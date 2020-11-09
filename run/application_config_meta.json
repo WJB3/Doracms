@@ -1,0 +1,739 @@
+{
+  "keys": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "port": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+      "hostname": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "session": {
+    "key": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "maxAge": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "httpOnly": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "encrypt": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "renew": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "userMaxAge": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "adminUserMaxAge": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "siteFile": {
+    "/favicon.ico": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "middleware": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "compress": {
+    "threshold": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "authPage": {
+    "threshold": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "view": {
+    "defaultViewEngine": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "mapping": {
+      ".html": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+    },
+    "root": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view\\config\\config.local.js",
+    "defaultExtension": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "dirs": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-i18n\\config\\config.default.js",
+    "queryField": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieField": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieDomain": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-i18n\\config\\config.default.js"
+  },
+  "origin": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "doracms_api": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "temp_static_forder": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "temp_view_forder": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "temp_locales_forder": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "admin_base_path": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "session_secret": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "auth_cookie_name": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "encrypt_key": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "salt_aes_key": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "salt_md5_key": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "security": {
+    "csrf": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+      "type": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "ignoreJSON": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "useSession": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "cookieName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "sessionName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "headerName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "bodyName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "queryName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "refererWhiteList": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "domainWhiteList": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+    "protocolWhiteList": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+    "defaultMiddleware": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+    "xframe": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.local.js",
+      "maxAge": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "includeSubdomains": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "policy": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js",
+      "checkAddress": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+    }
+  },
+  "crossHeader": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "authAdminToken": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "authAdminPower": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "authUserToken": {
+    "ignore": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "multipart": {
+    "fileSize": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "mode": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "fileExtensions": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+    "autoFields": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "defaultCharset": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldSize": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fields": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "files": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "whitelist": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "tmpdir": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart\\config\\config.default.js"
+    }
+  },
+  "backUpTick": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+  "backUpDataRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "uploadFileRouter": {
+    "uploadFileFormat": {
+      "upload_path": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js",
+      "static_root_path": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+    },
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "regUserRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "adsRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "announceRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "contentRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "contentCategoryRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "contentMessageRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "contentTagRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "contentTempRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "helpCenterRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "systemNotifyRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "systemOptionLogRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "templateConfigRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "versionManageRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "mailTemplateRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "doraMiddleStageRouter": {
+    "match": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.default.js"
+  },
+  "admin_root_path": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+  "dev_modules": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+  "sqlPath": {
+    "bin": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "backup": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js"
+  },
+  "sequelize": {
+    "dialect": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "host": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "port": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "database": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "username": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "password": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "delegate": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js"
+  },
+  "static": {
+    "prefix": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "maxAge": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "dynamic": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-static\\config\\config.default.js",
+    "preload": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-static\\config\\config.default.js",
+    "buffer": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-static\\config\\config.default.js",
+    "maxFiles": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-static\\config\\config.default.js"
+  },
+  "logger": {
+    "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "encoding": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "env": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "level": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "consoleLevel": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "appLogName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.local.js"
+    },
+    "allowDebugAtProd": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "server_path": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+  "server_api": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+  "helper": {
+    "shtml": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "callback": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "csrf": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-onerror\\config\\config.default.js",
+    "templatePath": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-onerror\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-watcher\\config\\config.local.js",
+    "eventSources": {
+      "default": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-watcher\\config\\config.default.js",
+      "development": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-schedule\\config\\config.default.js",
+      "file": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-schedule\\config\\config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-schedule\\config\\config.default.js"
+  },
+  "development": {
+    "watchDirs": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development\\config\\config.default.js",
+    "ignoreDirs": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development\\config\\config.default.js",
+    "fastReady": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development\\config\\config.default.js",
+    "reloadOnDebug": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development\\config\\config.default.js",
+    "overrideDefault": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development\\config\\config.default.js",
+    "overrideIgnore": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFiles": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxDays": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator\\config\\config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "throwOnUndefined": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "trimBlocks": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "lstripBlocks": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "cache": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view-nunjucks\\config\\config.local.js"
+  },
+  "doraBackUpData": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata\\config\\config.default.js"
+  },
+  "validate": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-validate\\config\\config.default.js",
+  "doraUploadFile": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile\\config\\config.default.js"
+  },
+  "doraRegUser": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser\\config\\config.default.js"
+  },
+  "doraAds": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads\\config\\config.default.js"
+  },
+  "doraAnnounce": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce\\config\\config.default.js"
+  },
+  "doraTemplateConfig": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig\\config\\config.default.js"
+  },
+  "doraContentTemp": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp\\config\\config.default.js"
+  },
+  "doraContentCategory": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory\\config\\config.default.js"
+  },
+  "doraContentMessage": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage\\config\\config.default.js"
+  },
+  "doraContentTags": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags\\config\\config.default.js"
+  },
+  "doraContent": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content\\config\\config.default.js"
+  },
+  "doraHelpCenter": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter\\config\\config.default.js"
+  },
+  "doraSystemNotify": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify\\config\\config.default.js"
+  },
+  "doraSystemOptionLog": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog\\config\\config.default.js"
+  },
+  "doraVersionManage": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\config.default.js"
+  },
+  "doraMiddleStage": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\config.default.js"
+  },
+  "doraMailTemplate": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js"
+  },
+  "env": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "name": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "cookies": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "proxy": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "maxIpsCount": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "maxProxyCount": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "protocolHeaders": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "ipHeaders": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "hostHeaders": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "pkg": {
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "dependencies": {
+      "await-stream-ready": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "axios": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "cross-env": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "crypto-js": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-doras-middlestage": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-doras-uploadfile": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-doras-validate": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-scripts": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-sequelize": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-view-nunjucks": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "iconv-lite": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "js-cache": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "jsonwebtoken": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "koa-compress": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "lodash": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "mammoth": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "mariadb": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "module-alias": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "moment": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "mysql2": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "node-schedule": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "node-unzip-2": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "nodemailer": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "qr-image": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "shelljs": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "stream-wormhole": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "trek-captcha": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "validator": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "xss": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "archiver": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "autod": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "autod-egg": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-bin": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-ci": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "egg-mock": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "eslint": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "eslint-config-egg": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "webstorm-disable-index": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "engines": {
+      "node": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "scripts": {
+      "debug": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "dev": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "test": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "test-local": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "cov": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "lint": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "ci": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "autod": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "pkgfiles": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "doracms": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "publishThemes": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "makeReleasePro": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "makeAdminScaffoldPro": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "makeGitHubPro": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "start": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "stop": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "ci": {
+      "version": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "repository": {
+      "type": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "url": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "keywords": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "author": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "files": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "eslintIgnore": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "_moduleAliases": {
+      "@root": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "@validate": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "@utils": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "license": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "baseDir": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "HOME": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "rundir": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "notFound": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "sitefile": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "middlewares": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "httpClient": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "formLimit": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "jsonLimit": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "textLimit": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "strict": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "depth": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "parameterLimit": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "onerror": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "request": {
+      "timeout": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketTimeout": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketTimeout": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "logging": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "workerStartTimeout": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "serverTimeout": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+  "clusterClient": {
+    "maxWaitTime": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
+    "responseTimeout": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+  },
+  "onClientError": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js"
+}

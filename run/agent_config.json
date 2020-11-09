@@ -1,0 +1,2147 @@
+{
+  "config": {
+    "session": {
+      "maxAge": 86400000,
+      "key": "DORA_SESS",
+      "httpOnly": true,
+      "encrypt": true,
+      "renew": true
+    },
+    "security": {
+      "domainWhiteList": [],
+      "protocolWhiteList": [],
+      "defaultMiddleware": "csrf,hsts,methodnoallow,noopen,nosniff,csp,xssProtection,xframe,dta",
+      "csrf": {
+        "enable": false,
+        "type": "ctoken",
+        "ignoreJSON": false,
+        "useSession": false,
+        "cookieName": "csrfToken",
+        "sessionName": "csrfToken",
+        "headerName": "x-csrf-token",
+        "bodyName": "_csrf",
+        "queryName": "_csrf",
+        "refererWhiteList": []
+      },
+      "xframe": {
+        "enable": true,
+        "value": "SAMEORIGIN"
+      },
+      "hsts": {
+        "enable": false,
+        "maxAge": 31536000,
+        "includeSubdomains": false
+      },
+      "dta": {
+        "enable": true
+      },
+      "methodnoallow": {
+        "enable": true
+      },
+      "noopen": {
+        "enable": true
+      },
+      "nosniff": {
+        "enable": true
+      },
+      "referrerPolicy": {
+        "enable": false,
+        "value": "no-referrer-when-downgrade"
+      },
+      "xssProtection": {
+        "enable": true,
+        "value": "1; mode=block"
+      },
+      "csp": {
+        "enable": false,
+        "policy": {}
+      },
+      "ssrf": {
+        "ipBlackList": null,
+        "checkAddress": null
+      },
+      "_protocolWhiteListSet": "<Set>"
+    },
+    "helper": {
+      "shtml": {}
+    },
+    "jsonp": {
+      "limit": 50,
+      "callback": [
+        "_callback",
+        "callback"
+      ],
+      "csrf": false
+    },
+    "onerror": {
+      "errorPageUrl": "",
+      "appErrorFilter": null,
+      "templatePath": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-onerror\\lib\\onerror_page.mustache"
+    },
+    "i18n": {
+      "defaultLocale": "zh-CN",
+      "dirs": [],
+      "queryField": "locale",
+      "cookieField": "locale",
+      "cookieDomain": "",
+      "cookieMaxAge": "1y"
+    },
+    "watcher": {
+      "type": "development",
+      "eventSources": {
+        "default": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-watcher\\lib\\event-sources\\default",
+        "development": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-watcher\\lib\\event-sources\\development"
+      }
+    },
+    "customLogger": {
+      "scheduleLogger": {
+        "consoleLevel": "NONE",
+        "file": "egg-schedule.log"
+      }
+    },
+    "schedule": {
+      "directory": []
+    },
+    "multipart": {
+      "mode": "stream",
+      "autoFields": false,
+      "defaultCharset": "utf8",
+      "fieldNameSize": 100,
+      "fieldSize": "100kb",
+      "fields": 10,
+      "fileSize": "10mb",
+      "files": 10,
+      "fileExtensions": [
+        ".doc",
+        ".docx"
+      ],
+      "whitelist": null,
+      "tmpdir": "C:\\Users\\wjb\\AppData\\Local\\Temp\\egg-multipart-tmp\\doracms-sql",
+      "cleanSchedule": {
+        "cron": "0 30 4 * * *"
+      }
+    },
+    "development": {
+      "watchDirs": [],
+      "ignoreDirs": [],
+      "fastReady": false,
+      "reloadOnDebug": true,
+      "overrideDefault": false,
+      "overrideIgnore": false
+    },
+    "logrotator": {
+      "filesRotateByHour": null,
+      "hourDelimiter": "-",
+      "filesRotateBySize": null,
+      "maxFileSize": 52428800,
+      "maxFiles": 10,
+      "rotateDuration": 60000,
+      "maxDays": 31
+    },
+    "static": {
+      "prefix": "/static",
+      "dir": [
+        "F:\\ChangweiProject\\DoraCMS-SQL\\app\\public",
+        "F:\\ChangweiProject\\DoraCMS-SQL\\backstage\\dist"
+      ],
+      "dynamic": true,
+      "preload": false,
+      "buffer": false,
+      "maxFiles": 1000,
+      "maxAge": 31536000
+    },
+    "view": {
+      "root": "F:\\ChangweiProject\\DoraCMS-SQL\\app\\view",
+      "cache": false,
+      "defaultExtension": ".html",
+      "defaultViewEngine": "nunjucks",
+      "mapping": {
+        ".html": "nunjucks"
+      }
+    },
+    "nunjucks": {
+      "autoescape": true,
+      "throwOnUndefined": false,
+      "trimBlocks": false,
+      "lstripBlocks": false,
+      "cache": false
+    },
+    "sequelize": {
+      "dialect": "mysql",
+      "database": "doracms",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "username": "root",
+      "password": "<String len: 4>",
+      "delegate": "model"
+    },
+    "doraBackUpData": {
+      "alias": "backUpData",
+      "pkgName": "egg-doras-backupdata",
+      "enName": "doraBackUpData",
+      "name": "数据管理",
+      "description": "数据管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.5",
+      "iconName": "icon_cspace",
+      "adminUrl": "/backUpData/js/app.js",
+      "adminApi": [
+        {
+          "url": "backupDataManage/getBakList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取备份数据列表"
+        },
+        {
+          "url": "backupDataManage/backUp",
+          "method": "post",
+          "controllerName": "backUpData",
+          "details": "执行数据备份"
+        },
+        {
+          "url": "backupDataManage/restore",
+          "method": "post",
+          "controllerName": "restoreData",
+          "details": "执行数据还原"
+        },
+        {
+          "url": "backupDataManage/deleteDataItem",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除备份数据"
+        }
+      ],
+      "fontApi": [],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-backupdata',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/backupDataManage')],\n\n    },\n\n    "
+    },
+    "validate": {},
+    "doraUploadFile": {
+      "alias": "uploadFile",
+      "pkgName": "egg-doras-uploadfile",
+      "enName": "doraUploadFile",
+      "name": "文件上传",
+      "description": "文件上传",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.5",
+      "iconName": "icon_service",
+      "adminUrl": "/uploadFile/js/app.js",
+      "adminApi": [
+        {
+          "url": "uploadFile/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取文件上传列表"
+        },
+        {
+          "url": "uploadFile/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条文件上传信息"
+        },
+        {
+          "url": "uploadFile/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个文件上传"
+        },
+        {
+          "url": "uploadFile/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新文件上传信息"
+        },
+        {
+          "url": "uploadFile/delete",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除文件上传"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "upload/files",
+          "method": "post",
+          "controllerName": "create",
+          "details": "文件上传"
+        },
+        {
+          "url": "upload/filePath",
+          "method": "post",
+          "controllerName": "createFileByPath",
+          "details": "文件上传(根据路径)"
+        },
+        {
+          "url": "upload/ueditor",
+          "method": "get",
+          "controllerName": "ueditor",
+          "details": "文件上传初始化配置"
+        },
+        {
+          "url": "upload/ueditor",
+          "method": "post",
+          "controllerName": "ueditor",
+          "details": "文件上传"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-uploadfile',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/uploadFile'), ctx => ctx.path.startsWith('/api/upload')],\n\n    },\n\n    "
+    },
+    "doraRegUser": {
+      "alias": "regUser",
+      "pkgName": "egg-doras-reguser",
+      "enName": "doraRegUser",
+      "name": "会员管理",
+      "description": "会员管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.4",
+      "iconName": "icon_people_fill",
+      "adminUrl": "/regUser/js/app.js",
+      "adminApi": [
+        {
+          "url": "regUser/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取会员列表"
+        },
+        {
+          "url": "regUser/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条会员信息"
+        },
+        {
+          "url": "regUser/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新会员信息"
+        },
+        {
+          "url": "regUser/deleteUser",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除会员"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "user/sendVerificationCode",
+          "method": "post",
+          "controllerName": "sendVerificationCode",
+          "details": "发送验证码"
+        },
+        {
+          "url": "user/doLogin",
+          "method": "post",
+          "controllerName": "loginAction",
+          "details": "用户登录"
+        },
+        {
+          "url": "user/touristLogin",
+          "method": "post",
+          "controllerName": "touristLoginAction",
+          "details": "游客登录"
+        },
+        {
+          "url": "user/doReg",
+          "method": "post",
+          "controllerName": "regAction",
+          "details": "用户注册"
+        },
+        {
+          "url": "user/bindInfo",
+          "method": "post",
+          "controllerName": "bindEmailOrPhoneNum",
+          "details": "信息绑定",
+          "authToken": true
+        },
+        {
+          "url": "user/resetPassword",
+          "method": "post",
+          "controllerName": "resetMyPassword",
+          "details": "重设密码"
+        },
+        {
+          "url": "user/modifyMyPsd",
+          "method": "post",
+          "controllerName": "modifyMyPsd",
+          "details": "修改密码",
+          "authToken": true
+        },
+        {
+          "url": "user/userInfo",
+          "method": "get",
+          "controllerName": "getUserInfoBySession",
+          "details": "获取用户信息",
+          "authToken": true
+        },
+        {
+          "url": "user/followCreator",
+          "method": "get",
+          "controllerName": "followCreator",
+          "details": "关注作者",
+          "authToken": true
+        },
+        {
+          "url": "user/addTags",
+          "method": "get",
+          "controllerName": "addTags",
+          "details": "关注标签",
+          "authToken": true
+        },
+        {
+          "url": "user/askContentThumbsUp",
+          "method": "get",
+          "controllerName": "askContentThumbsUp",
+          "details": "点赞",
+          "authToken": true
+        },
+        {
+          "url": "user/favoriteContent",
+          "method": "get",
+          "controllerName": "favoriteContent",
+          "details": "收藏",
+          "authToken": true
+        },
+        {
+          "url": "user/despiseContent",
+          "method": "get",
+          "controllerName": "despiseContent",
+          "details": "踩帖",
+          "authToken": true
+        },
+        {
+          "url": "user/checkPhoneNumExist",
+          "method": "get",
+          "controllerName": "checkPhoneNumExist",
+          "details": "检测手机号是否存在"
+        },
+        {
+          "url": "user/checkHadSetLoginPassword",
+          "method": "get",
+          "controllerName": "checkHadSetLoginPassword",
+          "details": "检测是否已设置登录密码",
+          "authToken": true
+        },
+        {
+          "url": "user/updateInfo",
+          "method": "post",
+          "controllerName": "updateUser",
+          "details": "更新用户信息",
+          "authToken": true
+        },
+        {
+          "url": "user/getMyFollowInfos",
+          "method": "get",
+          "controllerName": "getMyFollowInfos",
+          "details": "获取我关注的信息",
+          "authToken": true
+        },
+        {
+          "url": "user/logOut",
+          "method": "get",
+          "controllerName": "logOut",
+          "details": "退出登录",
+          "authToken": true
+        },
+        {
+          "url": "user/sentConfirmEmail",
+          "method": "post",
+          "controllerName": "sentConfirmEmail",
+          "details": "发送确认邮件"
+        },
+        {
+          "url": "user/updateNewPsd",
+          "method": "post",
+          "controllerName": "updateNewPsd",
+          "details": "设置新密码"
+        },
+        {
+          "url": "user/reset_pass",
+          "method": "get",
+          "controllerName": "reSetPass",
+          "details": "重设密码链接"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-reguser',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/regUser'), ctx => ctx.path.startsWith('/api/user')],\n\n    },\n\n    "
+    },
+    "doraAds": {
+      "alias": "ads",
+      "pkgName": "egg-doras-ads",
+      "enName": "doraAds",
+      "name": "广告管理",
+      "description": "广告管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.6",
+      "iconName": "icon_shakehands_fill",
+      "adminUrl": "/ads/js/app.js",
+      "adminApi": [
+        {
+          "url": "ads/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取广告列表"
+        },
+        {
+          "url": "ads/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条广告信息"
+        },
+        {
+          "url": "ads/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个广告"
+        },
+        {
+          "url": "ads/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新广告信息"
+        },
+        {
+          "url": "ads/delete",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除广告"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "ads/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条广告"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-ads',    \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/ads'), ctx => ctx.path.startsWith('/api/ads')],\n\n    },\n\n    "
+    },
+    "doraAnnounce": {
+      "alias": "announce",
+      "pkgName": "egg-doras-announce",
+      "enName": "doraAnnounce",
+      "name": "系统公告",
+      "description": "系统公告",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_inform_fill",
+      "adminUrl": "/announce/js/app.js",
+      "adminApi": [
+        {
+          "url": "systemAnnounce/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取系统公告列表"
+        },
+        {
+          "url": "systemAnnounce/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "新增公告"
+        },
+        {
+          "url": "systemAnnounce/deleteItem",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除公告"
+        }
+      ],
+      "fontApi": [],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-announce',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/systemAnnounce')],\n\n    },\n\n    "
+    },
+    "doraTemplateConfig": {
+      "alias": "templateConfig",
+      "pkgName": "egg-doras-templateconfig",
+      "enName": "doraTemplateConfig",
+      "name": "模板配置",
+      "description": "模板配置",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.4",
+      "iconName": "icon_skin",
+      "adminUrl": "/templateConfig/js/app.js",
+      "adminApi": [
+        {
+          "url": "template/getMyTemplateList",
+          "method": "get",
+          "controllerName": "getMyTemplateList",
+          "details": "获取已安装的模板列表"
+        },
+        {
+          "url": "template/addTemplateItem",
+          "method": "post",
+          "controllerName": "addTemplateItem",
+          "details": "新增模板单元"
+        },
+        {
+          "url": "template/delTemplateItem",
+          "method": "get",
+          "controllerName": "delTemplateItem",
+          "details": "删除模板单元"
+        },
+        {
+          "url": "template/getTemplateItemlist",
+          "method": "get",
+          "controllerName": "getTempItemForderList",
+          "details": "获取默认模板的模板单元列表"
+        },
+        {
+          "url": "template/getTempsFromShop",
+          "method": "get",
+          "controllerName": "getTempsFromShop",
+          "details": "获取模板市场中的模板列表",
+          "noPower": true
+        },
+        {
+          "url": "template/installTemp",
+          "method": "get",
+          "controllerName": "installTemp",
+          "details": "安装模板"
+        },
+        {
+          "url": "template/updateTemp",
+          "method": "get",
+          "controllerName": "updateTemplate",
+          "details": "更新模板"
+        },
+        {
+          "url": "template/uploadCMSTemplate",
+          "method": "post",
+          "controllerName": "uploadCMSTemplate",
+          "details": "上传自定义模板"
+        },
+        {
+          "url": "template/enableTemp",
+          "method": "get",
+          "controllerName": "enableTemp",
+          "details": "上传自定义模板"
+        },
+        {
+          "url": "template/uninstallTemp",
+          "method": "get",
+          "controllerName": "uninstallTemp",
+          "details": "卸载模板"
+        }
+      ],
+      "fontApi": [],
+      "initData": "templateitems.json",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-templateconfig',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: ['/manage/template/getMyTemplateList',\n        '/manage/template/addTemplateItem',\n        '/manage/template/delTemplateItem',\n        '/manage/template/getTemplateItemlist',\n        '/manage/template/getTempsFromShop',\n        '/manage/template/installTemp',\n        '/manage/template/updateTemp',\n        '/manage/template/uploadCMSTemplate',\n        '/manage/template/enableTemp',\n        '/manage/template/uninstallTemp',\n      ],\n\n    },\n\n    "
+    },
+    "doraContentTemp": {
+      "alias": "contentTemp",
+      "pkgName": "egg-doras-contenttemp",
+      "enName": "doraContentTemp",
+      "name": "模板编辑",
+      "description": "模板编辑",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_compile",
+      "adminUrl": "/contentTemp/js/app.js",
+      "adminApi": [
+        {
+          "url": "template/getTemplateForderList",
+          "method": "get",
+          "controllerName": "getContentDefaultTemplate",
+          "details": "获取模板文件列表"
+        },
+        {
+          "url": "template/getTemplateFileText",
+          "method": "get",
+          "controllerName": "getFileInfo",
+          "details": "读取文件内容"
+        },
+        {
+          "url": "template/updateTemplateFileText",
+          "method": "post",
+          "controllerName": "updateFileInfo",
+          "details": "更新文件内容"
+        },
+        {
+          "url": "template/createInvoice",
+          "method": "post",
+          "controllerName": "createInvoice",
+          "details": "预创建支付订单",
+          "noPower": true
+        },
+        {
+          "url": "template/checkInvoice",
+          "method": "post",
+          "controllerName": "checkInvoice",
+          "details": "订单校验",
+          "noPower": true
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "contentTemplate/getDefaultTempInfo",
+          "method": "get",
+          "controllerName": "getDefaultTempInfo",
+          "details": "获取默认模板信息"
+        }
+      ],
+      "initData": "contenttemplates.json",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-contenttemp',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: ['/manage/template/getTemplateForderList',\n        '/manage/template/getTemplateFileText',\n        '/manage/template/updateTemplateFileText',\n        '/api/contentTemplate/getDefaultTempInfo',\n      ],\n\n    },\n\n    "
+    },
+    "doraContentCategory": {
+      "alias": "contentCategory",
+      "pkgName": "egg-doras-contentcategory",
+      "enName": "doraContentCategory",
+      "name": "文档类别",
+      "description": "文档类别",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_category",
+      "adminUrl": "/contentCategory/js/app.js",
+      "adminApi": [
+        {
+          "url": "contentCategory/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取类别列表"
+        },
+        {
+          "url": "contentCategory/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条类别信息"
+        },
+        {
+          "url": "contentCategory/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个类别"
+        },
+        {
+          "url": "contentCategory/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新类别信息"
+        },
+        {
+          "url": "contentCategory/deleteCategory",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除类别"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "contentCategory/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取类别列表"
+        },
+        {
+          "url": "contentCategory/getTreelist",
+          "method": "get",
+          "controllerName": "treelist",
+          "details": "获取带树形结构的类别列表"
+        },
+        {
+          "url": "contentCategory/getCurrentCategoriesById",
+          "method": "get",
+          "controllerName": "getCurrentCategoriesById",
+          "details": "根据id获取分类"
+        },
+        {
+          "url": "contentCategory/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条类别信息"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-contentcategory', \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/contentCategory'), ctx => ctx.path.startsWith('/api/contentCategory')],\n\n    },\n\n    "
+    },
+    "doraContentMessage": {
+      "alias": "contentMessage",
+      "pkgName": "egg-doras-contentmessage",
+      "enName": "doraContentMessage",
+      "name": "文档留言",
+      "description": "文档留言管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_service",
+      "adminUrl": "/contentMessage/js/app.js",
+      "adminApi": [
+        {
+          "url": "contentMessage/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取留言列表"
+        },
+        {
+          "url": "contentMessage/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条留言信息"
+        },
+        {
+          "url": "contentMessage/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个留言"
+        },
+        {
+          "url": "contentMessage/deleteMessage",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除留言"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "contentMessage/postMessages",
+          "method": "post",
+          "controllerName": "postMessages",
+          "details": "发表留言",
+          "authToken": true
+        },
+        {
+          "url": "contentMessage/getMessages",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取留言列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-contentmessage',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/contentMessage'),ctx => ctx.path.startsWith('/api/contentMessage')],\n\n    },\n\n    "
+    },
+    "doraContentTags": {
+      "alias": "contentTags",
+      "pkgName": "egg-doras-contenttags",
+      "enName": "doraContentTags",
+      "name": "文档标签",
+      "description": "文档标签",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_tags",
+      "adminUrl": "/contentTags/js/app.js",
+      "adminApi": [
+        {
+          "url": "contentTag/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取标签列表"
+        },
+        {
+          "url": "contentTag/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条标签信息"
+        },
+        {
+          "url": "contentTag/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个标签"
+        },
+        {
+          "url": "contentTag/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新标签信息"
+        },
+        {
+          "url": "contentTag/deleteTag",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除标签"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "contentTag/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取标签列表"
+        },
+        {
+          "url": "contentTag/getHotList",
+          "method": "get",
+          "controllerName": "hot",
+          "details": "获取热门标签列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-contenttags',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/contentTag'), ctx => ctx.path.startsWith('/api/contentTag')],\n\n    },\n\n    "
+    },
+    "doraContent": {
+      "alias": "content",
+      "pkgName": "egg-doras-content",
+      "enName": "doraContent",
+      "name": "文档管理",
+      "description": "提供文档文案管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.4",
+      "iconName": "icon_doc_fill",
+      "adminUrl": "/content/js/app.js",
+      "adminApi": [
+        {
+          "url": "content/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取文档列表"
+        },
+        {
+          "url": "content/getContent",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条文档信息"
+        },
+        {
+          "url": "content/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个文档"
+        },
+        {
+          "url": "content/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新文档信息"
+        },
+        {
+          "url": "content/updateContents",
+          "method": "post",
+          "controllerName": "updateContents",
+          "details": "批量更新文档信息"
+        },
+        {
+          "url": "content/deleteContent",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除文档"
+        },
+        {
+          "url": "content/topContent",
+          "method": "post",
+          "controllerName": "updateContentToTop",
+          "details": "文档推荐"
+        },
+        {
+          "url": "content/roofContent",
+          "method": "post",
+          "controllerName": "roofPlacement",
+          "details": "文档置顶"
+        },
+        {
+          "url": "content/redictContentToUsers",
+          "method": "post",
+          "controllerName": "redictContentToUsers",
+          "details": "分配用户"
+        },
+        {
+          "url": "content/updateContentEditor",
+          "method": "post",
+          "controllerName": "updateContentEditor",
+          "details": "绑定编辑"
+        },
+        {
+          "url": "content/moveCate",
+          "method": "post",
+          "controllerName": "moveCate",
+          "details": "更新类别"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "content/getMyFavoriteContents",
+          "method": "get",
+          "controllerName": "getMyFavoriteContents",
+          "details": "获取收藏的文档列表",
+          "authToken": true
+        },
+        {
+          "url": "content/getUserContents",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取用户的文档列表"
+        },
+        {
+          "url": "content/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取文档列表"
+        },
+        {
+          "url": "content/getRadomContents",
+          "method": "get",
+          "controllerName": "getRadomContents",
+          "details": "获取随机文档列表"
+        },
+        {
+          "url": "content/getRandomContentImg",
+          "method": "get",
+          "controllerName": "getRandomContentImg",
+          "details": "获取随机文档首图"
+        },
+        {
+          "url": "content/getContent",
+          "method": "get",
+          "controllerName": "getOneContent",
+          "details": "获取单个文档信息"
+        },
+        {
+          "url": "content/getWordHtmlContent",
+          "method": "post",
+          "controllerName": "getWordHtmlContent",
+          "details": "获取Word文档Html信息"
+        },
+        {
+          "url": "content/addOne",
+          "method": "post",
+          "controllerName": "addContent",
+          "details": "新增文档",
+          "authToken": true
+        },
+        {
+          "url": "content/updateOne",
+          "method": "post",
+          "controllerName": "updateContent",
+          "details": "更新文档",
+          "authToken": true
+        },
+        {
+          "url": "content/getNearbyContent",
+          "method": "get",
+          "controllerName": "getNearbyContent",
+          "details": "上一篇/下一篇"
+        },
+        {
+          "url": "content/getCoverList",
+          "method": "get",
+          "controllerName": "getContentCoverList",
+          "details": "获取封面列表"
+        },
+        {
+          "url": "content/getCoverTypeList",
+          "method": "get",
+          "controllerName": "getContentCoverTypeList",
+          "details": "获取封面类别列表"
+        },
+        {
+          "url": "content/getOneContentCover",
+          "method": "get",
+          "controllerName": "getOneContentCover",
+          "details": "获取单个封面信息"
+        },
+        {
+          "url": "content/uploadCover",
+          "method": "post",
+          "controllerName": "uploadPreviewImgByBase64",
+          "details": "上传封面"
+        },
+        {
+          "url": "content/getContentCountsByCateId",
+          "method": "get",
+          "controllerName": "getContentCountsByCateId",
+          "details": "根据分类获取分类下文档总数"
+        }
+      ],
+      "initData": "contents.json",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-content',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/content'), ctx => ctx.path.startsWith('/api/content')],\n\n    },\n\n    "
+    },
+    "doraHelpCenter": {
+      "alias": "helpCenter",
+      "pkgName": "egg-doras-helpcenter",
+      "enName": "doraHelpCenter",
+      "name": "帮助中心",
+      "description": "提供帮助文案管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_service",
+      "adminUrl": "/helpCenter/js/app.js",
+      "adminApi": [
+        {
+          "url": "helpCenter/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取帮助列表"
+        },
+        {
+          "url": "helpCenter/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条帮助信息"
+        },
+        {
+          "url": "helpCenter/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个帮助"
+        },
+        {
+          "url": "helpCenter/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新帮助信息"
+        },
+        {
+          "url": "helpCenter/delete",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除帮助"
+        }
+      ],
+      "fontApi": [],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-helpcenter',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/helpCenter'), ctx => ctx.path.startsWith('/api/helpCenter')],\n\n    },\n\n    "
+    },
+    "doraSystemNotify": {
+      "alias": "systemNotify",
+      "pkgName": "egg-doras-systemnotify",
+      "enName": "doraSystemNotify",
+      "name": "系统消息",
+      "description": "系统消息",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.4",
+      "iconName": "icon_system_notic",
+      "adminUrl": "/systemNotify/js/app.js",
+      "adminApi": [
+        {
+          "url": "systemNotify/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取系统消息列表"
+        },
+        {
+          "url": "systemNotify/setHasRead",
+          "method": "get",
+          "controllerName": "setMessageHasRead",
+          "details": "设为已读消息"
+        },
+        {
+          "url": "systemNotify/deleteNotifyItem",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除操作日志"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "systemNotify/getUserNotifys",
+          "method": "get",
+          "controllerName": "getUserNotifys",
+          "details": "获取我的消息列表",
+          "authToken": true
+        },
+        {
+          "url": "systemNotify/setNoticeRead",
+          "method": "get",
+          "controllerName": "setMessageHasRead",
+          "details": "设置消息已读",
+          "authToken": true
+        },
+        {
+          "url": "systemNotify/delUserNotify",
+          "method": "get",
+          "controllerName": "delUserNotify",
+          "details": "删除消息",
+          "authToken": true
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-systemnotify',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/systemNotify'), ctx => ctx.path.startsWith('/api/systemNotify')],\n\n    },\n\n    "
+    },
+    "doraSystemOptionLog": {
+      "alias": "systemOptionLog",
+      "pkgName": "egg-doras-systemoptionlog",
+      "enName": "doraSystemOptionLog",
+      "name": "系统日志",
+      "description": "系统日志",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_logs",
+      "adminUrl": "/systemOptionLog/js/app.js",
+      "adminApi": [
+        {
+          "url": "systemOptionLog/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取日志列表"
+        },
+        {
+          "url": "systemOptionLog/deleteLogItem",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除单条日志"
+        },
+        {
+          "url": "systemOptionLog/deleteAllLogItem",
+          "method": "get",
+          "controllerName": "removeAll",
+          "details": "清空日志"
+        }
+      ],
+      "fontApi": [],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-systemoptionlog',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/systemOptionLog')],\n\n    },\n\n    "
+    },
+    "doraVersionManage": {
+      "alias": "versionManage",
+      "pkgName": "egg-doras-versionmanage",
+      "enName": "doraVersionManage",
+      "name": "app版本",
+      "description": "app版本",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_app",
+      "adminUrl": "/versionManage/js/app.js",
+      "adminApi": [
+        {
+          "url": "versionManage/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取版本配置"
+        },
+        {
+          "url": "versionManage/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新版本信息"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "versionManage/getAppVersion",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取app版本信息"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-versionmanage',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/versionManage'), ctx => ctx.path.startsWith('/api/versionManage')],\n\n    },\n\n    "
+    },
+    "doraMiddleStage": {
+      "alias": "doraMiddleStage",
+      "pkgName": "egg-doras-middleStage",
+      "enName": "doraMiddleStage",
+      "name": "doracms middlestage",
+      "description": "doracms middlestage",
+      "isadm": 0,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "",
+      "adminUrl": "",
+      "adminApi": [
+        {
+          "url": "singleUser/sendVerificationCode",
+          "method": "post",
+          "controllerName": "sendVerificationCode",
+          "details": "发送验证码",
+          "noPower": true
+        },
+        {
+          "url": "singleUser/doReg",
+          "method": "post",
+          "controllerName": "doReg",
+          "details": "用户注册",
+          "noPower": true
+        },
+        {
+          "url": "singleUser/doLogin",
+          "method": "post",
+          "controllerName": "doLogin",
+          "details": "用户登录",
+          "noPower": true
+        },
+        {
+          "url": "singleUser/logOut",
+          "method": "get",
+          "controllerName": "logOut",
+          "details": "用户登出",
+          "noPower": true
+        },
+        {
+          "url": "singleUser/getUserInfo",
+          "method": "get",
+          "controllerName": "getUserInfo",
+          "details": "获取用户信息",
+          "noPower": true
+        },
+        {
+          "url": "singleUser/getClientNotice",
+          "method": "get",
+          "controllerName": "getClientNotice",
+          "details": "获取系统公告列表",
+          "noPower": true
+        },
+        {
+          "url": "singleUser/getVersionMaintenanceInfo",
+          "method": "get",
+          "controllerName": "getVersionMaintenanceInfo",
+          "details": "获取版本维护信息",
+          "noPower": true
+        }
+      ],
+      "fontApi": [],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-doras-middleStage',\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/singleUser')],\n\n    },\n\n    "
+    },
+    "doraMailTemplate": {
+      "alias": "mailTemplate",
+      "pkgName": "egg-doras-mailtemplate",
+      "enName": "doraMailTemplate",
+      "name": "邮件模板",
+      "description": "邮件模板",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.3",
+      "iconName": "icon_service",
+      "adminUrl": "/mailTemplate/js/app.js",
+      "adminApi": [
+        {
+          "url": "mailTemplate/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取邮件模板列表"
+        },
+        {
+          "url": "mailTemplate/getTypeList",
+          "method": "get",
+          "controllerName": "typelist",
+          "details": "获取邮件模板类别列表"
+        },
+        {
+          "url": "mailTemplate/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条邮件模板信息"
+        },
+        {
+          "url": "mailTemplate/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个邮件模板"
+        },
+        {
+          "url": "mailTemplate/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新邮件模板信息"
+        },
+        {
+          "url": "mailTemplate/delete",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除邮件模板"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "mailTemplate/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取邮件模板列表"
+        },
+        {
+          "url": "mailTemplate/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单个邮件模板"
+        },
+        {
+          "url": "mailTemplate/getTypeList",
+          "method": "get",
+          "controllerName": "typelist",
+          "details": "获取邮件模板类别列表"
+        },
+        {
+          "url": "mailTemplate/sendEmail",
+          "method": "post",
+          "controllerName": "sendEmail",
+          "details": "发送邮件"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n\n         \n\n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/mailTemplate'), ctx => ctx.path.startsWith('/api/mailTemplate')],\n\n    },\n\n    "
+    },
+    "env": "local",
+    "name": "doracms-sql",
+    "keys": "<String len: 8>",
+    "cookies": {},
+    "proxy": false,
+    "maxIpsCount": 0,
+    "maxProxyCount": 0,
+    "protocolHeaders": "x-forwarded-proto",
+    "ipHeaders": "x-forwarded-for",
+    "hostHeaders": "",
+    "pkg": {
+      "name": "doracms-sql",
+      "version": "2.1.7",
+      "description": "",
+      "dependencies": {
+        "await-stream-ready": "^1.0.1",
+        "axios": "^0.19.0",
+        "cross-env": "^6.0.3",
+        "crypto-js": "^4.0.0",
+        "egg": "^2.3.0",
+        "egg-doras-middlestage": "^1.0.0",
+        "egg-doras-uploadfile": "^1.0.0",
+        "egg-doras-validate": "^1.0.1",
+        "egg-scripts": "^2.11.0",
+        "egg-sequelize": "^5.2.2",
+        "egg-view-nunjucks": "^2.2.0",
+        "iconv-lite": "^0.5.0",
+        "js-cache": "^1.0.3",
+        "jsonwebtoken": "^8.5.1",
+        "koa-compress": "^3.0.0",
+        "lodash": "^4.17.15",
+        "mammoth": "^1.4.9",
+        "mariadb": "^2.4.2",
+        "module-alias": "^2.2.1",
+        "moment": "^2.24.0",
+        "mysql2": "^2.1.0",
+        "node-schedule": "^1.3.2",
+        "node-unzip-2": "^0.2.8",
+        "nodemailer": "6.3.0",
+        "qr-image": "^3.2.0",
+        "shelljs": "^0.8.3",
+        "stream-wormhole": "^1.1.0",
+        "trek-captcha": "^0.4.0",
+        "validator": "^11.1.0",
+        "xss": "^1.0.6"
+      },
+      "devDependencies": {
+        "archiver": "^3.1.1",
+        "autod": "^3.0.1",
+        "autod-egg": "^1.0.0",
+        "egg-bin": "^4.13.0",
+        "egg-ci": "^1.8.0",
+        "egg-mock": "^3.14.0",
+        "eslint": "^4.18.0",
+        "eslint-config-egg": "^7.0.0",
+        "webstorm-disable-index": "^1.2.0"
+      },
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "scripts": {
+        "debug": "egg-bin debug",
+        "dev": "cross-env NODE_ENV=development && egg-bin dev",
+        "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+        "test-local": "egg-bin test",
+        "cov": "egg-bin cov",
+        "lint": "eslint .",
+        "ci": "npm run lint && egg-bin pkgfiles --check && npm run cov",
+        "autod": "autod",
+        "pkgfiles": "egg-bin pkgfiles",
+        "doracms": "node ./install/index.js",
+        "publishThemes": "node ./build/publishThemes",
+        "makeReleasePro": "node ./build/renderPro --type release",
+        "makeAdminScaffoldPro": "node ./build/renderPro --type adminScaffold",
+        "makeGitHubPro": "node ./build/renderPro --type github",
+        "start": "cross-env NODE_ENV=production && egg-scripts start --daemon --title=doracms-sql",
+        "stop": "egg-scripts stop --title=doracms-sql"
+      },
+      "ci": {
+        "version": "8, 9"
+      },
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "keywords": [
+        "egg",
+        "egg-framework"
+      ],
+      "author": "doramart",
+      "files": [
+        "app",
+        "config",
+        "lib",
+        "index.js"
+      ],
+      "eslintIgnore": [
+        "coverage",
+        "dist"
+      ],
+      "_moduleAliases": {
+        "@root": ".",
+        "@validate": "app/validate",
+        "@utils": "app/utils"
+      },
+      "license": "MIT"
+    },
+    "baseDir": "F:\\ChangweiProject\\DoraCMS-SQL",
+    "HOME": "C:\\Users\\wjb",
+    "rundir": "F:\\ChangweiProject\\DoraCMS-SQL\\run",
+    "dump": {
+      "ignore": "<Set>"
+    },
+    "confusedConfigurations": {
+      "bodyparser": "bodyParser",
+      "notFound": "notfound",
+      "sitefile": "siteFile",
+      "middlewares": "middleware",
+      "httpClient": "httpclient"
+    },
+    "notfound": {
+      "pageUrl": ""
+    },
+    "siteFile": {
+      "/favicon.ico": "<Buffer len: 4286>"
+    },
+    "bodyParser": {
+      "enable": true,
+      "encoding": "utf8",
+      "formLimit": "1mb",
+      "jsonLimit": "1mb",
+      "textLimit": "1mb",
+      "strict": true,
+      "queryString": {
+        "arrayLimit": 100,
+        "depth": 5,
+        "parameterLimit": 1000
+      },
+      "onerror": "<Function onerror>"
+    },
+    "logger": {
+      "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\logs",
+      "encoding": "utf8",
+      "env": "local",
+      "level": "INFO",
+      "consoleLevel": "INFO",
+      "disableConsoleAfterReady": false,
+      "outputJSON": false,
+      "buffer": true,
+      "appLogName": "doracms-sql-web.log",
+      "coreLogName": "egg-web.log",
+      "agentLogName": "egg-agent.log",
+      "errorLogName": "common-error.log",
+      "coreLogger": {
+        "consoleLevel": "WARN"
+      },
+      "allowDebugAtProd": false,
+      "type": "agent"
+    },
+    "httpclient": {
+      "enableDNSCache": false,
+      "dnsCacheLookupInterval": 10000,
+      "dnsCacheMaxLength": 1000,
+      "request": {
+        "timeout": 5000
+      },
+      "httpAgent": {
+        "keepAlive": true,
+        "freeSocketTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256
+      },
+      "httpsAgent": {
+        "keepAlive": true,
+        "freeSocketTimeout": 4000,
+        "maxSockets": 9007199254740991,
+        "maxFreeSockets": 256
+      }
+    },
+    "meta": {
+      "enable": true,
+      "logging": false
+    },
+    "coreMiddleware": [
+      "meta",
+      "siteFile",
+      "notfound",
+      "bodyParser",
+      "overrideMethod"
+    ],
+    "workerStartTimeout": 600000,
+    "serverTimeout": null,
+    "cluster": {
+      "listen": {
+        "path": "",
+        "port": 10003,
+        "hostname": ""
+      }
+    },
+    "clusterClient": {
+      "maxWaitTime": 60000,
+      "responseTimeout": 60000
+    },
+    "onClientError": null,
+    "userMaxAge": 86400000,
+    "adminUserMaxAge": 86400000,
+    "middleware": [
+      "notfoundHandler",
+      "crossHeader",
+      "compress",
+      "authUserToken",
+      "authAdminToken",
+      "authAdminPower"
+    ],
+    "compress": {
+      "threshold": 2048
+    },
+    "authPage": {
+      "threshold": 1024
+    },
+    "origin": "https://cdn.html-js.cn",
+    "doracms_api": "https://api.html-js.cn",
+    "temp_static_forder": "F:\\ChangweiProject\\DoraCMS-SQL/app/public/themes/",
+    "temp_view_forder": "F:\\ChangweiProject\\DoraCMS-SQL/app/view/",
+    "temp_locales_forder": "F:\\ChangweiProject\\DoraCMS-SQL/config/locale/",
+    "admin_base_path": "/admin",
+    "session_secret": "<String len: 14>",
+    "auth_cookie_name": "doracms",
+    "encrypt_key": "dora",
+    "salt_aes_key": "doracms_",
+    "salt_md5_key": "dora",
+    "crossHeader": {
+      "match": [
+        "/api"
+      ]
+    },
+    "authAdminToken": {
+      "match": [
+        "/manage",
+        "/admin"
+      ]
+    },
+    "authAdminPower": {
+      "match": [
+        "/manage"
+      ]
+    },
+    "authUserToken": {
+      "ignore": [
+        "/manage",
+        "/admin"
+      ]
+    },
+    "backUpTick": "0 0 0 */1 * ?",
+    "backUpDataRouter": {
+      "match": [
+        null
+      ]
+    },
+    "uploadFileRouter": {
+      "uploadFileFormat": {
+        "upload_path": "F:\\ChangweiProject\\DoraCMS-SQL/app/public",
+        "static_root_path": "cms"
+      },
+      "match": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "regUserRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "adsRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "announceRouter": {
+      "match": [
+        null
+      ]
+    },
+    "contentRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "contentCategoryRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "contentMessageRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "contentTagRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "contentTempRouter": {
+      "match": [
+        "/manage/template/getTemplateForderList",
+        "/manage/template/getTemplateFileText",
+        "/manage/template/updateTemplateFileText",
+        "/api/contentTemplate/getDefaultTempInfo"
+      ]
+    },
+    "helpCenterRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "systemNotifyRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "systemOptionLogRouter": {
+      "match": [
+        null
+      ]
+    },
+    "templateConfigRouter": {
+      "match": [
+        "/manage/template/getMyTemplateList",
+        "/manage/template/addTemplateItem",
+        "/manage/template/delTemplateItem",
+        "/manage/template/getTemplateItemlist",
+        "/manage/template/getTempsFromShop",
+        "/manage/template/installTemp",
+        "/manage/template/updateTemp",
+        "/manage/template/uploadCMSTemplate",
+        "/manage/template/enableTemp",
+        "/manage/template/uninstallTemp"
+      ]
+    },
+    "versionManageRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "mailTemplateRouter": {
+      "match": [
+        null,
+        null
+      ]
+    },
+    "doraMiddleStageRouter": {
+      "match": [
+        null
+      ]
+    },
+    "admin_root_path": "http://localhost",
+    "dev_modules": [],
+    "sqlPath": {
+      "bin": "/usr/local/mysql/bin/",
+      "backup": "F:\\ChangweiProject\\DoraCMS-SQL\\databak\\"
+    },
+    "server_path": "http://127.0.0.1:10003",
+    "server_api": "http://127.0.0.1:10003/api",
+    "coreMiddlewares": "~config~coreMiddleware",
+    "appMiddlewares": "~config~middleware",
+    "appMiddleware": "~config~middleware"
+  },
+  "plugins": {
+    "onerror": {
+      "enable": true,
+      "package": "egg-onerror",
+      "name": "onerror",
+      "dependencies": [],
+      "optionalDependencies": [
+        "jsonp"
+      ],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-onerror",
+      "version": "2.1.0"
+    },
+    "session": {
+      "enable": true,
+      "package": "egg-session",
+      "name": "session",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-session",
+      "version": "3.2.0"
+    },
+    "i18n": {
+      "enable": true,
+      "package": "egg-i18n",
+      "name": "i18n",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-i18n",
+      "version": "2.1.1"
+    },
+    "watcher": {
+      "enable": true,
+      "package": "egg-watcher",
+      "name": "watcher",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-watcher",
+      "version": "3.1.1"
+    },
+    "multipart": {
+      "enable": true,
+      "package": "egg-multipart",
+      "name": "multipart",
+      "dependencies": [],
+      "optionalDependencies": [
+        "schedule"
+      ],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-multipart",
+      "version": "2.10.3"
+    },
+    "security": {
+      "enable": true,
+      "package": "egg-security",
+      "name": "security",
+      "dependencies": [],
+      "optionalDependencies": [
+        "session"
+      ],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-security",
+      "version": "2.8.0"
+    },
+    "development": {
+      "enable": true,
+      "package": "egg-development",
+      "name": "development",
+      "dependencies": [
+        "watcher"
+      ],
+      "optionalDependencies": [],
+      "env": [
+        "local"
+      ],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-development",
+      "version": "2.7.0"
+    },
+    "logrotator": {
+      "enable": true,
+      "package": "egg-logrotator",
+      "name": "logrotator",
+      "dependencies": [
+        "schedule"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-logrotator",
+      "version": "3.1.0"
+    },
+    "schedule": {
+      "enable": true,
+      "package": "egg-schedule",
+      "name": "schedule",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-schedule",
+      "version": "3.6.6"
+    },
+    "static": {
+      "enable": true,
+      "package": "egg-static",
+      "name": "static",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-static",
+      "version": "2.2.0"
+    },
+    "jsonp": {
+      "enable": true,
+      "package": "egg-jsonp",
+      "name": "jsonp",
+      "dependencies": [],
+      "optionalDependencies": [
+        "security"
+      ],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-jsonp",
+      "version": "2.0.0"
+    },
+    "view": {
+      "enable": true,
+      "package": "egg-view",
+      "name": "view",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view",
+      "version": "2.1.3"
+    },
+    "nunjucks": {
+      "enable": true,
+      "package": "egg-view-nunjucks",
+      "name": "nunjucks",
+      "dependencies": [
+        "security",
+        "view"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-view-nunjucks",
+      "version": "2.2.0"
+    },
+    "sequelize": {
+      "enable": true,
+      "package": "egg-sequelize",
+      "name": "sequelize",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-sequelize",
+      "version": "5.2.2"
+    },
+    "doraBackUpData": {
+      "enable": true,
+      "package": "egg-doras-backupdata",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-backupdata",
+      "name": "doraBackUpData",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.5"
+    },
+    "validate": {
+      "enable": true,
+      "package": "egg-doras-validate",
+      "name": "validate",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-validate",
+      "version": "1.0.3"
+    },
+    "doraUploadFile": {
+      "enable": true,
+      "package": "egg-doras-uploadfile",
+      "name": "doraUploadFile",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-uploadfile",
+      "version": "1.0.5"
+    },
+    "doraRegUser": {
+      "enable": true,
+      "package": "egg-doras-reguser",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-reguser",
+      "name": "doraRegUser",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.4"
+    },
+    "doraAds": {
+      "enable": true,
+      "package": "egg-doras-ads",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-ads",
+      "name": "doraAds",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.6"
+    },
+    "doraAnnounce": {
+      "enable": true,
+      "package": "egg-doras-announce",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-announce",
+      "name": "doraAnnounce",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraTemplateConfig": {
+      "enable": true,
+      "package": "egg-doras-templateconfig",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-templateconfig",
+      "name": "doraTemplateConfig",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.4"
+    },
+    "doraContentTemp": {
+      "enable": true,
+      "package": "egg-doras-contenttemp",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttemp",
+      "name": "doraContentTemp",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraContentCategory": {
+      "enable": true,
+      "package": "egg-doras-contentcategory",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentcategory",
+      "name": "doraContentCategory",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraContentMessage": {
+      "enable": true,
+      "package": "egg-doras-contentmessage",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contentmessage",
+      "name": "doraContentMessage",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraContentTags": {
+      "enable": true,
+      "package": "egg-doras-contenttags",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-contenttags",
+      "name": "doraContentTags",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraContent": {
+      "enable": true,
+      "package": "egg-doras-content",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-content",
+      "name": "doraContent",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.4"
+    },
+    "doraHelpCenter": {
+      "enable": true,
+      "package": "egg-doras-helpcenter",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-helpcenter",
+      "name": "doraHelpCenter",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraSystemNotify": {
+      "enable": true,
+      "package": "egg-doras-systemnotify",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemnotify",
+      "name": "doraSystemNotify",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.4"
+    },
+    "doraSystemOptionLog": {
+      "enable": true,
+      "package": "egg-doras-systemoptionlog",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-systemoptionlog",
+      "name": "doraSystemOptionLog",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraVersionManage": {
+      "enable": true,
+      "package": "egg-doras-versionmanage",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage",
+      "name": "doraVersionManage",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    },
+    "doraMiddleStage": {
+      "enable": true,
+      "package": "egg-doras-middlestage",
+      "name": "doraMiddleStage",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage",
+      "version": "1.0.3"
+    },
+    "doraMailTemplate": {
+      "enable": true,
+      "package": "egg-doras-mailtemplate",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate",
+      "name": "doraMailTemplate",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.3"
+    }
+  }
+}
