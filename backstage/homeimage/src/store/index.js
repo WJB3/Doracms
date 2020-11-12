@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import getters from './getters'
-import ads from './modules/ads'
+import homeimage from './modules/homeimage'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    ads,
+    homeimage,
   },
   getters
 })

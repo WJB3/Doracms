@@ -1,5 +1,5 @@
 export default {
-  ads: {
+  homeimage: {
     name: "广告名",
     type: "广告类型",
     typeText: "文字",

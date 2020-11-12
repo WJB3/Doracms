@@ -1871,7 +1871,8 @@
     "dev_modules": [
       "navbar",
       "dashboard",
-      "adminResource"
+      "adminResource",
+      "homeimage"
     ],
     "sqlPath": {
       "bin": "/usr/local/mysql/bin/",

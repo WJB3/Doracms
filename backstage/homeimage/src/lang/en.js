@@ -1,5 +1,5 @@
 export default {
-  ads: {
+  homeimage: {
     name: "Ads Name",
     type: "Ads Type",
     typeText: "letter",

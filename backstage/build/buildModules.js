@@ -38,9 +38,11 @@ if (argvs[6] == '--localDistPath') {
 }
 
 let targetBuildModules = scanforder(modulesPath);
+
 if (designatedModule.length > 0) {
     targetBuildModules = designatedModule;
 }
+targetBuildModules.push("homeimage");
 targetBuildModules.forEach(function (name) {
     if (name != '.git' && name != 'build' && name != 'publicMethods' && name != 'dist') {
         shell.cd(`${modulesPath}/${name}`);

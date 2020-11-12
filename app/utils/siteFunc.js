@@ -59,14 +59,7 @@ var siteFunc = {
         let optionCates = _.filter(manageCates, (doc) => {
             return doc.source_type != '0';
         });
-        let consoleCates = _.filter(manageCates, (doc) => {
-            return doc.comments == '汉盾首页管理';
-        });
-        let consoleCates2 = _.filter(manageCates, (doc) => {
-            return doc.comments == '首页图片管理';
-        }); 
-
-        console.log(adminPower)
+      
 
         if (!_.isEmpty(adminPower)) {
             // 是否显示子菜单
@@ -79,13 +72,9 @@ var siteFunc = {
             }
             // 是否显示大类菜单
             for (const cate of rootCates) {
-                if(cate.id==149){
-                    console.log(cate);
-                }
+                 
                 let fiterSubCates = _.filter(newResources, (doc) => {
-                    if(doc.comments=="首页图片管理"){
-                        console.log("汉盾首页")
-                    }
+                    
                     return doc.parentId == cate.id;
                 });
                 console.log(fiterSubCates.length)

@@ -36,6 +36,7 @@ module.exports = appInfo => {
             // 'mailDelivery',
             // 'valine',
             // 'hook',
+            "homeimage"
         ],
         // DEV_CONFIG_MODULES_END
         sqlPath: {

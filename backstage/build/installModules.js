@@ -13,6 +13,7 @@ let targetBuildModules = scanforder(modulesPath);
 if (designatedModule.length > 0) {
     targetBuildModules = designatedModule;
 }
+console.log(targetBuildModules);
 targetBuildModules.forEach(function (name) {
     if (name != '.git' && name != 'build' && name != 'publicMethods' && name != 'dist') {
         shell.cd(`${modulesPath}/${name}`);
