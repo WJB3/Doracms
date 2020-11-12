@@ -91,8 +91,13 @@ const _renderContentCtx = async (appCtx, context, args, actionType) => {
         _.assign(payload, queryObj);
     }
 
-    // console.log(actionType, '--payload--', payload)
+    console.log(actionType, '--payload--', payload)
     apiData = await appCtx.helper.reqJsonData(api, payload);
+
+    if(actionType == 'ads'){
+        console.log(apiData);
+    }
+    
     context.ctx[key] = apiData;
 
 }

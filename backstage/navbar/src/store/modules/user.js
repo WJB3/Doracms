@@ -24,6 +24,7 @@ const state = {
 
 const mutations = {
   SET_ROUTES: (state, routes) => {
+   
     state.addRoutes = routes
     state.routes = constantRoutes.concat(routes)
   },
@@ -103,8 +104,10 @@ const actions = {
         if (!data) {
           reject('Verification failed, please Login again.')
         }
-
-        commit('SET_ROUTES', data)
+         
+        commit('SET_ROUTES', data);
+        console.log(data)
+   
         resolve(data)
       }).catch(error => {
         reject(error)

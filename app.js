@@ -13,6 +13,7 @@ class AppBootHook {
 
     configWillLoad() {
 
+        console.log("configWillLoad");
         this.app.loader.loadFile(path.join(this.app.config.baseDir, 'app/bootstrap/index.js'));
         const ctx = this.app.createAnonymousContext();
         this.app.nunjucks.addExtension('remote', new remote(ctx));
@@ -29,6 +30,8 @@ class AppBootHook {
         this.app.nunjucks.addExtension('ads', new ads(ctx));
         this.app.nunjucks.addExtension('navtree', new navtree(ctx));
         this.app.nunjucks.addExtension('childnav', new childnav(ctx));
+ 
+
     }
 
     async didLoad() {

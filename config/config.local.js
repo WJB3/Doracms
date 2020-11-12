@@ -8,11 +8,11 @@ module.exports = appInfo => {
         admin_root_path: 'http://localhost',
         // DEV_CONFIG_MODULES_BEGIN
         dev_modules: [
-            // 'navbar',
-            // 'dashboard',
+            'navbar',
+            'dashboard',
             // 'adminGroup',
             // 'adminUser',
-            // 'adminResource',
+            'adminResource',
             // 'systemConfig',
             // 'backUpData',
             // 'systemOptionLog',
@@ -58,7 +58,8 @@ module.exports = appInfo => {
             maxAge: 31536000,
         },
         logger: {
-            dir: path.join(appInfo.baseDir, 'logs'),
+            //dir: path.join(appInfo.baseDir, 'logs'),
+            consoleLevel: 'NONE',
         },
         server_path: 'http://127.0.0.1:10003',
         server_api: 'http://127.0.0.1:10003/api',

@@ -58,12 +58,11 @@ class AdminResourceController extends Controller {
             });
             let manageCates = await ctx.service.adminResource.find(payload, {
                 attributes: ['api', 'id', 'label', 'enable', 'routePath', 'parentId', 'source_type', 'icon', 'comments']
-            });
+            }); 
+            let adminPower = await ctx.helper.getAdminPower(ctx);  
 
-            // console.log('--manageCates--', manageCates)
-            let adminPower = await ctx.helper.getAdminPower(ctx);
-            let currentCates = await siteFunc.renderNoPowerMenus(manageCates, adminPower);
-
+            let currentCates = await siteFunc.renderNoPowerMenus(manageCates, adminPower); 
+            
             ctx.helper.renderSuccess(ctx, {
                 data: currentCates
             });

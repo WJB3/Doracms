@@ -62,6 +62,7 @@ module.exports = {
         data = {},
         message = ''
     } = {}) {
+        // console.log(data)
         ctx.body = {
             status: 200,
             data: data || {},
@@ -506,7 +507,7 @@ module.exports = {
             attributes: {
                 exclude: ['password', 'email']
             }
-        })
+        }); 
         let adminPower = adminUserInfo.group.power || [];
         return adminPower;
     },

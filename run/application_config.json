@@ -125,6 +125,7 @@
         "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-versionmanage\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\locales",
+        "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\config\\locale"
       ],
@@ -1443,6 +1444,37 @@
       "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n\n         \n\n    };\n\n    ",
       "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/mailTemplate'), ctx => ctx.path.startsWith('/api/mailTemplate')],\n\n    },\n\n    "
     },
+    "eggHomeImage": {
+      "alias": "homeimage",
+      "pkgName": "egg-home-image",
+      "enName": "eggHomeImage",
+      "name": "首页图片管理",
+      "description": "首页图片管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.6",
+      "iconName": "icon_shakehands_fill",
+      "adminUrl": "/homeimage/js/app.js",
+      "adminApi": [
+        {
+          "url": "homeimage/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取首页图片列表"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "homeimage/getAppVersion",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取首页图片列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-home-image',    \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/homeimage')\n        ,\n\n    },\n\n    "
+    },
     "env": "local",
     "name": "doracms-sql",
     "keys": "<String len: 8>",
@@ -1584,11 +1616,11 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\logs",
+      "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\logs\\doracms-sql",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
-      "consoleLevel": "INFO",
+      "consoleLevel": "NONE",
       "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
@@ -1677,7 +1709,8 @@
       "systemOptionLogRouter",
       "versionManageRouter",
       "middleStageRouter",
-      "mailTemplateRouter"
+      "mailTemplateRouter",
+      "homeImageRouter"
     ],
     "compress": {
       "threshold": 2048
@@ -1835,7 +1868,11 @@
       ]
     },
     "admin_root_path": "http://localhost",
-    "dev_modules": [],
+    "dev_modules": [
+      "navbar",
+      "dashboard",
+      "adminResource"
+    ],
     "sqlPath": {
       "bin": "/usr/local/mysql/bin/",
       "backup": "F:\\ChangweiProject\\DoraCMS-SQL\\databak\\"
@@ -2227,6 +2264,17 @@
       "env": [],
       "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
       "version": "1.0.3"
+    },
+    "eggHomeImage": {
+      "enable": true,
+      "package": "egg-home-image",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image",
+      "name": "eggHomeImage",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.6"
     }
   }
 }

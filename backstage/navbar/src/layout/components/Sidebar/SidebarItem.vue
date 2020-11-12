@@ -68,6 +68,8 @@ export default {
     this.onlyOneChild = null;
     return {};
   },
+  mounted:function(){ 
+  },
   methods: {
     hasOneShowingChild(children = [], parent) {
       const showingChildren = children.filter(item => {

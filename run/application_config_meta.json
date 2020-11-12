@@ -217,11 +217,11 @@
     "maxFiles": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-static\\config\\config.default.js"
   },
   "logger": {
-    "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "consoleLevel": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\config.local.js",
+    "dir": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
     "encoding": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
     "env": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
     "level": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
-    "consoleLevel": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
     "disableConsoleAfterReady": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
     "outputJSON": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
     "buffer": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
@@ -578,6 +578,23 @@
     "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
     "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js",
     "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\config.default.js"
+  },
+  "eggHomeImage": {
+    "alias": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "pkgName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "enName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "name": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "description": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "isadm": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "isindex": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "version": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "iconName": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "adminUrl": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "adminApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "fontApi": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "initData": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "pluginsConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js",
+    "defaultConfig": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\config.default.js"
   },
   "env": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",
   "name": "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\config.default.js",

@@ -33,6 +33,7 @@ export const constantRoutes = [{
   redirect: settings.admin_base_path + '/dashboard',
   children: []
 }];
+ 
 
 const createRouter = () => new Router({
   mode: 'history',

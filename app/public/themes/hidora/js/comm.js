@@ -22,10 +22,10 @@ $(document).ready(function() {
     });
 	
  //nav
-	$("#mnavh").click(function(){
+	$("#mnavh").click(function(){ 
     $("#starlist").toggle();
-	$("#mnavh").toggleClass("open");
-	$(".sub").hide();
+    $("#mnavh").toggleClass("open");
+    $(".sub").hide();
 	});
 	//nav menu
   

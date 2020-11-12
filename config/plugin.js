@@ -167,6 +167,12 @@ exports.doraMailTemplate = {
 // doraMailTemplatePluginEnd
 
 
+exports.eggHomeImage = {
+    enable: true,
+    package: 'egg-home-image',
+    path: path.join(__dirname, "../lib/plugin/egg-home-image")
+};
+
 
 // PLUGIN_NORMALPLUGIN_END
 

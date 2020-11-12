@@ -33,19 +33,7 @@
         autoplayDisableOnInteraction: false,
       });
     </script>
-    <!-- banner end-->
-    <div class="headline">
-      <ul>
-        {% recommend key="reCommendListTop",pageSize=2 %}
-        {% if reCommendListTop.length > 0 %}
-        {% for item in reCommendListTop%}
-        <li><a href="{{item.url}}" title="{{item.title}}"><img src="{{item.sImg}}" alt="{{item.title}}"><span>
-              <h4>{{item.title}}</h4>
-            </span></a></li>
-        {% endfor %}
-        {% endif %}
-      </ul>
-    </div>
+    
     <!--headline end-->
     <div class="clear"></div>
     <div class="h_title">最新文章</div>
