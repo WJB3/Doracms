@@ -11,96 +11,76 @@ const state = {
   },
   infoFormState: {
     edit: false,
-    formData: {
-      name: '',
-      ads_type: '1',
-      height: '',
-      comments: '',
-      items: [],
-      state: true,
-      carousel: true
-    }
+    name:"",
+    imgList:[],
+    type:"1"
   },
   itemFormState: {
-    show: false,
     edit: false,
-    formData: {
-      title: '',
-      link: '',
-      appLink: '',
-      appLinkType: '',
-      width: '',
-      height: '',
-      alt: '',
-      sImg: ''
-    }
-  }
+    show:false,
+    img:""
+  },
+   
 }
 
 const mutations = {
   [types.ADS_LIST](state, list) {
     state.list = list
   },
-  [types.ADS_INFO_FORMSTATE](state, formState) {
-    state.infoFormState.edit = formState.edit;
-    state.infoFormState.formData = Object.assign({
-      name: '',
-      ads_type: '1',
-      height: '',
-      comments: '',
-      items: [],
-      state: true,
-      carousel: true
-    }, formState.formData);
+  [types.INFO_FORMSTATE](state, formState) { 
+    state.infoFormState.imgList = Object.assign({
+      
+    }, formState.imgList);
   },
-  [types.ADS_ITEM_FORMSTATE](state, formState) {
+  [types.ITEM_FORMSTATE](state, formState) {
     state.itemFormState.edit = formState.edit;
     state.itemFormState.show = formState.show;
-    state.itemFormState.formData = Object.assign({
-      title: '',
-      link: '',
-      width: '',
-      height: '',
-      alt: '',
-      sImg: '',
-    }, formState.formData);
+    state.itemFormState.img = formState.img;
   },
+  [types.ADD_IMAGE](state,formState){
+    let list=state.infoFormState.imgList
+    let item=list[list.length-1]||0
+    state.infoFormState.imgList.push({_id:item._id,link:formState.img})
+    state.infoFormState.imgList = state.infoFormState.imgList; 
+  }
+   
 }
 
 const actions = {
 
   getHomeImageList({
     commit
-  }, params = {}) {
-    console.log("aaa")
+  }, params = {}) { 
     getHomeImageList(params).then((result) => {
+      console.log(result.data)
       commit(types.ADS_LIST, result.data)
     })
   },
-  adsInfoForm: ({
+  homeimageInfoForm: ({
     commit
   }, params = {}) => {
-    commit(types.ADS_INFO_FORMSTATE, {
-      edit: params.edit,
-      formData: params.formData
+    commit(types.INFO_FORMSTATE,params)
+  },
+  addImage:({commit},params={})=>{ 
+    commit(types.ADD_IMAGE, { 
+      img:params.img
     })
   },
-  showAdsItemForm: ({
+  showItemForm: ({
     commit
   }, params = {
-    edit: false,
-    formData: {}
+    edit: false
   }) => {
-    commit(types.ADS_ITEM_FORMSTATE, {
+    commit(types.ITEM_FORMSTATE, {
       show: true,
-      edit: params.edit,
-      formData: params.formData
+      edit: params.edit, 
+      img:""
     })
   },
-  hideAdsItemForm: ({
+  hideItemForm: ({
     commit
   }) => {
-    commit(types.ADS_ITEM_FORMSTATE, {
+    commit(types.ITEM_FORMSTATE, {
       show: false
     })
   },

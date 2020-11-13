@@ -1,7 +1,7 @@
 <template>
   <div class="dr-toolbar">
     <div class="option-button el-col-6">
-      <el-button type="primary" size="small" plain round @click="addAds">
+      <el-button type="primary" size="small" plain round @click="addImageList">
         <svg-icon icon-class="icon_add" />
       </el-button>
       <!-- TOPBARLEFT -->
@@ -24,12 +24,12 @@ export default {
     };
   },
   methods: {
-    addAds() {
-      this.$store.dispatch("ads/adsInfoForm", {
+    addImageList() {
+      this.$store.dispatch("homeimage/homeimageInfoForm", {
         edit: false,
         formData: {}
       });
-      this.$router.push(this.$root.adminBasePath + "/ads/addAds");
+      this.$router.push(this.$root.adminBasePath + "/homeimage/addHomeImage");
     }
 
     // TOPBARLEFTOPTION

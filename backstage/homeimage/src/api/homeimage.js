@@ -1,7 +1,6 @@
 import request from '@root/publicMethods/request'
 
-export function getHomeImageList(params) {
-  console.log("getHomeImageListService")
+export function getHomeImageList(params) { 
   return request({
     url: '/manage/homeimage/getList',
     method: 'get',

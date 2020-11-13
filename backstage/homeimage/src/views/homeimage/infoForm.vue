@@ -1,9 +1,9 @@
 <template>
-  <div :class="classObj" class="dr-adsInfoForm">
+  <div :class="classObj" class="dr-InfoForm infoForm">
     <div class="main-container">
-      <ItemForm :device="device" :formState="adsItemForm" />
+      <ItemForm :device="device" :formState="itemFormState" />
+
       <el-form
-        :model="formState.formData"
         :rules="rules"
         ref="ruleForm"
         label-width="120px"
@@ -11,108 +11,38 @@
         :label-position="device == 'mobile' ? 'top' : 'right'"
       >
         <el-form-item :label="$t('homeimage.name')" prop="name">
-          <el-input size="small" v-model="formState.formData.name"></el-input>
+          <el-input size="small" v-model="formState.name"></el-input>
         </el-form-item>
-        <el-form-item v-if="!formState.edit" :label="$t('homeimage.type')" prop="type">
-          <el-radio-group v-model="formState.formData.ads_type" @change="changeType">
-            <el-radio class="radio" label="0">{{$t('homeimage.typeText')}}</el-radio>
-            <el-radio class="radio" label="1">{{$t('homeimage.typePic')}}</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item :label="$t('homeimage.enable')" prop="state">
-          <el-switch
-            :on-text="$t('main.radioOn')"
-            :off-text="$t('main.radioOff')"
-            v-model="formState.formData.state"
-          ></el-switch>
-        </el-form-item>
-        <el-form-item :label="$t('homeimage.comments')" prop="comments">
-          <el-input size="small" v-model="formState.formData.comments"></el-input>
-        </el-form-item>
-        <div v-if="formState.formData.ads_type == '1'">
-          <el-form-item :label="$t('homeimage.slider')" prop="carousel">
-            <el-switch
-              :on-text="$t('main.radioOn')"
-              :off-text="$t('main.radioOff')"
-              v-model="formState.formData.carousel"
-            ></el-switch>
-          </el-form-item>
-          <el-form-item :label="$t('homeimage.showHeight')" prop="height">
-            <el-input
-              size="small"
-              type="number"
-              min="0"
-              max="10"
-              style="width:150px;"
-              :placeholder="$t('homeimage.showHeight')"
-              v-model="formState.formData.height"
-            >
-              <template slot="append">px</template>
-            </el-input>
-          </el-form-item>
-          <el-form-item :label="$t('homeimage.imglist')" prop="items">
-            <el-button
-              size="small"
-              type="primary"
-              plain
-              round
-              @click="showAdsItemForm"
-            >{{$t('homeimage.addImgItem')}}</el-button>
-            <div class="dr-homeimage-item" v-for="item in formState.formData.items" :key="item._id">
-              <div class="img">
-                <img :src="item.sImg" />
-              </div>
-              <div class="details">
-                <ul>
-                  <li>{{$t('homeimage.imgAlt')}}：{{item.alt}}</li>
-                  <li>{{$t('homeimage.imgLink')}}：{{item.link}}</li>
-                </ul>
-              </div>
-              <div class="options">
-                <el-button size="mini" type="primary" plain round @click="editAdsItemInfo(item)">
-                  <svg-icon icon-class="edit" />
-                </el-button>
-              </div>
-              <i class="el-icon-close" @click="deleteAdsItem(item)"></i>
-            </div>
-          </el-form-item>
-        </div>
-        <div v-if="formState.formData.ads_type == '0'">
-          <el-form-item :label="$t('homeimage.textList')" prop="items">
-            <el-button
-              size="small"
-              type="primary"
-              plain
-              round
-              @click="showAdsItemForm"
-            >{{$t('homeimage.addTextLink')}}</el-button>
-            <div v-if="formState.formData.items.length > 0">
-              <el-tag
-                v-for="tag in formState.formData.items"
-                :key="tag.title"
-                type="gray"
-                :closable="true"
-                @close="deleteAdsItem(tag)"
-              >
-                <span @click="editAdsItemInfo(tag)">{{tag.title}}</span>
-              </el-tag>
-            </div>
-          </el-form-item>
-        </div>
-        <el-form-item>
+
+        <el-form-item :label="$t('homeimage.imglist')" prop="items">
           <el-button
-            size="medium"
+            size="small"
             type="primary"
-            @click="submitForm('ruleForm')"
-          >{{formState.edit ? $t('main.form_btnText_update') : $t('main.form_btnText_save')}}</el-button>
-          <el-button size="medium" @click="backToList">{{$t('main.back')}}</el-button>
+            plain
+            round
+            @click="showItemForm"
+            >{{ $t("homeimage.addImgItem") }}</el-button
+          >
+
+          <div v-if="formState.imgList.length > 0" class="wrapper">
+            <div
+              class="homeimage-item"
+              v-for="item in formState.imgList"
+              :key="item._id"
+            >
+              <div class="img">
+                <img :src="item.link" />
+              </div> 
+              <i class="el-icon-close close-icon" @click="deleteItem(item)"></i>
+            </div>
+          </div>
         </el-form-item>
       </el-form>
     </div>
   </div>
 </template>
 <script>
-import { updateAds, addOneAd, getOneAd } from "@/api/homeimage";
+import { update, addOneAd, getOneAd } from "@/api/homeimage";
 import ItemForm from "./itemForm";
 import _ from "lodash";
 import { mapGetters, mapActions } from "vuex";
@@ -128,79 +58,74 @@ export default {
           {
             required: true,
             message: this.$t("validate.inputNull", {
-              label: this.$t("homeimage.name")
+              label: this.$t("homeimage.name"),
             }),
-            trigger: "blur"
+            trigger: "blur",
           },
           {
             min: 2,
             max: 15,
             message: this.$t("validate.ranglengthandnormal", {
               min: 2,
-              max: 15
+              max: 15,
             }),
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         comments: [
           {
             required: true,
             message: this.$t("validate.inputNull", {
-              label: this.$t("main.comments_label")
+              label: this.$t("main.comments_label"),
             }),
-            trigger: "blur"
+            trigger: "blur",
           },
           {
             min: 5,
             max: 30,
             message: this.$t("validate.ranglengthandnormal", {
               min: 5,
-              max: 30
+              max: 30,
             }),
-            trigger: "blur"
-          }
-        ]
-      }
+            trigger: "blur",
+          },
+        ],
+      },
     };
   },
   components: {
-    ItemForm
+    ItemForm,
   },
   methods: {
     backToList() {
       this.$router.push(this.$root.adminBasePath + "/homeimage");
     },
     changeType(type) {},
-    showAdsItemForm() {
-      this.$store.dispatch("homeimage/showAdsItemForm", { edit: false });
+    showItemForm() {
+      this.$store.dispatch("homeimage/showItemForm", { edit: false, });
     },
-    editAdsItemInfo(item) {
-      this.$store.dispatch("homeimage/showAdsItemForm", {
-        edit: true,
-        formData: item
+     
+    deleteItem(item) {
+      let oldFormState = this.$store.getters.infoFormState;
+      let imgList = oldFormState.imgList;
+      let newItems = _.filter(imgList, (doc) => {
+        return doc._id!==item._id;
       });
-    },
-    deleteAdsItem(item) {
-      let oldFormState = this.$store.getters.adsInfoForm;
-      let adsItems = oldFormState.formData.items;
-      let newItems = _.filter(adsItems, doc => {
-        return doc._id != item._id;
-      });
-      oldFormState.formData.items = newItems;
-      this.$store.dispatch("homeimage/adsInfoForm", oldFormState);
+      oldFormState.imgList = newItems;
+      this.$store.dispatch("homeimage/homeimageInfoForm", oldFormState);
     },
     submitForm(formName) {
-      this.$refs[formName].validate(valid => {
+      this.$refs[formName].validate((valid) => {
         if (valid) {
           let params = this.formState.formData;
           // 更新
           if (this.formState.edit) {
-            updateAds(params).then(result => {
+            update(params).then((result) => {
               if (result.status === 200) {
-                this.$store.dispatch("homeimage/hideAdsItemForm");
+                this.$store.dispatch("homeimage/hideItemForm");
                 this.$message({
                   message: this.$t("main.updateSuccess"),
-                  type: "success"
+                  type: "success",
                 });
                 this.$router.push(this.$root.adminBasePath + "/homeimage");
               } else {
@@ -209,11 +134,11 @@ export default {
             });
           } else {
             // 新增
-            addOneAd(params).then(result => {
+            addOneAd(params).then((result) => {
               if (result.status === 200) {
                 this.$message({
                   message: this.$t("main.addSuccess"),
-                  type: "success"
+                  type: "success",
                 });
                 this.$router.push(this.$root.adminBasePath + "/homeimage");
               } else {
@@ -226,32 +151,34 @@ export default {
           return false;
         }
       });
-    }
+    },
   },
   computed: {
-    ...mapGetters(["adsItemForm"]),
-    formState() {
-      return this.$store.getters.adsInfoForm;
+    itemFormState() { 
+      return this.$store.getters.itemFormState;
+    },
+    formState() { 
+      return this.$store.getters.infoFormState;
     },
     classObj() {
       return {
         hideSidebar: !this.sidebarOpened,
         openSidebar: this.sidebarOpened,
         withoutAnimation: "false",
-        mobile: this.device === "mobile"
+        mobile: this.device === "mobile",
       };
-    }
+    },
   },
   mounted() {
     initEvent(this);
     // 针对手动页面刷新
     if (this.$route.params.id) {
-      getOneAd(this.$route.params).then(result => {
+      getOneAd(this.$route.params).then((result) => {
         if (result.status === 200) {
           if (result.data) {
-            this.$store.dispatch("homeimage/adsInfoForm", {
+            this.$store.dispatch("homeimage/InfoForm", {
               edit: true,
-              formData: result.data
+              formData: result.data,
             });
           } else {
             this.$message({
@@ -259,7 +186,7 @@ export default {
               type: "warning",
               onClose: () => {
                 this.$router.push(this.$root.adminBasePath + "/homeimage");
-              }
+              },
             });
           }
         } else {
@@ -267,11 +194,11 @@ export default {
         }
       });
     }
-  }
+  },
 };
 </script>
 <style lang="scss">
-.dr-adsInfoForm {
+.dr-InfoForm {
   margin-top: 30px;
 }
 .el-tag {
@@ -317,6 +244,40 @@ export default {
     font-size: 11px;
     cursor: pointer;
     color: #bfcbd9;
+  }
+}
+.infoForm {
+  .wrapper {
+    display: flex; 
+    flex-wrap:wrap;
+
+    .homeimage-item {
+      width:23%;
+      height:300px;
+      position: relative;
+      border: 2px solid skyblue;
+      border-radius: 4px;
+      padding: 5px; 
+      margin:1%;
+
+      .img{
+        height:100%;
+        width:100%;
+
+        img{
+          width:100%;
+          height:100%;
+        }
+      }
+
+      .close-icon{
+        position: absolute;
+        top: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        right: 15px;
+      }
+    }
   }
 }
 </style>

@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "55200168929dc0a3a642";
+/******/ 	var hotCurrentHash = "658d5a5528c49cbee1fc";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1316,8 +1316,6 @@ service.interceptors.request.use(function (config) {
   return config;
 }, function (error) {
   // do something with request error
-  console.log(error); // for debug
-
   return Promise.reject(error);
 }); // response interceptor
 

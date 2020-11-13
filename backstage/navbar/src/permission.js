@@ -49,8 +49,8 @@ router.beforeEach(async (to, from, next) => {
             // get user info
             await store.dispatch('user/getInfo');
             let accessRoutes = await store.dispatch('user/getResources');
-            router.addRoutes(accessRoutes)
-            console.log(accessRoutes)
+            router.addRoutes(accessRoutes) 
+            
             next({
               ...to,
               replace: true

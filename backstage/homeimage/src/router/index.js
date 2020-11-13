@@ -15,7 +15,11 @@ const createRouter = () => new Router({
     path: settings.admin_base_path + '/homeimage',
     name: 'homeimage',
     component: HomeImage
-  } ]
+  },{
+    path:settings.admin_base_path+'/homeimage/addHomeImage',
+    name:"addHomeImage",
+    component:()=>import(/*webpackChunkName: "addHomeImage" */'@/views/homeimage/infoForm.vue')
+  }]
   // {
   //   path: settings.admin_base_path + '/ads/editAds/:id',
   //   name: 'editAds',

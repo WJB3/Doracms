@@ -9,20 +9,15 @@
       @selection-change="handleSelectionChange"
     >
       <el-table-column type="selection" width="55"></el-table-column>
-      <el-table-column prop="name" :label="$t('homeimage.name')" width="200"></el-table-column>
-      <el-table-column prop="type" :label="$t('homeimage.type')" width="80">
-        <template slot-scope="scope">
-          <span v-if="scope.row.type == '0'">{{$t('homeimage.typeText')}}</span>
-          <span v-if="scope.row.type == '1'">{{$t('homeimage.typePic')}}</span>
-        </template>
-      </el-table-column>
-      <el-table-column prop="state" :label="$t('homeimage.enable')" width="100" show-overflow-tooltip>
+      <el-table-column prop="name" :label="$t('homeimage.name')" width="auto"></el-table-column>
+     
+      <el-table-column prop="state" :label="$t('homeimage.link')" width="auto" show-overflow-tooltip>
         <template slot-scope="scope">
           <svg-icon v-show="scope.row.state" :style="green" icon-class="check-circle-fill" />
           <svg-icon v-show="!scope.row.state" :style="red" icon-class="minus-circle-fill" />
         </template>
       </el-table-column>
-      <el-table-column prop="comments" :label="$t('homeimage.dis')" show-overflow-tooltip></el-table-column>
+     
       <el-table-column :label="$t('main.dataTableOptions')" width="150">
         <template slot-scope="scope">
           <el-tooltip class="item" effect="dark" content="Get code" placement="top-start">

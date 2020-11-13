@@ -1473,7 +1473,7 @@
       ],
       "initData": "",
       "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-home-image',    \n    };\n\n    ",
-      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/homeimage')\n        ,\n\n    },\n\n    "
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/homeimage')],\n\n       \n    },\n\n    "
     },
     "env": "local",
     "name": "doracms-sql",
@@ -1872,6 +1872,7 @@
       "navbar",
       "dashboard",
       "adminResource",
+      "ads",
       "homeimage"
     ],
     "sqlPath": {

@@ -4,8 +4,8 @@
       <el-row class="dr-datatable">
         <el-col :span="24">
           <TopBar type="ads"></TopBar>
-          <DataTable :dataList="adsList.docs"></DataTable>
-          <Pagination :device="device" :pageInfo="adsList.pageInfo" pageType="ads"></Pagination>
+          <DataTable :dataList="imageList.docs"></DataTable>
+          <Pagination :device="device" :pageInfo="imageList.pageInfo" pageType="ads"></Pagination>
         </el-col>
       </el-row>
     </div>
@@ -35,7 +35,7 @@ export default {
   },
   methods: mapActions([]),
   computed: {
-    ...mapGetters(["adsList"]),
+    ...mapGetters(["imageList"]),
     formState() {
       return this.$store.getters.adsInfoForm;
     },

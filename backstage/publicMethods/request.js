@@ -28,7 +28,6 @@ service.interceptors.request.use(
   },
   error => {
     // do something with request error
-    console.log(error) // for debug
     return Promise.reject(error)
   }
 )
@@ -46,7 +45,7 @@ service.interceptors.response.use(
    * You can also judge the status by HTTP Status Code
    */
   response => {
-    tryHideFullScreenLoading();
+    tryHideFullScreenLoading(); 
     const res = response.data
 
     // if the custom code is not 200, it is judged as an error.

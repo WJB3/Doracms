@@ -18,7 +18,7 @@ module.exports = appInfo => {
             // 'systemOptionLog',
             // 'announce',
             // 'systemNotify',
-            // 'ads',
+            'ads',
             // 'contentTemp',
             // 'templateConfig',
             // 'versionManage',

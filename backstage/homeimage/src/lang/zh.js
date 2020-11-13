@@ -1,6 +1,6 @@
 export default {
   homeimage: {
-    name: "广告名",
+    name: "首页图片",
     type: "广告类型",
     typeText: "文字",
     typePic: "图片",

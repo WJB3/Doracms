@@ -1,6 +1,6 @@
 const getters = {
-  adsList: state => state.ads.list,
-  adsInfoForm: state => state.ads.infoFormState,
-  adsItemForm: state => state.ads.itemFormState,
+  imageList: state => state.homeimage.list,
+  infoFormState: state => state.homeimage.infoFormState, 
+  itemFormState: state => state.homeimage.itemFormState,
 }
 export default getters
