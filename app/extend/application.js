@@ -79,7 +79,7 @@ module.exports = {
         for (const pluginItem in pluginInfo) {
 
             // 1、开启插件，2、已成功加载，3、内部(dora)插件
-            if (pluginInfo.hasOwnProperty(pluginItem) && pluginInfo[pluginItem].enable && !_.isEmpty(app.config[pluginItem]) && pluginItem.indexOf('dora') == 0) {
+            if (pluginInfo.hasOwnProperty(pluginItem) && pluginInfo[pluginItem].enable && !_.isEmpty(app.config[pluginItem]) && (pluginItem.indexOf('dora') == 0|| pluginItem.indexOf('egg') == 0)) {
 
                 let {
                     adminApi,

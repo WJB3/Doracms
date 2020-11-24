@@ -4,6 +4,7 @@ class AppBootHook {
 
 
     constructor(app) {
+        console.log(app)
         this.app = app;
     }
 
@@ -21,6 +22,7 @@ class AppBootHook {
         this.app.nunjucks.addExtension('AssetsExtension', new AssetsExtension(ctx));
         this.app.nunjucks.addExtension('PluginsExtension', new PluginsExtension(ctx));
         this.app.nunjucks.addExtension('recommend', new recommend(ctx));
+        this.app.nunjucks.addExtension('homeimage', new homeimage(ctx));
         this.app.nunjucks.addExtension('hot', new hot(ctx));
         this.app.nunjucks.addExtension('news', new news(ctx));
         this.app.nunjucks.addExtension('random', new random(ctx));
@@ -30,6 +32,8 @@ class AppBootHook {
         this.app.nunjucks.addExtension('ads', new ads(ctx));
         this.app.nunjucks.addExtension('navtree', new navtree(ctx));
         this.app.nunjucks.addExtension('childnav', new childnav(ctx));
+        this.app.nunjucks.addExtension('goodsList', new goodsList(ctx));
+        this.app.nunjucks.addExtension('goodsCategory', new goodsCategory(ctx));
  
 
     }

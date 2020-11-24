@@ -143,8 +143,7 @@ export default {
     };
   },
   methods: {
-    handleChange(value) {
-      console.log(value);
+    handleChange(value) { 
     },
     changeType(value) {},
     confirm() {

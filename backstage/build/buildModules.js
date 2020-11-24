@@ -43,6 +43,9 @@ if (designatedModule.length > 0) {
     targetBuildModules = designatedModule;
 }
 targetBuildModules.push("homeimage");
+targetBuildModules.push("goodsCategory");
+targetBuildModules.push("goodsInfo");
+
 targetBuildModules.forEach(function (name) {
     if (name != '.git' && name != 'build' && name != 'publicMethods' && name != 'dist') {
         shell.cd(`${modulesPath}/${name}`);

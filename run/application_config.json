@@ -126,6 +126,8 @@
         "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg-doras-middlestage\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-doras-mailtemplate\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image\\config\\locales",
+        "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-category\\config\\locales",
+        "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-info\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\node_modules\\egg\\config\\locales",
         "F:\\ChangweiProject\\DoraCMS-SQL\\config\\locale"
       ],
@@ -1461,11 +1463,17 @@
           "method": "get",
           "controllerName": "list",
           "details": "获取首页图片列表"
+        },
+        {
+          "url": "homeimage/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "增加首页图片"
         }
       ],
       "fontApi": [
         {
-          "url": "homeimage/getAppVersion",
+          "url": "homeimage/getList",
           "method": "get",
           "controllerName": "list",
           "details": "获取首页图片列表"
@@ -1474,6 +1482,116 @@
       "initData": "",
       "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-home-image',    \n    };\n\n    ",
       "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/homeimage')],\n\n       \n    },\n\n    "
+    },
+    "eggGoodsCategory": {
+      "alias": "goodsCategory",
+      "pkgName": "egg-goods-category",
+      "enName": "eggGoodsCategory",
+      "name": "分类管理",
+      "description": "分类管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.6",
+      "iconName": "icon_shakehands_fill",
+      "adminUrl": "/goodsCategory/js/app.js",
+      "adminApi": [
+        {
+          "url": "goodsCategory/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取类别列表"
+        },
+        {
+          "url": "goodsCategory/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条类别信息"
+        },
+        {
+          "url": "goodsCategory/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个类别"
+        },
+        {
+          "url": "goodsCategory/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新类别信息"
+        },
+        {
+          "url": "goodsCategory/deleteCategory",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除类别"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "goodsCategory/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取类别列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-goods-category',    \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/goodsCategory'), ctx => ctx.path.startsWith('/api/goodsCategory')],\n\n    },\n\n    "
+    },
+    "eggGoodsInfo": {
+      "alias": "goodsInfo",
+      "pkgName": "egg-goods-info",
+      "enName": "eggGoodsInfo",
+      "name": "分类管理",
+      "description": "分类管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.6",
+      "iconName": "icon_shakehands_fill",
+      "adminUrl": "/goodsInfo/js/app.js",
+      "adminApi": [
+        {
+          "url": "goodsInfo/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取类别列表"
+        },
+        {
+          "url": "goodsInfo/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条类别信息"
+        },
+        {
+          "url": "goodsInfo/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个类别"
+        },
+        {
+          "url": "goodsInfo/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新类别信息"
+        },
+        {
+          "url": "goodsInfo/deleteCategory",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除类别"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "goodsInfo/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取产品列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-goods-info',    \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/goodsInfo'), ctx => ctx.path.startsWith('/api/goodsInfo')],\n\n    },\n\n    "
     },
     "env": "local",
     "name": "doracms-sql",
@@ -1645,13 +1763,17 @@
         "keepAlive": true,
         "freeSocketTimeout": 4000,
         "maxSockets": 9007199254740991,
-        "maxFreeSockets": 256
+        "maxFreeSockets": 256,
+        "timeout": 30000,
+        "socketActiveTTL": 0
       },
       "httpsAgent": {
         "keepAlive": true,
         "freeSocketTimeout": 4000,
         "maxSockets": 9007199254740991,
-        "maxFreeSockets": 256
+        "maxFreeSockets": 256,
+        "timeout": 30000,
+        "socketActiveTTL": 0
       }
     },
     "meta": {
@@ -1710,7 +1832,9 @@
       "versionManageRouter",
       "middleStageRouter",
       "mailTemplateRouter",
-      "homeImageRouter"
+      "homeImageRouter",
+      "goodsCategoryRouter",
+      "goodsInfoRouter"
     ],
     "compress": {
       "threshold": 2048
@@ -1870,10 +1994,9 @@
     "admin_root_path": "http://localhost",
     "dev_modules": [
       "navbar",
-      "dashboard",
       "adminResource",
-      "ads",
-      "homeimage"
+      "goodsCategory",
+      "goodsInfo"
     ],
     "sqlPath": {
       "bin": "/usr/local/mysql/bin/",
@@ -2272,6 +2395,28 @@
       "package": "egg-home-image",
       "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-home-image",
       "name": "eggHomeImage",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.6"
+    },
+    "eggGoodsCategory": {
+      "enable": true,
+      "package": "egg-goods-category",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-category",
+      "name": "eggGoodsCategory",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.6"
+    },
+    "eggGoodsInfo": {
+      "enable": true,
+      "package": "egg-goods-info",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-info",
+      "name": "eggGoodsInfo",
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],

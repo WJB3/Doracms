@@ -34,10 +34,12 @@ module.exports = {
             targetUrl = this.app.config.server_api + '/' + url
         }
 
+        console.log(targetUrl)
+
         if (method === 'get') {
             responseData = await Axios.get(targetUrl, {
                 params
-            })
+            }) 
         } else if (method === 'post') {
             responseData = await Axios.post(targetUrl, params)
         }

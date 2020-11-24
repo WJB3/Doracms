@@ -19,13 +19,14 @@ module.exports = (options, app) => {
         'plugin/checkInvoice'
     ]
 
-    return async function authAdminPower(ctx, next) {
-
+    return async function authAdminPower(ctx, next) { 
         // 添加插件中的白名单
-        let getPluginApiWhiteList = app.getExtendApiList();
+        let getPluginApiWhiteList = app.getExtendApiList(); 
         if (!_.isEmpty(getPluginApiWhiteList) && !_.isEmpty(getPluginApiWhiteList.adminApiWhiteList) && routeWhiteList.indexOf(getPluginApiWhiteList.adminApiWhiteList.join(',')) < 0) {
             routeWhiteList = routeWhiteList.concat(getPluginApiWhiteList.adminApiWhiteList);
         }
+
+       
 
         let resouce = await ctx.service.adminResource.find({
             isPaging: '0'
@@ -35,12 +36,16 @@ module.exports = (options, app) => {
             },
             attributes: ["id", "api"]
         });
-
+ 
         let hasPower = false;
+        // console.log((ctx.originalUrl).replace('/manage/', '').split("?")[0]);
+        // console.log(await ctx.helper.getAdminPower(ctx));
         for (let i = 0; i < resouce.length; i++) {
             let resourceObj = resouce[i];
 
             let targetApi = (ctx.originalUrl).replace('/manage/', '').split("?")[0];
+            
+           
             if (!_.isEmpty(ctx.session.adminUserInfo)) {
                 let adminPower = await ctx.helper.getAdminPower(ctx);
                 if (resourceObj.api === targetApi && adminPower && adminPower.indexOf(resourceObj.id) > -1) {

@@ -45,8 +45,7 @@ export const bootstrap = [
   vueLifecycles.bootstrap,
 ];
 
-export function mount(props) {
-  console.log('adminUser pros', props);
+export function mount(props) { 
   return vueLifecycles.mount(props);
 }
 

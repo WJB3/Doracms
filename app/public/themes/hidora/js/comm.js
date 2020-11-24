@@ -1,5 +1,9 @@
+
+ 
+
+
 $(document).ready(function() {
-  
+ 
    //search
 	$(".is-search,.go-left").click(function() {
         $(".search-page").toggle();
@@ -53,7 +57,13 @@ $(document).ready(function() {
         }
       }
     });
-	
+  
+    $(".category_container .category2_name").hover(function(event) {
+        let category2Index=$(this)[0].dataset.category2Index; 
+        console.log(env)
+        console.log(env.extensions);
+        
+    });
 	
 });
 

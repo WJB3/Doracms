@@ -173,9 +173,18 @@ exports.eggHomeImage = {
     path: path.join(__dirname, "../lib/plugin/egg-home-image")
 };
 
-
+exports.eggGoodsCategory = {
+    enable: true,
+    package: 'egg-goods-category',
+    path: path.join(__dirname, "../lib/plugin/egg-goods-category")
+};
 // PLUGIN_NORMALPLUGIN_END
 
+exports.eggGoodsInfo = {
+    enable: true,
+    package: 'egg-goods-info',
+    path: path.join(__dirname, "../lib/plugin/egg-goods-info")
+};
 
 
 for (const pluginItem in pluginConfigs) {

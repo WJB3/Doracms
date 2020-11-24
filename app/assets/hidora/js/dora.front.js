@@ -193,7 +193,7 @@ var userEmailLoginVm = avalon.define({
     validate: {
         onError: function (reasons) {
             reasons.forEach(function (reason) {
-                console.log(reason.getMessage())
+                //console.log(reason.getMessage())
             })
         },
         onValidateAll: function (reasons) {

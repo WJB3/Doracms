@@ -7,35 +7,12 @@ export function getHomeImageList(params) {
     params
   })
 }
-
-export function getOneAd(params) {
+ 
+ 
+export function add(data) {
   return request({
-    url: '/manage/ads/getOne',
-    method: 'get',
-    params
-  })
-}
-
-export function addOneAd(data) {
-  return request({
-    url: '/manage/ads/addOne',
+    url: '/manage/homeimage/addOne',
     method: 'post',
     data
-  })
-}
-
-export function updateAds(data) {
-  return request({
-    url: '/manage/ads/updateOne',
-    method: 'post',
-    data
-  })
-}
-
-export function delAds(params) {
-  return request({
-    url: '/manage/ads/delete',
-    method: 'get',
-    params
   })
 }

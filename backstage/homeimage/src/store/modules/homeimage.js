@@ -18,14 +18,22 @@ const state = {
   itemFormState: {
     edit: false,
     show:false,
-    img:""
+    img:[]
   },
    
 }
 
 const mutations = {
   [types.ADS_LIST](state, list) {
-    state.list = list
+    state.list = {
+      pageInfo:list.pageInfo,
+      docs:[
+        ...list.docs.map((item)=>({
+          ...item,
+          imgList:JSON.parse(item.imgList)
+        }))
+      ]
+    }
   },
   [types.INFO_FORMSTATE](state, formState) { 
     state.infoFormState.imgList = Object.assign({
@@ -38,9 +46,10 @@ const mutations = {
     state.itemFormState.img = formState.img;
   },
   [types.ADD_IMAGE](state,formState){
+     
     let list=state.infoFormState.imgList
-    let item=list[list.length-1]||0
-    state.infoFormState.imgList.push({_id:item._id,link:formState.img})
+    let item=list[list.length-1]||[];
+    state.infoFormState.imgList.push({_id:item._id?item._id++:0,link:formState.img})
     state.infoFormState.imgList = state.infoFormState.imgList; 
   }
    

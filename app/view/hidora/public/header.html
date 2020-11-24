@@ -51,7 +51,7 @@
             alt="3D生态网_3D打印技术_3D模型免费下载"></a></div>
       <ul id="starlist">
         <li><a href="/">首页</a></li>
-        {% navtree 'default' %}
+        {% navtree '/stuff' %}
         {% for cate in navtree %}
         {% if cate.children and cate.children.length>0 and cate.type == '1'%}
         <li class="menu"><a href="{{cate.url}}">{{cate.name}}</a>
@@ -69,7 +69,7 @@
         {% endif %}
         {% endfor %}
 
-        <li><a href="/all">所有文章</a></li>
+        <li><a href="/all">索取样册</a></li>
         <!-- <li><a href="zhuanti.html">专题封面</a></li>
         <li><a href="list(zhuanti).html">专题列表</a></li>
         <li class="menu"><a href="javascript:;">内容页</a>

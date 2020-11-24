@@ -24,12 +24,10 @@ export default {
       }
     };
   },
-  mounted:function(){
-    console.log("resoucrtree mounted")
+  mounted:function(){ 
   },
   methods: {
-    append(store, data) {
-      console.log("resourceTree")
+    append(store, data) { 
       let formData = {};
       formData.parentId = data._id;
       formData.parent = {

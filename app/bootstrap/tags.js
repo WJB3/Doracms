@@ -11,6 +11,7 @@ const nunjucks = require('nunjucks');
 const jsPlugins = require('./plugin');
 
 const _renderContentCtx = async (appCtx, context, args, actionType) => {
+   
     let _ctx = context.ctx;
     let key = _.isEmpty(args.key) ? actionType : args.key;
 
@@ -60,9 +61,10 @@ const _renderContentCtx = async (appCtx, context, args, actionType) => {
         api = "contentCategory/getTreelist";
     } else if (actionType == 'childnav') {
         api = "contentCategory/getCurrentCategoriesById";
+    } else if (actionType==="homeimage"){
+        api = "homeimage/getList";
     }
-
-
+ 
     const typeId = args.typeId ? args.typeId : false;
     const pageSize = args.pageSize ? args.pageSize : 10;
     const isPaging = args.isPaging ? args.isPaging : "1";
@@ -90,13 +92,16 @@ const _renderContentCtx = async (appCtx, context, args, actionType) => {
     if (queryObj) {
         _.assign(payload, queryObj);
     }
+    
+   
+    if(actionType == 'ads'){ 
+    }else if(actionType=="homeimage"){ 
+        payload.isPaging = true;
+        
+    }else if(actionType==="navtree"){
 
-    console.log(actionType, '--payload--', payload)
-    apiData = await appCtx.helper.reqJsonData(api, payload);
-
-    if(actionType == 'ads'){
-        console.log(apiData);
-    }
+    }   
+    apiData = await appCtx.helper.reqJsonData(api, payload); 
     
     context.ctx[key] = apiData;
 
@@ -115,8 +120,7 @@ global.remote = function (appCtx) {
     };
 
     this.run = async (context, args, callback) => {
-        const key = _.isEmpty(args.key) ? false : args.key;
-        // console.log('---key--', key);
+        const key = _.isEmpty(args.key) ? false : args.key; 
         try {
             const api = _.isEmpty(args.api) ? false : args.api;
             const queryObj = _.isEmpty(args.query) ? false : JSON.parse(args.query);
@@ -143,8 +147,7 @@ global.remote = function (appCtx) {
                 _.assign(payload, queryObj);
             }
 
-            apiData = await appCtx.helper.reqJsonData(api, payload);
-            // console.log(payload, '--apiData--', apiData);
+            apiData = await appCtx.helper.reqJsonData(api, payload); 
             context.ctx[key] = apiData;
             return callback(null, '');
         } catch (error) {
@@ -181,19 +184,17 @@ global.news = function (appCtx) {
 }
 
 // 推荐文档
-global.recommend = function (appCtx) {
-
+global.recommend = function (appCtx) {  
     this.tags = ['recommend'];
 
-    this.parse = function (parser, nodes, lexer) {
+    this.parse = function (parser, nodes, lexer) { 
         var tok = parser.nextToken();
         var args = parser.parseSignature(null, true);
         parser.advanceAfterBlockEnd(tok.value);
         return new nodes.CallExtensionAsync(this, 'run', args);
     };
 
-    this.run = async (context, args, callback) => {
-
+    this.run = async (context, args, callback) => { 
         try {
             await _renderContentCtx(appCtx, context, args, 'recommend')
             return callback(null, '');
@@ -203,6 +204,257 @@ global.recommend = function (appCtx) {
 
     };
 }
+
+//首页图片
+global.homeimage = function (appCtx) {  
+
+    this.tags = ['homeimage'];
+
+    this.parse = function (parser, nodes, lexer) {  
+
+        var tok = parser.nextToken();
+        var args = parser.parseSignature(null, true);
+        parser.advanceAfterBlockEnd(tok.value);
+        return new nodes.CallExtensionAsync(this, 'run', args);
+    };
+
+    this.run = async (context, args, callback) => {  
+       
+        const key = _.isEmpty(args.key) ? "homeimage" : args.key; 
+        try {
+            const api = _.isEmpty(args.api) ? false : args.api;
+            const queryObj = _.isEmpty(args.query) ? false : JSON.parse(args.query);
+            const pageSize = _.isEmpty(args.pageSize) ? false : args.pageSize;
+            const isPaging = _.isEmpty(args.isPaging) ? '1' : args.isPaging;
+
+            let apiData = []; 
+
+            let payload = {};
+
+            if (pageSize) {
+                payload.pageSize = pageSize;
+            }
+
+            if (isPaging) {
+                payload.isPaging = isPaging;
+            }
+
+            if (queryObj) {
+                _.assign(payload, queryObj);
+            }
+
+            apiData = await appCtx.helper.reqJsonData("homeimage/getList", payload);
+
+            const allImageList=apiData.docs.map(item=>JSON.parse(item.imgList));
+            let indexA=0;
+            const newList=allImageList.reduce((total,current,index)=>{ 
+                
+                return total.concat(current)
+            },[]).map((item)=>{
+                indexA++; 
+                return ({
+                    ...item,
+                    _id:indexA,
+                })
+            })
+           
+            context.ctx[key] = newList; 
+            return callback(null, '');
+        } catch (error) {
+            context.ctx[key] = [];
+            return callback(null, '');
+        }
+
+
+    };
+}
+
+function transformGoods(data){
+    let categoryGoods= data.map(item=>{
+        return ({
+            ...item,
+            categoryId:JSON.parse(item.categoryId)[2],
+            goodsList:JSON.parse(item.goodsList)
+        })
+    })
+
+    let result=[];
+    let vk=new Set();
+    
+    for(let i=0;i<categoryGoods.length;i++){
+        if(!vk.has(categoryGoods[i].categoryId)){
+            let temp={categoryId:categoryGoods[i].categoryId,goodsList:categoryGoods[i].goodsList}
+            result.push(temp);
+            vk.add(temp.categoryId)
+        }else{
+            let index=result.findIndex(item=>item.categoryId===categoryGoods[i].categoryId);
+            result[index].goodsList.push(...categoryGoods[i].goodsList)
+        }
+    }
+    return result;
+}
+
+global.goodsList=function(appCtx){ 
+    this.tags = ['goodsList'];
+
+    this.parse = function (parser, nodes, lexer) {  
+        var tok = parser.nextToken();
+        var args = parser.parseSignature(null, true);
+        parser.advanceAfterBlockEnd(tok.value);
+        return new nodes.CallExtensionAsync(this, 'run', args);
+    };
+
+    this.run = async (context, args, callback) => {
+         
+       
+        const key = _.isEmpty(args.key) ? "goodsList" : args.key; 
+        try { 
+            const queryObj = _.isEmpty(args.query) ? false : JSON.parse(args.query);
+            const pageSize = _.isEmpty(args.pageSize) ? false : args.pageSize;
+            const isPaging = _.isEmpty(args.isPaging) ? '0' : args.isPaging;
+
+            let apiData = []; 
+
+            let payload = {};
+
+            if (pageSize) {
+                payload.pageSize = pageSize;
+            }
+
+            if (isPaging) {
+                payload.isPaging = isPaging;
+            }
+
+            if (queryObj) {
+                _.assign(payload, queryObj);
+            }
+
+            apiData = await appCtx.helper.reqJsonData("goodsInfo/getList", payload); 
+
+            const newList=transformGoods(apiData);
+
+            context.ctx[key] = newList; 
+            return callback(null, '');
+
+        } catch (error) {
+            context.ctx[key] = []; 
+            return callback(null, '');
+        }
+
+
+    };
+
+
+}
+
+function transformTree(treeData,pId){
+    let result=[],temp;
+    treeData.forEach(item=>{
+        if(item.parentId==pId){
+            let obj=item;
+            temp=transformTree(treeData,item.id);
+            obj.children=temp;
+            result.push(obj);
+        }
+    })
+    return result;
+}
+
+function transformCategoryGoods(category,goodsList){
+
+    let copy=[].concat(category);
+    let goodsId=goodsList.map(item=>item.categoryId); 
+    
+    copy.forEach(itemA=>{
+        itemA.children.forEach(itemB=>{
+            itemB.children.forEach(itemC=>{
+                if(goodsId.indexOf(itemC.id)>-1){
+                    itemC.currentGoodList=goodsList.find(itemD=>itemC.id==itemD.categoryId).goodsList
+                }
+            })
+        })
+    })
+    return copy
+}
+
+function transformIndex(arr,category1Index,category2Index,category3Index){
+     
+    let copy=[].concat(arr); 
+    copy.forEach(itemA=>{
+        itemA.currentIndex=category1Index;
+        itemA.children.forEach(itemB=>{
+            itemB.currentIndex=category2Index;
+            itemB.children.forEach(itemC=>{
+                itemC.currentIndex=category3Index; 
+            })
+        })
+    }) 
+    return copy;
+
+}
+
+global.goodsCategory=function(appCtx){
+
+    this.tags = ['goodsCategory'];
+
+    this.parse = function (parser, nodes, lexer) {  
+
+        var tok = parser.nextToken();
+        var args = parser.parseSignature(null, true);
+        parser.advanceAfterBlockEnd(tok.value);
+        return new nodes.CallExtensionAsync(this, 'run', args);
+    };
+
+    this.run = async (context, args, callback) => { 
+        
+        const key = _.isEmpty(args.key) ? "goodsCategory" : args.key; 
+
+        try { 
+            const queryObj = _.isEmpty(args.query) ? false : JSON.parse(args.query);
+            const pageSize = _.isEmpty(args.pageSize) ? false : args.pageSize;
+            const isPaging = _.isEmpty(args.isPaging) ? '0' : args.isPaging;
+
+            let apiData = []; 
+
+            let payload = {};
+
+            if (pageSize) {
+                payload.pageSize = pageSize;
+            }
+
+            if (isPaging) {
+                payload.isPaging = isPaging;
+            }
+
+            if (queryObj) {
+                _.assign(payload, queryObj);
+            } 
+
+            apiData = await appCtx.helper.reqJsonData("goodsCategory/getList", payload); 
+
+            console.log(apiData)
+            console.log(context.ctx["goodsList"])
+
+            const data=transformCategoryGoods(transformTree(apiData,0),context.ctx["goodsList"]); 
+         
+            const newList=transformIndex(data,0,0,0)
+
+            console.log(newList)
+
+            context.ctx[key] = newList; 
+
+            return callback(null, '');
+
+        } catch (error) {
+            context.ctx[key] = []; 
+            return callback(null, '');
+        }
+
+
+    };
+}
+
+ 
 
 // 热门文档
 global.hot = function (appCtx) {
@@ -334,7 +586,7 @@ global.navtree = function (appCtx) {
 
     this.run = async (context, args, callback) => {
         try {
-            await _renderContentCtx(appCtx, context, args, 'navtree')
+            await _renderContentCtx(appCtx, context, args, 'navtree') 
             return callback(null, '');
         } catch (error) {
             return callback(null, '');
@@ -496,8 +748,7 @@ global.AssetsExtension = function () {
         let _ctx = context.ctx;
         const assetsSource = args ? args : '';
         // const assetsType = args.type;
-        const assetsKeyArr = assetsSource.split(' ');
-        // console.log('--_ctx--', _ctx)
+        const assetsKeyArr = assetsSource.split(' '); 
         const rawCode = bodyCallback();
         let assetsStr = ``;
         let assetsPath = `${_ctx.staticThemePath}`;

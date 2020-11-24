@@ -9,8 +9,8 @@ module.exports = appInfo => {
         // DEV_CONFIG_MODULES_BEGIN
         dev_modules: [
             'navbar',
-            'dashboard',
-            // 'adminGroup',
+            //'dashboard',
+            //'adminGroup',
             // 'adminUser',
             'adminResource',
             // 'systemConfig',
@@ -18,13 +18,13 @@ module.exports = appInfo => {
             // 'systemOptionLog',
             // 'announce',
             // 'systemNotify',
-            'ads',
+            //'ads',
             // 'contentTemp',
             // 'templateConfig',
             // 'versionManage',
             // 'content',
             // 'contentTags',
-            // 'contentCategory',
+            //'contentCategory',
             // 'contentMessage',
             // 'regUser',
             // 'helpCenter',
@@ -36,7 +36,9 @@ module.exports = appInfo => {
             // 'mailDelivery',
             // 'valine',
             // 'hook',
-            "homeimage"
+            //"homeimage",
+            "goodsCategory",
+            "goodsInfo",
         ],
         // DEV_CONFIG_MODULES_END
         sqlPath: {

@@ -11,10 +11,13 @@
       <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column prop="name" :label="$t('homeimage.name')" width="auto"></el-table-column>
      
-      <el-table-column prop="state" :label="$t('homeimage.link')" width="auto" show-overflow-tooltip>
+      <el-table-column prop="imgList" label="图片" width="auto" show-overflow-tooltip>
         <template slot-scope="scope">
-          <svg-icon v-show="scope.row.state" :style="green" icon-class="check-circle-fill" />
-          <svg-icon v-show="!scope.row.state" :style="red" icon-class="minus-circle-fill" />
+          <div v-if="scope.row.imgList.length>0">
+            <div  v-for="item in scope.row.imgList" :key="item._id" style="max-width: 100px;max-height: 50px;">
+              <img :src="item.link"  style="width: 100%;height: 100%;" />
+            </div>
+          </div>
         </template>
       </el-table-column>
      
