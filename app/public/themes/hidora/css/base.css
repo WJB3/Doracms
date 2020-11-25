@@ -75,9 +75,9 @@ nav { line-height: 80px;height: 80px; width: 100%; background: #fff; box-shadow:
 .open .navicon:before, .open .navicon:after { content: ''; display: block; width: 28px; height: 2px; position: absolute; background: #727171; }
 /*main*/
 main { width: 1200px; margin: 30px auto 0; overflow: hidden; display:block}
-.lbox { width: 860px; float: left }
+.lbox { width: 100%; float: left }
 .rbox { width: 320px; float: right }
-.banner { width: 856px; height: 300px; float: left; position: relative }
+.banner { width: 100%; height: 300px; float: left; position: relative }
 .banner section:after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: -webkit-gradient(linear, 0 0, 0 bottom, from(transparent), to(#000)); z-index: -1; }
 .banner section { bottom: 0; left: 0; position: absolute; display: block; width: 100%; z-index: 0; }
 .banner h4 { color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,.5); font-size: 20px; line-height: 26px; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2; padding: 0 20px; z-index: 2; margin: 20px 0 40px; }
@@ -178,17 +178,26 @@ footer a:hover { color: #fff }
 .ft_about li { width: 33.33%; margin-bottom: 16px; font-size: 14px; }
 .ft_contact { font-size: 14px; float: left; margin-left: 100px; position: relative; padding-left: 100px; }
 .ft_contact li { margin-bottom: 15px; background-size: 20px !important; padding-left: 30px; }
-.ft_contact li:nth-child(1) { background: url(../images/icon_time.png) no-repeat }
+.ft_contact li:nth-child(1) { background: url(../images/company_name.png) no-repeat }
 .ft_contact li:nth-child(2) { background: url(../images/icon_dizhi.png) no-repeat }
 .ft_contact li:nth-child(3) { background: url(../images/icon_tell.png) no-repeat }
-.ft_contact li:nth-child(4) { background: url(../images/icon_email.png) no-repeat }
+.ft_contact li:nth-child(4) { background: url(../images/icon_time.png) no-repeat }
+.ft_contact li:nth-child(1) { background: url(../images/icon_time.png) no-repeat }
 .ft_contact:after, .ft_contact:before { content: ""; width: 1px; height: 100%; background: #363c49; position: absolute; top: 0 }
 .ft_contact:after { left: 1px; background: #010d27 }
 .ft_contact:before { left: 0 }
 .ft_guanzhu { float: right; width: 25%; font-size: 14px; }
 .ft_guanzhu li { text-align: center; float: left; width: 50%; }
 .ft_guanzhu li img { width: 100px; height: 100px; margin: auto; }
-.copyright { font-size: 12px; overflow: hidden; border-top: #2a3345 1px solid; padding: 15px 0 0; line-height: 24px; }
+.copyright { font-size: 16px; overflow: hidden; border-top: #2a3345 1px solid; padding: 15px 0 0; line-height: 24px; }
+.copyright .center{
+    text-align: center;
+    line-height: 2;
+}
+.copyright .center img{
+    margin: 10px auto;
+    
+}
 .cr_left { float: left; }
 .cr_right { float: right; text-align: right; }
 .cr_right img { display: inline-block; vertical-align: bottom; margin-right: 5px; }
@@ -389,6 +398,11 @@ a.btn_more:hover { background: #16499d; color: #fff; }
     border-bottom: 1px solid #c1c1c1;
     
 } 
+.right_title_cat:hover{ 
+ 
+    background: #fff; 
+    
+} 
 .right_content{
     display: flex;
     flex-wrap: wrap;
@@ -403,5 +417,12 @@ a.btn_more:hover { background: #16499d; color: #fff; }
     border-right: 1px solid #C1C1C1;
     border-bottom: 1px solid #C1C1C1;
     font-size: 14px;
+    max-height: 50%;
+    min-height: 50%;
 
+}
+
+.right_content_good img{
+    max-width: 136px;
+    min-height: 98px;
 }

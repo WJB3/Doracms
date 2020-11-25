@@ -390,6 +390,20 @@ function getPostMessages() {
         }
     })
 }
+
+function getTreeData() {
+    getAjaxData('/api/goodsInfo/getList', (data) => {
+        if (data.status == 200) {
+            goodsLevelTreeVm.treeList = data.data.docs;
+        }
+    })
+}
+
+var goodsLevelTreeVm=avalon.define({
+    $id:"goodsLevelTree",
+    treeList:[],
+})
+
 var postMsgVm = avalon.define({
     $id: 'postMessage',
     content: '',

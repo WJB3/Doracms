@@ -432,14 +432,9 @@ global.goodsCategory=function(appCtx){
 
             apiData = await appCtx.helper.reqJsonData("goodsCategory/getList", payload); 
 
-            console.log(apiData)
-            console.log(context.ctx["goodsList"])
-
             const data=transformCategoryGoods(transformTree(apiData,0),context.ctx["goodsList"]); 
          
-            const newList=transformIndex(data,0,0,0)
-
-            console.log(newList)
+            const newList=transformIndex(data,0,0,0) 
 
             context.ctx[key] = newList; 
 

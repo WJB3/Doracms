@@ -1,0 +1,83 @@
+<!--产品分类模板-->
+
+<div ms-controller="goodsLevelTree" id="goodsLevelTree">
+    <div ms-for="(index,category1) in @treeList" class="category_container"
+        style="border-style:solid;border-width: 1px;" 
+        ms-css="{borderColor: @category1.background}"
+        ms-attr="{'data-categoryLevel1':@index}"    
+    >
+        <div class="category_left" style="border-style:solid;border-width: 1px;"
+            ms-css="{borderColor: @category1.background}">
+
+            <div ms-text="'F'+@NumberFunc(@index+1)+'  '+@category1.name" class="left_title"
+                style="border-style:solid;border-width: 1px;"
+                ms-css="{borderColor: @category1.background,background:@category1.background}">
+            </div>
+            <div class="left_content">
+                <ul>
+                    <li 
+                        ms-for="(index,category2) in @category1.children" 
+                        class="category2_name"
+                        ms-attr="{'data-categoryLevel2':@index}" 
+                        ms-text="'●  '+@category2.name"
+                    ></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="category_right" style="border-style:solid;border-width: 1px;"
+            ms-css="{borderColor: @category1.background}">
+            <div class="right_title">
+                
+                <div 
+                    class="right_title_cat"  
+                    ms-for="(index,category3) in @category1.children[@category1.currentIndex].children"     
+                    data-category3-index="@index"
+                    ms-text="@category3.name" 
+                    :visible="@isVisible(@index)"
+                    ms-attr="{'data-categoryLevel3':@index}"
+                > 
+                </div> 
+            </div>
+            
+          
+            <div class="right_content" >
+                <div 
+                    class="right_content_good"
+                    ms-for="(index,category) in  @category1.children[@category1.currentIndex].children[@category1.children[@category1.currentIndex].currentIndex].currentGoodList"         
+                > 
+                    <img ms-attr="{src:@category.sImg}">
+                    <div 
+                        style="margin-top: 10px;" 
+                        ms-text="@category.name"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $(function () {
+        getTreeData(); 
+    }) 
+    
+ 
+    //悬浮在二级标题上
+    $("body").on("mouseenter", "#goodsLevelTree .category2_name", function() { 
+        let arrIndex=$(this).parents(".category_container")[0].dataset.categorylevel1;
+        let categoryIndex1=$(this)[0].dataset.categorylevel2;
+        let categoryIndex2=0; 
+        let categoryIndex3=0; 
+        changeIndex(arrIndex,categoryIndex1,categoryIndex2,categoryIndex3);
+    })
+
+    //悬浮在三级标题上
+    $("body").on("mouseenter", "#goodsLevelTree .right_title_cat", function() { 
+        let arrIndex=$(this).parents(".category_container")[0].dataset.categorylevel1;
+        let categoryIndex1=$(this)[0].dataset.categorylevel2;
+        let categoryIndex2=$(this)[0].dataset.categorylevel3; 
+        let categoryIndex3=0; 
+        changeIndex(arrIndex,categoryIndex1,categoryIndex2,categoryIndex3);
+    })
+</script>

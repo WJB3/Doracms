@@ -44,24 +44,10 @@
     <div class="h_title">产品楼层</div>
     <div class="blogs">
       <ul>
-        {% include './public/itemListTemp.html' %}
+        {% include './goodsCategory.html' %}
       </ul>
     </div>
   </div>
-  <aside class="rbox">
-    {% include './public/reCommendList.html' %}
-    <div class="lm_hot">
-      <p class="h_title">精选标签</p>
-      <ul>
-        {% hottags pageSize=4 %}
-        {% for tagItem in hottags %}
-        <a href="{{tagItem.url}}" target="_blank">{{tagItem.name}}</a>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="ad"><a href="https://www.aliyun.com/minisite/goods?userCode=l1qstn8f&share_source=copy_link"
-        target="_blank"><img src="{{staticThemePath}}/picture/ad.jpg" alt="阿里云优惠券"></a></div>
-    {% include './public/hotNewsList.html' %}
-  </aside>
+ 
 </main>
 {% endblock %}
