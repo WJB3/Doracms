@@ -26,8 +26,7 @@ export default {
   methods: {
     addImageList() {
       this.$store.dispatch("homeimage/homeimageInfoForm", {
-        edit: false,
-        formData: {}
+        edit: false, 
       });
       this.$router.push(this.$root.adminBasePath + "/homeimage/addHomeImage");
     }

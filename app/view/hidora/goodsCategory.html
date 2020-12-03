@@ -45,6 +45,8 @@
                 <div 
                     class="right_content_good"
                     ms-for="(index,category) in  @category1.children[@category1.currentIndex].children[@category1.children[@category1.currentIndex].currentIndex].currentGoodList"         
+                    :visible="@isVisible6(@index)"
+                  
                 > 
                     <img ms-attr="{src:@category.sImg}">
                     <div 

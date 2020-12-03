@@ -22,6 +22,22 @@
           <el-input size="small" v-model="formState.formData.name"></el-input>
         </el-form-item>
 
+        <el-form-item label="品牌" prop="brand">
+          <el-select
+            v-model="formState.formData.brand"
+            placeholder="请选择"
+            @change="handleChangeBrand"
+          >
+            <el-option
+              v-for="item in brandList"
+              :key="item.value"
+              :label="item.label"
+              :value="item.id"
+            >
+            </el-option>
+          </el-select>
+        </el-form-item>
+
         <el-form-item label="上传图片" prop="sImg">
           <el-upload
             class="avatar-uploader"
@@ -57,6 +73,7 @@ export default {
   props: {
     formState: Object,
     device: String,
+    brandListAll:Array
   },
   data() {
     return { 
@@ -80,13 +97,24 @@ export default {
           },
         ],
       },
+      defaultValue:""
     };
   },
   computed: { 
+    brandList(){
+      return this.brandListAll.map((item)=>({
+          value: item.name,
+          label: item.name, 
+          id: item.id,
+      }))
+    }
   },
   methods: {
     handleAvatarSuccess(res, file) {
       this.formState.formData.sImg = res.data.path;
+    },
+    handleChangeBrand(value){
+
     },
     beforeAvatarUpload(file) {
       const isJPG = file.type === "image/jpeg";

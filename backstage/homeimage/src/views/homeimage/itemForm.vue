@@ -67,11 +67,13 @@ export default {
       this.formState.img = res.data.path;
     },
     beforeAvatarUpload(file) {
+      console.log(file.type)
       const isJPG = file.type === "image/jpeg";
       const isPNG = file.type === "image/png";
       const isGIF = file.type === "image/gif";
+      const isWebp = file.type === "image/webp";
       const isLt2M = file.size / 1024 / 1024 < 2;
-      if (!isJPG && !isPNG && !isGIF) {
+      if (!isJPG && !isPNG && !isGIF && !isWebp) {
         this.$message.error(this.$t("validate.limitUploadImgType"));
       }
       if (!isLt2M) {
@@ -79,7 +81,7 @@ export default {
           this.$t("validate.limitUploadImgSize", { size: 2 })
         );
       }
-      return (isJPG || isPNG || isGIF) && isLt2M;
+      return (isJPG || isPNG || isGIF || isWebp) && isLt2M;
     },
     submitForm(formName, type = "") { 
  

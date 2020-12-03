@@ -4,6 +4,7 @@
 {% goodsList "/stuff" %}
 <main>
   <div class="lbox">
+    <div class="wrapper_a">
     <div class="swiper-container banner"> 
       {% homeimage "/stuff" %}
       <div class="swiper-wrapper">
@@ -21,9 +22,12 @@
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+ 
     </div>
+    {% include './category.html' %}
 
     
+    </div>
     
     <script>
       //banner	
@@ -36,15 +40,16 @@
         centeredSlides: true,
         autoplay: 8000,
         autoplayDisableOnInteraction: false,
+        loop : true,
       });
     </script>
     
     <!--headline end-->
     <div class="clear"></div>
-    <div class="h_title">产品楼层</div>
+     
     <div class="blogs">
       <ul>
-        {% include './goodsCategory.html' %}
+        {% include './adsGoods.html' %}
       </ul>
     </div>
   </div>

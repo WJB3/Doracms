@@ -1,7 +1,7 @@
 <template>
   <div :class="classObj" class="dr-adsInfoForm">
     <div class="main-container">
-      <ItemForm :device="device" :formState="itemForm" />
+      <ItemForm :device="device" :formState="itemForm" :brandListAll="brandListAll" />
       <el-form
         :model="infoForm"
         :rules="rules"
@@ -82,7 +82,7 @@
   </div>
 </template>
 <script>
-import { updateAds, addOneAd, getOneAd, getCategoryList } from "@/api/goodsInfo";
+import { updateAds, addOneAd, getOneAd, getCategoryList,getBrandList } from "@/api/goodsInfo";
 import ItemForm from "./itemForm";
 import _ from "lodash";
 import { mapGetters, mapActions } from "vuex";
@@ -139,6 +139,7 @@ export default {
       categoryListLevelTwo: [],
       categoryListLevelThree: [],
       categoryListAll: [],
+      brandListAll:[]
     };
   },
   components: {
@@ -218,6 +219,7 @@ export default {
               goodsList:goodsList
             }).then((result) => {
               if (result.status === 200) {
+                this.$store.commit("goodsInfo/clearGoodsList")
                 this.$message({
                   message: this.$t("main.addSuccess"),
                   type: "success",
@@ -287,6 +289,12 @@ export default {
           id: item.id,
         }));
     });
+
+    getBrandList({isPaging:"0"}).then((brandList)=>{
+      this.brandListAll=brandList.data;
+    })
+
+
   },
 };
 </script>

@@ -60,7 +60,7 @@ module.exports = {
     },
 
     // 获取类别或文档详情模板文件
-    getCateOrDetailTemp(defaultTemp, contentTemp = '', type) {
+    getCateOrDetailTemp(defaultTemp, contentTemp = '', type) { 
         let fileName = "contentList.html",
             currentPath = "";
         if (type == 'detail') {
@@ -94,6 +94,8 @@ module.exports = {
     },
 
     async getPageData() {
+
+        console.log("getPageData")
 
         let ctx = this;
         let payload = ctx.params;

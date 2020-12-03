@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a0cb04f705c07d7f4d1b";
+/******/ 	var hotCurrentHash = "d0a7e3e3b84466e1de0b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -12907,7 +12907,6 @@ var actions = {
       var treeData = Object(_utils__WEBPACK_IMPORTED_MODULE_4__["renderTreeData"])({
         docs: result.data
       });
-      console.log(treeData);
       commit(_types_js__WEBPACK_IMPORTED_MODULE_1__["CONTENTCATEGORYS_LIST"], treeData);
     });
   }

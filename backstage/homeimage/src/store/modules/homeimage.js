@@ -36,9 +36,8 @@ const mutations = {
     }
   },
   [types.INFO_FORMSTATE](state, formState) { 
-    state.infoFormState.imgList = Object.assign({
-      
-    }, formState.imgList);
+    console.log(formState)
+    state.infoFormState = Object.assign(state.infoFormState, formState);
   },
   [types.ITEM_FORMSTATE](state, formState) {
     state.itemFormState.edit = formState.edit;
@@ -48,7 +47,7 @@ const mutations = {
   [types.ADD_IMAGE](state,formState){
      
     let list=state.infoFormState.imgList
-    let item=list[list.length-1]||[];
+    let item=list[list.length-1]||[]; 
     state.infoFormState.imgList.push({_id:item._id?item._id++:0,link:formState.img})
     state.infoFormState.imgList = state.infoFormState.imgList; 
   }

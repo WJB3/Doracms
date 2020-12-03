@@ -16,7 +16,8 @@ const state = {
       label: '',  
       parentId: '',   
       name: '',
-      parentObj:{}
+      parentObj:{},
+      sortId:0
     }
   },
   categoryList: {

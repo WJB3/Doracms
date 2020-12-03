@@ -47,3 +47,11 @@ export function getCategoryList(params){
     method: 'get'
   })
 }
+
+export function getBrandList(params){
+  return request({
+    url: '/manage/goodsBrand/getList',
+    params,
+    method: 'get'
+  })
+}

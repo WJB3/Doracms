@@ -142,9 +142,13 @@ class HomeController extends Controller {
     }
 
     async getDataForCatePage() {
+         
         const ctx = this.ctx;
         ctx.pageType = "cate";
         let defaultUrl = url.parse(ctx.originalUrl).pathname;
+
+        console.log(defaultUrl)//t/goodsDetails
+
         let current = ctx.params.current;
         if (current) {
             defaultUrl = defaultUrl.replace('/' + current + '.html', '')

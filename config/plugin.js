@@ -186,6 +186,12 @@ exports.eggGoodsInfo = {
     path: path.join(__dirname, "../lib/plugin/egg-goods-info")
 };
 
+exports.eggGoodsBrand={
+    enable:true,
+    package:"egg-goods-brand",
+    path:path.join(__dirname,"../lib/plugin/egg-goods-brand")
+}
+
 
 for (const pluginItem in pluginConfigs) {
     if (pluginConfigs.hasOwnProperty(pluginItem)) {

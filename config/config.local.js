@@ -12,7 +12,7 @@ module.exports = appInfo => {
             //'dashboard',
             //'adminGroup',
             // 'adminUser',
-            'adminResource',
+            //'adminResource',
             // 'systemConfig',
             // 'backUpData',
             // 'systemOptionLog',
@@ -24,7 +24,7 @@ module.exports = appInfo => {
             // 'versionManage',
             // 'content',
             // 'contentTags',
-            //'contentCategory',
+            'contentCategory',
             // 'contentMessage',
             // 'regUser',
             // 'helpCenter',
@@ -37,8 +37,9 @@ module.exports = appInfo => {
             // 'valine',
             // 'hook',
             //"homeimage",
-            "goodsCategory",
+            //"goodsCategory",
             "goodsInfo",
+            //"goodsBrand"
         ],
         // DEV_CONFIG_MODULES_END
         sqlPath: {

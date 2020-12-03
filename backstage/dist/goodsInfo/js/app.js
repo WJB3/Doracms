@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "0fec84ad5abc9c6c3e20";
+/******/ 	var hotCurrentHash = "55a56581cea77658b9e1";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1535,52 +1535,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/_core-js@2.6.11@core-js/modules/es6.function.name.js");
 /* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _api_ads__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/api/ads */ "./src/api/ads.js");
+/* harmony import */ var _api_goodsInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/api/goodsInfo */ "./src/api/goodsInfo.js");
 /* harmony import */ var _directive_clipboard_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/directive/clipboard/index.js */ "./src/directive/clipboard/index.js");
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1653,7 +1610,7 @@ __webpack_require__.r(__webpack_exports__);
         cancelButtonText: this.$t("main.cancelBtnText"),
         type: "warning"
       }).then(function () {
-        return Object(_api_ads__WEBPACK_IMPORTED_MODULE_1__["delAds"])({
+        return Object(_api_goodsInfo__WEBPACK_IMPORTED_MODULE_1__["delAds"])({
           ids: rows[index]._id
         });
       }).then(function (result) {
@@ -1745,9 +1702,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     Pagination: _common_Pagination_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   methods: Object(vuex__WEBPACK_IMPORTED_MODULE_8__["mapActions"])([]),
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_8__["mapGetters"])(["adsList"])), {}, {
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_8__["mapGetters"])(["list"])), {}, {
     formState: function formState() {
-      return this.$store.getters.adsInfoForm;
+      return this.$store.getters.infoForm;
     },
     classObj: function classObj() {
       return {
@@ -1760,7 +1717,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
   }),
   mounted: function mounted() {
     Object(_root_publicMethods_events__WEBPACK_IMPORTED_MODULE_9__["initEvent"])(this);
-    this.$store.dispatch("ads/getAdsList");
+    this.$store.dispatch("goodsInfo/getList");
   }
 });
 
@@ -1782,13 +1739,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es6.object.keys */ "./node_modules/_core-js@2.6.11@core-js/modules/es6.object.keys.js");
 /* harmony import */ var core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var F_ChangweiProject_DoraCMS_SQL_backstage_goodsInfo_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/_@babel_runtime@7.12.5@@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _api_ads__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/api/ads */ "./src/api/ads.js");
-/* harmony import */ var _itemForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./itemForm */ "./src/views/ads/itemForm.vue");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash */ "lodash");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "vuex");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _root_publicMethods_events__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @root/publicMethods/events */ "../publicMethods/events.js");
+/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/_core-js@2.6.11@core-js/modules/es6.function.name.js");
+/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _api_goodsInfo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/api/goodsInfo */ "./src/api/goodsInfo.js");
+/* harmony import */ var _itemForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itemForm */ "./src/views/ads/itemForm.vue");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuex */ "vuex");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _root_publicMethods_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @root/publicMethods/events */ "../publicMethods/events.js");
+
 
 
 
@@ -1881,36 +1841,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1919,8 +1849,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      categoryDefaultValue: "",
+      categoryDefaultValue2: "",
+      categoryDefaultValue3: "",
       sidebarOpened: true,
       device: "desktop",
+      goodsList: [],
       rules: {
         name: [{
           required: true,
@@ -1952,19 +1886,55 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
           }),
           trigger: "blur"
         }]
-      }
+      },
+      categoryListLevelOne: [],
+      categoryListLevelTwo: [],
+      categoryListLevelThree: [],
+      categoryListAll: []
     };
   },
   components: {
-    ItemForm: _itemForm__WEBPACK_IMPORTED_MODULE_5__["default"]
+    ItemForm: _itemForm__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   methods: {
+    handleChangeLevelOne: function handleChangeLevelOne(name) {
+      var copy = [].concat(this.categoryListLevelOne);
+      var parentId = copy.filter(function (item) {
+        return item.id === name;
+      })[0].id;
+      this.categoryListLevelTwo = this.categoryListAll.filter(function (item) {
+        return item.parentId == parentId;
+      }).map(function (item) {
+        return {
+          value: item.name,
+          label: item.name,
+          parentId: item.parentId,
+          id: item.id
+        };
+      });
+    },
+    handleChangeLevelTwo: function handleChangeLevelTwo(name) {
+      var copy = [].concat(this.categoryListLevelTwo);
+      var parentId = copy.filter(function (item) {
+        return item.id === name;
+      })[0].id;
+      this.categoryListLevelThree = this.categoryListAll.filter(function (item) {
+        return item.parentId == parentId;
+      }).map(function (item) {
+        return {
+          value: item.name,
+          label: item.name,
+          parentId: item.parentId,
+          id: item.id
+        };
+      });
+    },
     backToList: function backToList() {
-      this.$router.push(this.$root.adminBasePath + "/ads");
+      this.$router.push(this.$root.adminBasePath + "/goodsInfo");
     },
     changeType: function changeType(type) {},
-    showAdsItemForm: function showAdsItemForm() {
-      this.$store.dispatch("ads/showAdsItemForm", {
+    showItemForm: function showItemForm() {
+      this.$store.dispatch("goodsInfo/showItemForm", {
         edit: false
       });
     },
@@ -1978,24 +1948,26 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       var oldFormState = this.$store.getters.adsInfoForm;
       var adsItems = oldFormState.formData.items;
 
-      var newItems = lodash__WEBPACK_IMPORTED_MODULE_6___default.a.filter(adsItems, function (doc) {
+      var newItems = lodash__WEBPACK_IMPORTED_MODULE_7___default.a.filter(adsItems, function (doc) {
         return doc._id != item._id;
       });
 
       oldFormState.formData.items = newItems;
-      this.$store.dispatch("ads/adsInfoForm", oldFormState);
+      this.$store.dispatch("goodsInfo/infoForm", oldFormState);
     },
     submitForm: function submitForm(formName) {
       var _this = this;
 
       this.$refs[formName].validate(function (valid) {
         if (valid) {
-          var params = _this.formState.formData; // 更新
+          var params = _this.infoForm;
+          var categoryId = JSON.stringify([_this.categoryDefaultValue, _this.categoryDefaultValue2, _this.categoryDefaultValue3]);
+          var goodsList = JSON.stringify(_this.infoForm.goodsList); // 更新
 
-          if (_this.formState.edit) {
-            Object(_api_ads__WEBPACK_IMPORTED_MODULE_4__["updateAds"])(params).then(function (result) {
+          if (_this.infoForm.edit) {
+            Object(_api_goodsInfo__WEBPACK_IMPORTED_MODULE_5__["updateAds"])(params).then(function (result) {
               if (result.status === 200) {
-                _this.$store.dispatch("ads/hideAdsItemForm");
+                _this.$store.dispatch("goodsInfo/hideItemForm");
 
                 _this.$message({
                   message: _this.$t("main.updateSuccess"),
@@ -2009,14 +1981,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
             });
           } else {
             // 新增
-            Object(_api_ads__WEBPACK_IMPORTED_MODULE_4__["addOneAd"])(params).then(function (result) {
+            Object(_api_goodsInfo__WEBPACK_IMPORTED_MODULE_5__["addOneAd"])({
+              categoryId: categoryId,
+              goodsList: goodsList
+            }).then(function (result) {
               if (result.status === 200) {
                 _this.$message({
                   message: _this.$t("main.addSuccess"),
                   type: "success"
                 });
 
-                _this.$router.push(_this.$root.adminBasePath + "/ads");
+                _this.$router.push(_this.$root.adminBasePath + "/goodsInfo");
               } else {
                 _this.$message.error(result.message);
               }
@@ -2029,9 +2004,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       });
     }
   },
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_7__["mapGetters"])(["adsItemForm"])), {}, {
-    formState: function formState() {
-      return this.$store.getters.adsInfoForm;
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_8__["mapGetters"])(["itemForm"])), {}, {
+    infoForm: function infoForm() {
+      return this.$store.getters.infoForm;
     },
     classObj: function classObj() {
       return {
@@ -2045,10 +2020,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
   mounted: function mounted() {
     var _this2 = this;
 
-    Object(_root_publicMethods_events__WEBPACK_IMPORTED_MODULE_8__["initEvent"])(this); // 针对手动页面刷新
+    Object(_root_publicMethods_events__WEBPACK_IMPORTED_MODULE_9__["initEvent"])(this); // 针对手动页面刷新
 
     if (this.$route.params.id) {
-      Object(_api_ads__WEBPACK_IMPORTED_MODULE_4__["getOneAd"])(this.$route.params).then(function (result) {
+      Object(_api_goodsInfo__WEBPACK_IMPORTED_MODULE_5__["getOneAd"])(this.$route.params).then(function (result) {
         if (result.status === 200) {
           if (result.data) {
             _this2.$store.dispatch("ads/adsInfoForm", {
@@ -2069,6 +2044,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         }
       });
     }
+
+    Object(_api_goodsInfo__WEBPACK_IMPORTED_MODULE_5__["getCategoryList"])().then(function (categoryList) {
+      _this2.categoryListAll = categoryList.data;
+      _this2.categoryListLevelOne = categoryList.data.filter(function (item) {
+        return item.parentId == "0";
+      }).map(function (item) {
+        return {
+          value: item.name,
+          label: item.name,
+          parentId: item.parentId,
+          id: item.id
+        };
+      });
+    });
   }
 });
 
@@ -2138,39 +2127,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2179,68 +2135,25 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      linkTypeOpts: [{
-        value: "0",
-        label: "文章"
-      }, {
-        value: "1",
-        label: "链接"
-      }],
-      rules1: {
-        title: [{
-          required: true,
-          message: this.$t("validate.inputNull", {
-            label: this.$t("ads.textContent")
-          }),
-          trigger: "blur"
-        }, {
-          min: 2,
-          max: 15,
-          message: this.$t("validate.ranglengthandnormal", {
-            min: 2,
-            max: 15
-          }),
-          trigger: "blur"
-        }],
-        link: [{
-          required: true,
-          message: this.$t("validate.inputNull", {
-            label: this.$t("main.comments_label")
-          }),
-          trigger: "blur"
-        }]
-      },
       rules: {
-        alt: [{
+        name: [{
           required: true,
           message: this.$t("validate.inputNull", {
-            label: this.$t("ads.dis")
-          }),
-          trigger: "blur"
-        }, {
-          min: 2,
-          max: 30,
-          message: this.$t("validate.ranglengthandnormal", {
-            min: 2,
-            max: 30
+            label: "名称必填"
           }),
           trigger: "blur"
         }],
-        link: [{
+        sImg: [{
           required: true,
           message: this.$t("validate.inputNull", {
-            label: this.$t("main.comments_label")
+            label: "图片链接必填"
           }),
           trigger: "blur"
         }]
       }
     };
   },
-  computed: {
-    adsType: function adsType() {
-      return this.$store.getters.adsInfoForm.formData.ads_type;
-    }
-  },
+  computed: {},
   methods: {
     handleAvatarSuccess: function handleAvatarSuccess(res, file) {
       this.formState.formData.sImg = res.data.path;
@@ -2270,23 +2183,23 @@ __webpack_require__.r(__webpack_exports__);
       this.$refs[formName].validate(function (valid) {
         if (valid) {
           var params = _this.formState.formData;
-          var oldFormState = _this.$store.getters.adsInfoForm;
-          var adsItems = oldFormState.formData.items; // 更新
+          var oldFormState = _this.$store.getters.infoForm;
+          var items = oldFormState.goodsList; // 更新
 
           if (_this.formState.edit) {
-            for (var i = 0; i < adsItems.length; i++) {
-              if (adsItems[i]._id == params._id) adsItems[i] = params;
+            for (var i = 0; i < items.length; i++) {
+              if (items[i]._id == params._id) items[i] = params;
             }
 
-            _this.$store.dispatch("ads/adsInfoForm", oldFormState);
+            _this.$store.dispatch("goodsInfo/infoForm", oldFormState);
           } else {
             // 新增
-            adsItems.push(params);
+            items.push(params);
 
-            _this.$store.dispatch("ads/adsInfoForm", oldFormState);
+            _this.$store.dispatch("goodsInfo/infoForm", oldFormState);
           }
 
-          _this.$store.dispatch("ads/hideAdsItemForm");
+          _this.$store.dispatch("goodsInfo/hideItemForm");
         } else {
           console.log("error submit!!");
           return false;
@@ -2355,7 +2268,7 @@ __webpack_require__.r(__webpack_exports__);
       var state = this.pageInfo ? this.pageInfo.state : "";
       var user = this.pageInfo ? this.pageInfo.user : "";
       var targetCurrent = current;
-      this.$store.dispatch("ads/getAdsList", {
+      this.$store.dispatch("goodsInfo/getAdsList", {
         current: targetCurrent,
         pageSize: pageSize,
         searchkey: searchkey
@@ -2413,12 +2326,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    addAds: function addAds() {
-      this.$store.dispatch("ads/adsInfoForm", {
+    add: function add() {
+      this.$store.dispatch("goodsInfo/adsInfoForm", {
         edit: false,
         formData: {}
       });
-      this.$router.push(this.$root.adminBasePath + "/ads/addAds");
+      this.$router.push(this.$root.adminBasePath + "/goodsInfo/add");
     } // TOPBARLEFTOPTION
 
   },
@@ -2524,174 +2437,10 @@ var render = function() {
           on: { "selection-change": _vm.handleSelectionChange }
         },
         [
-          _c("el-table-column", { attrs: { type: "selection", width: "55" } }),
           _c("el-table-column", {
-            attrs: { prop: "name", label: _vm.$t("ads.name"), width: "200" }
+            attrs: { prop: "categoryId", label: "分类", width: "400" }
           }),
-          _c("el-table-column", {
-            attrs: { prop: "type", label: _vm.$t("ads.type"), width: "80" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(scope) {
-                  return [
-                    scope.row.type == "0"
-                      ? _c("span", [_vm._v(_vm._s(_vm.$t("ads.typeText")))])
-                      : _vm._e(),
-                    scope.row.type == "1"
-                      ? _c("span", [_vm._v(_vm._s(_vm.$t("ads.typePic")))])
-                      : _vm._e()
-                  ]
-                }
-              }
-            ])
-          }),
-          _c("el-table-column", {
-            attrs: {
-              prop: "state",
-              label: _vm.$t("ads.enable"),
-              width: "100",
-              "show-overflow-tooltip": ""
-            },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(scope) {
-                  return [
-                    _c("svg-icon", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: scope.row.state,
-                          expression: "scope.row.state"
-                        }
-                      ],
-                      style: _vm.green,
-                      attrs: { "icon-class": "check-circle-fill" }
-                    }),
-                    _c("svg-icon", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !scope.row.state,
-                          expression: "!scope.row.state"
-                        }
-                      ],
-                      style: _vm.red,
-                      attrs: { "icon-class": "minus-circle-fill" }
-                    })
-                  ]
-                }
-              }
-            ])
-          }),
-          _c("el-table-column", {
-            attrs: {
-              prop: "comments",
-              label: _vm.$t("ads.dis"),
-              "show-overflow-tooltip": ""
-            }
-          }),
-          _c("el-table-column", {
-            attrs: { label: _vm.$t("main.dataTableOptions"), width: "150" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(scope) {
-                  return [
-                    _c(
-                      "el-tooltip",
-                      {
-                        staticClass: "item",
-                        attrs: {
-                          effect: "dark",
-                          content: "Get code",
-                          placement: "top-start"
-                        }
-                      },
-                      [
-                        _c(
-                          "el-button",
-                          {
-                            directives: [
-                              {
-                                name: "clipboard",
-                                rawName: "v-clipboard:copy",
-                                value: _vm.inputData(
-                                  scope.$index,
-                                  _vm.dataList
-                                ),
-                                expression: "inputData(scope.$index, dataList)",
-                                arg: "copy"
-                              },
-                              {
-                                name: "clipboard",
-                                rawName: "v-clipboard:success",
-                                value: _vm.clipboardSuccess,
-                                expression: "clipboardSuccess",
-                                arg: "success"
-                              }
-                            ],
-                            attrs: {
-                              size: "mini",
-                              type: "warning",
-                              plain: "",
-                              round: ""
-                            }
-                          },
-                          [_c("svg-icon", { attrs: { "icon-class": "code" } })],
-                          1
-                        )
-                      ],
-                      1
-                    ),
-                    _c(
-                      "el-button",
-                      {
-                        attrs: {
-                          size: "mini",
-                          type: "primary",
-                          plain: "",
-                          round: ""
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.editAdsInfo(scope.$index, _vm.dataList)
-                          }
-                        }
-                      },
-                      [_c("svg-icon", { attrs: { "icon-class": "edit" } })],
-                      1
-                    ),
-                    _c(
-                      "el-button",
-                      {
-                        attrs: {
-                          size: "mini",
-                          type: "danger",
-                          plain: "",
-                          round: ""
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteAds(scope.$index, _vm.dataList)
-                          }
-                        }
-                      },
-                      [
-                        _c("svg-icon", {
-                          attrs: { "icon-class": "icon_delete" }
-                        })
-                      ],
-                      1
-                    )
-                  ]
-                }
-              }
-            ])
-          })
+          _c("el-table-column", { attrs: { prop: "goodsList", label: "产品" } })
         ],
         1
       )
@@ -2735,11 +2484,11 @@ var render = function() {
               { attrs: { span: 24 } },
               [
                 _c("TopBar", { attrs: { type: "ads" } }),
-                _c("DataTable", { attrs: { dataList: _vm.adsList.docs } }),
+                _c("DataTable", { attrs: { dataList: _vm.list.docs } }),
                 _c("Pagination", {
                   attrs: {
                     device: _vm.device,
-                    pageInfo: _vm.adsList.pageInfo,
+                    pageInfo: _vm.list.pageInfo,
                     pageType: "ads"
                   }
                 })
@@ -2782,7 +2531,7 @@ var render = function() {
       { staticClass: "main-container" },
       [
         _c("ItemForm", {
-          attrs: { device: _vm.device, formState: _vm.adsItemForm }
+          attrs: { device: _vm.device, formState: _vm.itemForm }
         }),
         _c(
           "el-form",
@@ -2790,319 +2539,125 @@ var render = function() {
             ref: "ruleForm",
             staticClass: "demo-ruleForm",
             attrs: {
-              model: _vm.formState.formData,
+              model: _vm.infoForm,
               rules: _vm.rules,
               "label-width": "120px",
-              "label-position": _vm.device == "mobile" ? "top" : "right"
+              "label-position": "top"
             }
           },
           [
             _c(
               "el-form-item",
-              { attrs: { label: _vm.$t("ads.name"), prop: "name" } },
+              { attrs: { label: "分类一", prop: "category1" } },
               [
-                _c("el-input", {
-                  attrs: { size: "small" },
-                  model: {
-                    value: _vm.formState.formData.name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.formState.formData, "name", $$v)
-                    },
-                    expression: "formState.formData.name"
-                  }
-                })
-              ],
-              1
-            ),
-            !_vm.formState.edit
-              ? _c(
-                  "el-form-item",
-                  { attrs: { label: _vm.$t("ads.type"), prop: "type" } },
-                  [
-                    _c(
-                      "el-radio-group",
-                      {
-                        on: { change: _vm.changeType },
-                        model: {
-                          value: _vm.formState.formData.ads_type,
-                          callback: function($$v) {
-                            _vm.$set(_vm.formState.formData, "ads_type", $$v)
-                          },
-                          expression: "formState.formData.ads_type"
-                        }
+                _c(
+                  "el-select",
+                  {
+                    attrs: { placeholder: "请选择" },
+                    on: { change: _vm.handleChangeLevelOne },
+                    model: {
+                      value: _vm.categoryDefaultValue,
+                      callback: function($$v) {
+                        _vm.categoryDefaultValue = $$v
                       },
-                      [
-                        _c(
-                          "el-radio",
-                          { staticClass: "radio", attrs: { label: "0" } },
-                          [_vm._v(_vm._s(_vm.$t("ads.typeText")))]
-                        ),
-                        _c(
-                          "el-radio",
-                          { staticClass: "radio", attrs: { label: "1" } },
-                          [_vm._v(_vm._s(_vm.$t("ads.typePic")))]
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              : _vm._e(),
-            _c(
-              "el-form-item",
-              { attrs: { label: _vm.$t("ads.enable"), prop: "state" } },
-              [
-                _c("el-switch", {
-                  attrs: {
-                    "on-text": _vm.$t("main.radioOn"),
-                    "off-text": _vm.$t("main.radioOff")
+                      expression: "categoryDefaultValue"
+                    }
                   },
-                  model: {
-                    value: _vm.formState.formData.state,
-                    callback: function($$v) {
-                      _vm.$set(_vm.formState.formData, "state", $$v)
-                    },
-                    expression: "formState.formData.state"
-                  }
-                })
+                  _vm._l(_vm.categoryListLevelOne, function(item) {
+                    return _c("el-option", {
+                      key: item.value,
+                      attrs: { label: item.label, value: item.id }
+                    })
+                  }),
+                  1
+                )
               ],
               1
             ),
             _c(
               "el-form-item",
-              { attrs: { label: _vm.$t("ads.comments"), prop: "comments" } },
+              { attrs: { label: "分类二", prop: "category2" } },
               [
-                _c("el-input", {
-                  attrs: { size: "small" },
-                  model: {
-                    value: _vm.formState.formData.comments,
-                    callback: function($$v) {
-                      _vm.$set(_vm.formState.formData, "comments", $$v)
-                    },
-                    expression: "formState.formData.comments"
-                  }
-                })
+                _c(
+                  "el-select",
+                  {
+                    attrs: { placeholder: "请选择" },
+                    on: { change: _vm.handleChangeLevelTwo },
+                    model: {
+                      value: _vm.categoryDefaultValue2,
+                      callback: function($$v) {
+                        _vm.categoryDefaultValue2 = $$v
+                      },
+                      expression: "categoryDefaultValue2"
+                    }
+                  },
+                  _vm._l(_vm.categoryListLevelTwo, function(item) {
+                    return _c("el-option", {
+                      key: item.value,
+                      attrs: { label: item.label, value: item.id }
+                    })
+                  }),
+                  1
+                )
               ],
               1
             ),
-            _vm.formState.formData.ads_type == "1"
-              ? _c(
-                  "div",
+            _c(
+              "el-form-item",
+              { attrs: { label: "分类三", prop: "category3" } },
+              [
+                _c(
+                  "el-select",
+                  {
+                    attrs: { placeholder: "请选择" },
+                    model: {
+                      value: _vm.categoryDefaultValue3,
+                      callback: function($$v) {
+                        _vm.categoryDefaultValue3 = $$v
+                      },
+                      expression: "categoryDefaultValue3"
+                    }
+                  },
+                  _vm._l(_vm.categoryListLevelThree, function(item) {
+                    return _c("el-option", {
+                      key: item.value,
+                      attrs: { label: item.label, value: item.id }
+                    })
+                  }),
+                  1
+                )
+              ],
+              1
+            ),
+            _c(
+              "el-form-item",
+              { attrs: { label: "产品列表", prop: "goodsList" } },
+              [
+                _c("el-button", { on: { click: _vm.showItemForm } }, [
+                  _vm._v("添加产品")
+                ]),
+                _c(
+                  "el-table",
+                  {
+                    staticStyle: { width: "100%" },
+                    attrs: { data: _vm.infoForm.goodsList }
+                  },
                   [
-                    _c(
-                      "el-form-item",
-                      {
-                        attrs: { label: _vm.$t("ads.slider"), prop: "carousel" }
-                      },
-                      [
-                        _c("el-switch", {
-                          attrs: {
-                            "on-text": _vm.$t("main.radioOn"),
-                            "off-text": _vm.$t("main.radioOff")
-                          },
-                          model: {
-                            value: _vm.formState.formData.carousel,
-                            callback: function($$v) {
-                              _vm.$set(_vm.formState.formData, "carousel", $$v)
-                            },
-                            expression: "formState.formData.carousel"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _c(
-                      "el-form-item",
-                      {
-                        attrs: {
-                          label: _vm.$t("ads.showHeight"),
-                          prop: "height"
-                        }
-                      },
-                      [
-                        _c(
-                          "el-input",
-                          {
-                            staticStyle: { width: "150px" },
-                            attrs: {
-                              size: "small",
-                              type: "number",
-                              min: "0",
-                              max: "10",
-                              placeholder: _vm.$t("ads.showHeight")
-                            },
-                            model: {
-                              value: _vm.formState.formData.height,
-                              callback: function($$v) {
-                                _vm.$set(_vm.formState.formData, "height", $$v)
-                              },
-                              expression: "formState.formData.height"
-                            }
-                          },
-                          [_c("template", { slot: "append" }, [_vm._v("px")])],
-                          2
-                        )
-                      ],
-                      1
-                    ),
-                    _c(
-                      "el-form-item",
-                      {
-                        attrs: { label: _vm.$t("ads.imglist"), prop: "items" }
-                      },
-                      [
-                        _c(
-                          "el-button",
-                          {
-                            attrs: {
-                              size: "small",
-                              type: "primary",
-                              plain: "",
-                              round: ""
-                            },
-                            on: { click: _vm.showAdsItemForm }
-                          },
-                          [_vm._v(_vm._s(_vm.$t("ads.addImgItem")))]
-                        ),
-                        _vm._l(_vm.formState.formData.items, function(item) {
-                          return _c(
-                            "div",
-                            { key: item._id, staticClass: "dr-ads-item" },
-                            [
-                              _c("div", { staticClass: "img" }, [
-                                _c("img", { attrs: { src: item.sImg } })
-                              ]),
-                              _c("div", { staticClass: "details" }, [
-                                _c("ul", [
-                                  _c("li", [
-                                    _vm._v(
-                                      _vm._s(_vm.$t("ads.imgAlt")) +
-                                        "：" +
-                                        _vm._s(item.alt)
-                                    )
-                                  ]),
-                                  _c("li", [
-                                    _vm._v(
-                                      _vm._s(_vm.$t("ads.imgLink")) +
-                                        "：" +
-                                        _vm._s(item.link)
-                                    )
-                                  ])
-                                ])
-                              ]),
-                              _c(
-                                "div",
-                                { staticClass: "options" },
-                                [
-                                  _c(
-                                    "el-button",
-                                    {
-                                      attrs: {
-                                        size: "mini",
-                                        type: "primary",
-                                        plain: "",
-                                        round: ""
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.editAdsItemInfo(item)
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("svg-icon", {
-                                        attrs: { "icon-class": "edit" }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _c("i", {
-                                staticClass: "el-icon-close",
-                                on: {
-                                  click: function($event) {
-                                    return _vm.deleteAdsItem(item)
-                                  }
-                                }
-                              })
-                            ]
-                          )
-                        })
-                      ],
-                      2
-                    )
+                    _c("el-table-column", {
+                      attrs: { label: "产品名称", prop: "name" }
+                    }),
+                    _c("el-table-column", {
+                      attrs: { label: "产品图片", prop: "sImg" }
+                    }),
+                    _c("el-table-column", {
+                      attrs: { label: "操作", prop: "name" }
+                    })
                   ],
                   1
                 )
-              : _vm._e(),
-            _vm.formState.formData.ads_type == "0"
-              ? _c(
-                  "div",
-                  [
-                    _c(
-                      "el-form-item",
-                      {
-                        attrs: { label: _vm.$t("ads.textList"), prop: "items" }
-                      },
-                      [
-                        _c(
-                          "el-button",
-                          {
-                            attrs: {
-                              size: "small",
-                              type: "primary",
-                              plain: "",
-                              round: ""
-                            },
-                            on: { click: _vm.showAdsItemForm }
-                          },
-                          [_vm._v(_vm._s(_vm.$t("ads.addTextLink")))]
-                        ),
-                        _vm.formState.formData.items.length > 0
-                          ? _c(
-                              "div",
-                              _vm._l(_vm.formState.formData.items, function(
-                                tag
-                              ) {
-                                return _c(
-                                  "el-tag",
-                                  {
-                                    key: tag.title,
-                                    attrs: { type: "gray", closable: true },
-                                    on: {
-                                      close: function($event) {
-                                        return _vm.deleteAdsItem(tag)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      {
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.editAdsItemInfo(tag)
-                                          }
-                                        }
-                                      },
-                                      [_vm._v(_vm._s(tag.title))]
-                                    )
-                                  ]
-                                )
-                              }),
-                              1
-                            )
-                          : _vm._e()
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              : _vm._e(),
+              ],
+              1
+            ),
             _c(
               "el-form-item",
               [
@@ -3116,15 +2671,7 @@ var render = function() {
                       }
                     }
                   },
-                  [
-                    _vm._v(
-                      _vm._s(
-                        _vm.formState.edit
-                          ? _vm.$t("main.form_btnText_update")
-                          : _vm.$t("main.form_btnText_save")
-                      )
-                    )
-                  ]
+                  [_vm._v("确定")]
                 ),
                 _c(
                   "el-button",
@@ -3177,13 +2724,7 @@ var render = function() {
             md: 6,
             lg: 6,
             xl: 6,
-            title:
-              (_vm.formState.edit
-                ? _vm.$t("main.modify")
-                : _vm.$t("main.addNew")) +
-              (_vm.adsType == "1"
-                ? _vm.$t("ads.typePic")
-                : _vm.$t("ads.textLink")),
+            title: _vm.添加产品,
             visible: _vm.formState.show,
             "close-on-click-modal": false
           },
@@ -3194,248 +2735,87 @@ var render = function() {
           }
         },
         [
-          _vm.adsType == "1"
-            ? _c(
-                "el-form",
-                {
-                  ref: "ruleForm",
-                  staticClass: "demo-ruleForm",
-                  attrs: {
-                    model: _vm.formState.formData,
-                    rules: _vm.rules,
-                    "label-width": "80px",
-                    "label-position": _vm.device == "mobile" ? "top" : "right"
-                  }
-                },
+          _c(
+            "el-form",
+            {
+              ref: "ruleForm",
+              staticClass: "demo-ruleForm",
+              attrs: {
+                model: _vm.formState.formData,
+                rules: _vm.rules,
+                "label-width": "80px",
+                "label-position": _vm.device == "mobile" ? "top" : "right"
+              }
+            },
+            [
+              _c(
+                "el-form-item",
+                { attrs: { label: "产品名称", prop: "name" } },
+                [
+                  _c("el-input", {
+                    attrs: { size: "small" },
+                    model: {
+                      value: _vm.formState.formData.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.formState.formData, "name", $$v)
+                      },
+                      expression: "formState.formData.name"
+                    }
+                  })
+                ],
+                1
+              ),
+              _c(
+                "el-form-item",
+                { attrs: { label: "上传图片", prop: "sImg" } },
                 [
                   _c(
-                    "el-form-item",
-                    { attrs: { label: _vm.$t("ads.dis"), prop: "alt" } },
-                    [
-                      _c("el-input", {
-                        attrs: { size: "small" },
-                        model: {
-                          value: _vm.formState.formData.alt,
-                          callback: function($$v) {
-                            _vm.$set(_vm.formState.formData, "alt", $$v)
-                          },
-                          expression: "formState.formData.alt"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
-                    { attrs: { label: _vm.$t("ads.link"), prop: "link" } },
-                    [
-                      _c("el-input", {
-                        attrs: { size: "small" },
-                        model: {
-                          value: _vm.formState.formData.link,
-                          callback: function($$v) {
-                            _vm.$set(_vm.formState.formData, "link", $$v)
-                          },
-                          expression: "formState.formData.link"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
+                    "el-upload",
                     {
-                      attrs: { label: _vm.$t("ads.appLink"), prop: "appLink" }
-                    },
-                    [
-                      _c("el-input", {
-                        attrs: { size: "small" },
-                        model: {
-                          value: _vm.formState.formData.appLink,
-                          callback: function($$v) {
-                            _vm.$set(_vm.formState.formData, "appLink", $$v)
-                          },
-                          expression: "formState.formData.appLink"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
-                    {
+                      staticClass: "avatar-uploader",
                       attrs: {
-                        label: _vm.$t("ads.appLinkType"),
-                        prop: "appLinkType"
+                        action: "/api/upload/files",
+                        "show-file-list": false,
+                        "on-success": _vm.handleAvatarSuccess,
+                        "before-upload": _vm.beforeAvatarUpload,
+                        data: { action: "uploadimage" }
                       }
                     },
                     [
-                      _c(
-                        "el-select",
-                        {
-                          attrs: { placeholder: "请选择app链接类型" },
-                          model: {
-                            value: _vm.formState.formData.appLinkType,
-                            callback: function($$v) {
-                              _vm.$set(
-                                _vm.formState.formData,
-                                "appLinkType",
-                                $$v
-                              )
-                            },
-                            expression: "formState.formData.appLinkType"
-                          }
-                        },
-                        _vm._l(_vm.linkTypeOpts, function(item) {
-                          return _c("el-option", {
-                            key: item.value,
-                            attrs: { label: item.label, value: item.value }
+                      _vm.formState.formData.sImg
+                        ? _c("img", {
+                            staticClass: "avatar",
+                            attrs: { src: _vm.formState.formData.sImg }
                           })
-                        }),
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
-                    { attrs: { label: _vm.$t("ads.upload"), prop: "sImg" } },
-                    [
-                      _c(
-                        "el-upload",
-                        {
-                          staticClass: "avatar-uploader",
-                          attrs: {
-                            action: "/api/upload/files",
-                            "show-file-list": false,
-                            "on-success": _vm.handleAvatarSuccess,
-                            "before-upload": _vm.beforeAvatarUpload,
-                            data: { action: "uploadimage" }
-                          }
-                        },
-                        [
-                          _vm.formState.formData.sImg
-                            ? _c("img", {
-                                staticClass: "avatar",
-                                attrs: { src: _vm.formState.formData.sImg }
-                              })
-                            : _c("i", {
-                                staticClass: "el-icon-plus avatar-uploader-icon"
-                              })
-                        ]
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
-                    [
-                      _c(
-                        "el-button",
-                        {
-                          attrs: { size: "medium", type: "primary" },
-                          on: {
-                            click: function($event) {
-                              return _vm.submitForm("ruleForm")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm.formState.edit
-                                ? _vm.$t("main.form_btnText_update")
-                                : _vm.$t("main.form_btnText_save")
-                            )
-                          )
-                        ]
-                      )
-                    ],
-                    1
+                        : _c("i", {
+                            staticClass: "el-icon-plus avatar-uploader-icon"
+                          })
+                    ]
                   )
                 ],
                 1
-              )
-            : _vm._e(),
-          _vm.adsType == "0"
-            ? _c(
-                "el-form",
-                {
-                  ref: "ruleForm1",
-                  staticClass: "demo-ruleForm",
-                  attrs: {
-                    model: _vm.formState.formData,
-                    rules: _vm.rules1,
-                    "label-width": "80px"
-                  }
-                },
+              ),
+              _c(
+                "el-form-item",
                 [
                   _c(
-                    "el-form-item",
+                    "el-button",
                     {
-                      attrs: { label: _vm.$t("ads.textContent"), prop: "title" }
+                      attrs: { size: "medium", type: "primary" },
+                      on: {
+                        click: function($event) {
+                          return _vm.submitForm("ruleForm")
+                        }
+                      }
                     },
-                    [
-                      _c("el-input", {
-                        attrs: { size: "small" },
-                        model: {
-                          value: _vm.formState.formData.title,
-                          callback: function($$v) {
-                            _vm.$set(_vm.formState.formData, "title", $$v)
-                          },
-                          expression: "formState.formData.title"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
-                    { attrs: { label: _vm.$t("ads.link"), prop: "link" } },
-                    [
-                      _c("el-input", {
-                        attrs: { size: "small" },
-                        model: {
-                          value: _vm.formState.formData.link,
-                          callback: function($$v) {
-                            _vm.$set(_vm.formState.formData, "link", $$v)
-                          },
-                          expression: "formState.formData.link"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _c(
-                    "el-form-item",
-                    [
-                      _c(
-                        "el-button",
-                        {
-                          attrs: { size: "smmediumall", type: "primary" },
-                          on: {
-                            click: function($event) {
-                              return _vm.submitForm("ruleForm1")
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm.formState.edit
-                                ? _vm.$t("main.form_btnText_update")
-                                : _vm.$t("main.form_btnText_save")
-                            )
-                          )
-                        ]
-                      )
-                    ],
-                    1
+                    [_vm._v("保存")]
                   )
                 ],
                 1
               )
-            : _vm._e()
+            ],
+            1
+          )
         ],
         1
       )
@@ -3554,7 +2934,7 @@ var render = function() {
           "el-button",
           {
             attrs: { type: "primary", size: "small", plain: "", round: "" },
-            on: { click: _vm.addAds }
+            on: { click: _vm.add }
           },
           [_c("svg-icon", { attrs: { "icon-class": "icon_add" } })],
           1
@@ -7476,7 +6856,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/_css-lo
 
 
 // module
-exports.push([module.i, ".dr-adsInfoForm {\n  margin-top: 30px;\n}\n.el-tag {\n  margin-right: 15px;\n}\n.dr-ads-item {\n  color: #48576a;\n  border-radius: 4px;\n  border: 1px solid #bfcbd9;\n  padding: 5px;\n  position: relative;\n  margin: 15px 0;\n}\n.dr-ads-item .img {\n    width: 70px;\n    height: 70px;\n    position: absolute;\n}\n.dr-ads-item .img img {\n      width: 100%;\n      height: 100%;\n}\n.dr-ads-item .details {\n    display: inline-block;\n    margin-left: 80px;\n}\n.dr-ads-item .details ul {\n      margin: 0;\n      padding: 0;\n}\n.dr-ads-item .details ul li {\n        list-style-type: none;\n}\n.dr-ads-item .options {\n    position: absolute;\n    right: 20px;\n    top: 20px;\n}\n.dr-ads-item .el-icon-close {\n    position: absolute;\n    right: 5px;\n    top: 5px;\n    font-size: 11px;\n    cursor: pointer;\n    color: #bfcbd9;\n}\n", ""]);
+exports.push([module.i, ".demo-ruleForm {\n  margin-left: 50px;\n}\n.dr-adsInfoForm {\n  margin-top: 30px;\n}\n.el-tag {\n  margin-right: 15px;\n}\n.dr-ads-item {\n  color: #48576a;\n  border-radius: 4px;\n  border: 1px solid #bfcbd9;\n  padding: 5px;\n  position: relative;\n  margin: 15px 0;\n}\n.dr-ads-item .img {\n    width: 70px;\n    height: 70px;\n    position: absolute;\n}\n.dr-ads-item .img img {\n      width: 100%;\n      height: 100%;\n}\n.dr-ads-item .details {\n    display: inline-block;\n    margin-left: 80px;\n}\n.dr-ads-item .details ul {\n      margin: 0;\n      padding: 0;\n}\n.dr-ads-item .details ul li {\n        list-style-type: none;\n}\n.dr-ads-item .options {\n    position: absolute;\n    right: 20px;\n    top: 20px;\n}\n.dr-ads-item .el-icon-close {\n    position: absolute;\n    right: 5px;\n    top: 5px;\n    font-size: 11px;\n    cursor: pointer;\n    color: #bfcbd9;\n}\n", ""]);
 
 // exports
 
@@ -14591,55 +13971,63 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/api/ads.js":
-/*!************************!*\
-  !*** ./src/api/ads.js ***!
-  \************************/
-/*! exports provided: getAdsList, getOneAd, addOneAd, updateAds, delAds */
+/***/ "./src/api/goodsInfo.js":
+/*!******************************!*\
+  !*** ./src/api/goodsInfo.js ***!
+  \******************************/
+/*! exports provided: getList, getOneAd, addOneAd, updateAds, delAds, getCategoryList */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAdsList", function() { return getAdsList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getList", function() { return getList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getOneAd", function() { return getOneAd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addOneAd", function() { return addOneAd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAds", function() { return updateAds; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "delAds", function() { return delAds; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategoryList", function() { return getCategoryList; });
 /* harmony import */ var _root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @root/publicMethods/request */ "../publicMethods/request.js");
 
-function getAdsList(params) {
+function getList(params) {
   return Object(_root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    url: '/manage/ads/getList',
+    url: '/manage/goodsInfo/getList',
     method: 'get',
     params: params
   });
 }
 function getOneAd(params) {
   return Object(_root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    url: '/manage/ads/getOne',
+    url: '/manage/goodsInfo/getOne',
     method: 'get',
     params: params
   });
 }
 function addOneAd(data) {
   return Object(_root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    url: '/manage/ads/addOne',
+    url: '/manage/goodsInfo/addOne',
     method: 'post',
     data: data
   });
 }
 function updateAds(data) {
   return Object(_root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    url: '/manage/ads/updateOne',
+    url: '/manage/goodsInfo/updateOne',
     method: 'post',
     data: data
   });
 }
 function delAds(params) {
   return Object(_root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    url: '/manage/ads/delete',
+    url: '/manage/goodsInfo/delete',
     method: 'get',
     params: params
+  });
+}
+function getCategoryList(params) {
+  return Object(_root_publicMethods_request__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    url: '/manage/goodsCategory/getList',
+    params: params,
+    method: 'get'
   });
 }
 
@@ -15467,14 +14855,14 @@ var createRouter = function createRouter() {
       name: 'goodsinfo',
       component: _views_ads__WEBPACK_IMPORTED_MODULE_3__["default"]
     }, {
-      path: _root_publicMethods_settings__WEBPACK_IMPORTED_MODULE_2___default.a.admin_base_path + '/ads/editAds/:id',
-      name: 'editAds',
+      path: _root_publicMethods_settings__WEBPACK_IMPORTED_MODULE_2___default.a.admin_base_path + '/goodsInfo/edit/:id',
+      name: 'edit',
       component: function component() {
         return Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! @/views/ads/infoForm.vue */ "./src/views/ads/infoForm.vue"));
       }
     }, {
-      path: _root_publicMethods_settings__WEBPACK_IMPORTED_MODULE_2___default.a.admin_base_path + '/ads/addAds',
-      name: 'addAds',
+      path: _root_publicMethods_settings__WEBPACK_IMPORTED_MODULE_2___default.a.admin_base_path + '/goodsInfo/add',
+      name: 'add',
       component: function component() {
         return Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! @/views/ads/infoForm.vue */ "./src/views/ads/infoForm.vue"));
       }
@@ -15513,14 +14901,14 @@ __webpack_require__.p = window.getPublicPath('goodsInfo');
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var getters = {
-  adsList: function adsList(state) {
-    return state.ads.list;
+  list: function list(state) {
+    return state.goodsInfo.list;
   },
-  adsInfoForm: function adsInfoForm(state) {
-    return state.ads.infoFormState;
+  infoForm: function infoForm(state) {
+    return state.goodsInfo.infoFormState;
   },
-  adsItemForm: function adsItemForm(state) {
-    return state.ads.itemFormState;
+  itemForm: function itemForm(state) {
+    return state.goodsInfo.itemFormState;
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (getters);
@@ -15541,7 +14929,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "vuex");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getters */ "./src/store/getters.js");
-/* harmony import */ var _modules_ads__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/ads */ "./src/store/modules/ads.js");
+/* harmony import */ var _modules_goodsInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/goodsInfo */ "./src/store/modules/goodsInfo.js");
 
 
 
@@ -15549,7 +14937,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1___default.a);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1___default.a.Store({
   modules: {
-    ads: _modules_ads__WEBPACK_IMPORTED_MODULE_3__["default"]
+    goodsInfo: _modules_goodsInfo__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   getters: _getters__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
@@ -15557,10 +14945,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1___default.a.Store({
 
 /***/ }),
 
-/***/ "./src/store/modules/ads.js":
-/*!**********************************!*\
-  !*** ./src/store/modules/ads.js ***!
-  \**********************************/
+/***/ "./src/store/modules/goodsInfo.js":
+/*!****************************************!*\
+  !*** ./src/store/modules/goodsInfo.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -15568,7 +14956,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1___default.a.Store({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var F_ChangweiProject_DoraCMS_SQL_backstage_goodsInfo_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ "./node_modules/_@babel_runtime@7.12.5@@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types.js */ "./src/store/types.js");
-/* harmony import */ var _api_ads__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/api/ads */ "./src/api/ads.js");
+/* harmony import */ var _api_goodsInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/api/goodsInfo */ "./src/api/goodsInfo.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "lodash");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
 
@@ -15585,27 +14973,16 @@ var state = {
   },
   infoFormState: {
     edit: false,
-    formData: {
-      name: '',
-      ads_type: '1',
-      height: '',
-      comments: '',
-      items: [],
-      state: true,
-      carousel: true
-    }
+    category1: "",
+    category2: "",
+    category3: "",
+    goodsList: []
   },
   itemFormState: {
     show: false,
     edit: false,
     formData: {
-      title: '',
-      link: '',
-      appLink: '',
-      appLinkType: '',
-      width: '',
-      height: '',
-      alt: '',
+      name: "",
       sImg: ''
     }
   }
@@ -15616,43 +14993,36 @@ var mutations = (_mutations = {}, Object(F_ChangweiProject_DoraCMS_SQL_backstage
   state.infoFormState.edit = formState.edit;
   state.infoFormState.formData = Object.assign({
     name: '',
-    ads_type: '1',
-    height: '',
-    comments: '',
-    items: [],
-    state: true,
-    carousel: true
+    sImg: ""
   }, formState.formData);
+  state.infoFormState.goodsList = formState.goodsList;
 }), Object(F_ChangweiProject_DoraCMS_SQL_backstage_goodsInfo_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_mutations, _types_js__WEBPACK_IMPORTED_MODULE_1__["ADS_ITEM_FORMSTATE"], function (state, formState) {
   state.itemFormState.edit = formState.edit;
   state.itemFormState.show = formState.show;
   state.itemFormState.formData = Object.assign({
-    title: '',
-    link: '',
-    width: '',
-    height: '',
-    alt: '',
+    name: "",
     sImg: ''
   }, formState.formData);
 }), _mutations);
 var actions = {
-  getAdsList: function getAdsList(_ref) {
+  getList: function getList(_ref) {
     var commit = _ref.commit;
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-    Object(_api_ads__WEBPACK_IMPORTED_MODULE_2__["getAdsList"])(params).then(function (result) {
+    Object(_api_goodsInfo__WEBPACK_IMPORTED_MODULE_2__["getList"])(params).then(function (result) {
       commit(_types_js__WEBPACK_IMPORTED_MODULE_1__["ADS_LIST"], result.data);
     });
   },
-  adsInfoForm: function adsInfoForm(_ref2) {
+  infoForm: function infoForm(_ref2) {
     var commit = _ref2.commit;
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     commit(_types_js__WEBPACK_IMPORTED_MODULE_1__["ADS_INFO_FORMSTATE"], {
       edit: params.edit,
-      formData: params.formData
+      formData: params.formData,
+      goodsList: params.goodsList
     });
   },
-  showAdsItemForm: function showAdsItemForm(_ref3) {
+  showItemForm: function showItemForm(_ref3) {
     var commit = _ref3.commit;
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
       edit: false,
@@ -15664,7 +15034,7 @@ var actions = {
       formData: params.formData
     });
   },
-  hideAdsItemForm: function hideAdsItemForm(_ref4) {
+  hideItemForm: function hideItemForm(_ref4) {
     var commit = _ref4.commit;
     commit(_types_js__WEBPACK_IMPORTED_MODULE_1__["ADS_ITEM_FORMSTATE"], {
       show: false

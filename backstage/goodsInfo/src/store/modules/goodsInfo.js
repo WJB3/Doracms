@@ -21,7 +21,8 @@ const state = {
     edit: false,
     formData: {
       name:"",
-      sImg: ''
+      sImg: '',
+      brand:""
     }
   },
 }
@@ -46,6 +47,9 @@ const mutations = {
       sImg: '',
     }, formState.formData);
   },
+  clearGoodsList(state, formState){
+    state.infoFormState.goodsList=[]
+  }
 }
 
 const actions = {

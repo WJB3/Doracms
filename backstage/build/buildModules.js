@@ -45,6 +45,7 @@ if (designatedModule.length > 0) {
 targetBuildModules.push("homeimage");
 targetBuildModules.push("goodsCategory");
 targetBuildModules.push("goodsInfo");
+targetBuildModules.push("goodsBrand");
 
 targetBuildModules.forEach(function (name) {
     if (name != '.git' && name != 'build' && name != 'publicMethods' && name != 'dist') {

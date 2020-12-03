@@ -1,0 +1,56 @@
+<div ms-controller="adsGoods" id="adsGoods" class="adscategory_class">
+    <div ms-for="(index,category2) in @categoryList" class="adscategory_item" ms-attr="{'data-category2Index':@index}">
+        <div class="title_wrapper">
+            <div ms-text="@category2.name" class="title">
+            </div>
+
+            <div class="more">
+                <div ms-for="(index3,category3) in @category2.children" ms-text="@category3.name"
+                    ms-attr="{'data-category3Index':@index3}" :class="[@category2.currentIndex==@index3 && 'active']">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="category_container">
+            <div class="container1">
+                <div class="type1_fill" :visible="@category2.adsItems.length===1"
+                    ms-css="{background: @renderImage(@category2.adsItems[0].sImg),backgroundSize:'contain'}">
+                </div>
+                <div class="type2_fill" :visible="@category2.adsItems.length>1">
+                    <div ms-for="(adsIndex,adsItem) in @category2.adsItems"
+                        ms-css="{background: @renderImage(@adsItem.sImg),backgroundSize:'contain'}">
+
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div 
+                    class="container2_good"
+                    ms-for="(index,goods) in @category2.children[@category2.currentIndex].currentGoodList"
+                
+                >
+                    <img ms-attr="{src:@goods.sImg,'data-goodsid':@goods.id}" />
+                    <div ms-text="@goods.name" ms-attr="{title:@goods.name}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+<script>
+    //悬浮在二级标题上
+    $("body").on("hover", "#adsGoods .more div", function () { 
+        let category2Index = $(this).parents(".adscategory_item")[0].dataset.category2index;
+        let category3Index = $(this)[0].dataset.category3index; 
+        setCategory3Index([], category2Index, category3Index);
+    })
+    //悬浮在二级标题上
+    $("body").on("click", ".container2_good", function () {
+        console.log()
+        let goodId=$(this).children("img")[0].dataset.goodsid; 
+        window.location.href="/t/goodsDetails?good_id="+goodId;
+    })
+</script>

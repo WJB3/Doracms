@@ -1,0 +1,54 @@
+
+
+<div ms-controller="category" id="category" class="category_class">
+    <ul class="category_list">
+        <li 
+            ms-for="(index,category1) in @categoryList" 
+            ms-html="renderCategory1(@category1.name)" 
+            class="category_list_li"
+            ms-attr="{'data-index':@index}"
+        >  
+        </li>
+    </ul>
+    <div
+        class="rightPanel" 
+        :visible="@rightPanelVisible">
+        <div 
+            ms-for="(index,category2) in @categoryList[@rightPanelCurrentIndex].children" 
+            class="rightPanel_item"
+        >
+            <img ms-attr="{src:@getFirstImg(@category2)}" class="category_img">
+            <div  ms-text="@category2.name"></div>
+        </div>
+    </div>
+</div>
+<script>
+    let hoverTimeout=null;
+    $(function () { 
+        getCategory();
+    })  
+  //悬浮在三级标题上
+    $("body").on("mouseenter", "#category .category_list li", function() {  
+        if(hoverTimeout){
+            clearTimeout(hoverTimeout);
+        }
+        let arrIndex=$(this)[0].dataset.index; 
+        rightPanelVisibleChange(true,arrIndex);
+    });
+    $("body").on("mouseleave", "#category .category_list", function() {  
+        let arrIndex=$(this)[0].dataset.index; 
+        hoverTimeout=setTimeout(()=>{
+            rightPanelVisibleChange(false,-1);
+        },200) 
+    })
+    $("body").on("mouseenter", ".rightPanel", function() {  
+        if(hoverTimeout){
+            clearTimeout(hoverTimeout);
+        }
+    })
+    $("body").on("mouseleave", ".rightPanel", function() {  
+        hoverTimeout=setTimeout(()=>{
+            rightPanelVisibleChange(false,-1);
+        },200)  
+    })
+</script>

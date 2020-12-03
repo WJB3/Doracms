@@ -521,6 +521,12 @@
           "method": "get",
           "controllerName": "getOne",
           "details": "获取单条广告"
+        },
+        {
+          "url": "ads/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取单条广告"
         }
       ],
       "initData": "",
@@ -1539,6 +1545,61 @@
       "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-goods-info',    \n    };\n\n    ",
       "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/goodsInfo'), ctx => ctx.path.startsWith('/api/goodsInfo')],\n\n    },\n\n    "
     },
+    "eggGoodsBrand": {
+      "alias": "goodsBrand",
+      "pkgName": "egg-goods-brand",
+      "enName": "eggGoodsBrand",
+      "name": "产品品牌管理",
+      "description": "产品品牌管理",
+      "isadm": 1,
+      "isindex": 0,
+      "version": "1.0.6",
+      "iconName": "icon_shakehands_fill",
+      "adminUrl": "/goodsBrand/js/app.js",
+      "adminApi": [
+        {
+          "url": "goodsBrand/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取品牌列表"
+        },
+        {
+          "url": "goodsBrand/getOne",
+          "method": "get",
+          "controllerName": "getOne",
+          "details": "获取单条品牌信息"
+        },
+        {
+          "url": "goodsBrand/addOne",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个品牌"
+        },
+        {
+          "url": "goodsBrand/updateOne",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新品牌信息"
+        },
+        {
+          "url": "goodsBrand/deleteCategory",
+          "method": "get",
+          "controllerName": "removes",
+          "details": "删除品牌"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "goodsBrand/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取品牌列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-goods-brand',    \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/goodsBrand'), ctx => ctx.path.startsWith('/api/goodsBrand')],\n\n    },\n\n    "
+    },
     "env": "local",
     "name": "doracms-sql",
     "keys": "<String len: 8>",
@@ -1911,8 +1972,7 @@
     "admin_root_path": "http://localhost",
     "dev_modules": [
       "navbar",
-      "adminResource",
-      "goodsCategory",
+      "contentCategory",
       "goodsInfo"
     ],
     "sqlPath": {
@@ -2322,6 +2382,17 @@
       "package": "egg-goods-info",
       "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-info",
       "name": "eggGoodsInfo",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.6"
+    },
+    "eggGoodsBrand": {
+      "enable": true,
+      "package": "egg-goods-brand",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-brand",
+      "name": "eggGoodsBrand",
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],

@@ -17,15 +17,17 @@
         label-width="120px"
         class="demo-ruleForm"
       >
-        <el-form-item
-          v-show="dialogState.cate_type==='children' && !dialogState.edit"
-          :label="$t('goodsCategory.parentType')"
-          prop="label"
-        >
-          <el-input size="small" :disabled="true" v-model="dialogState.formData.parentObj.name"></el-input>
-        </el-form-item>
+         
         <el-form-item label="类别名称" prop="name">
           <el-input size="small" v-model="dialogState.formData.name"></el-input>
+        </el-form-item>
+        <el-form-item label="排序" prop="sortId">
+          <el-input-number
+            size="small"
+            v-model="dialogState.formData.sortId" 
+            :min="1"
+            :max="50"
+          ></el-input-number>
         </el-form-item>
          <el-form-item>
           <el-button

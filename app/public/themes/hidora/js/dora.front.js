@@ -137,8 +137,7 @@ function getTreeData() {
 }
 
 function changeIndex(arrIndex,categoryIndex1,categoryIndex2,categoryIndex3){
-    let copy=[].concat(globalGoodsCategory);
-    console.log(transformIndex(copy,categoryIndex1,categoryIndex2,categoryIndex3,arrIndex));
+    let copy=[].concat(globalGoodsCategory); 
     goodsLevelTreeVm.treeList=transformIndex(copy,categoryIndex1,categoryIndex2,categoryIndex3,arrIndex);
 }
 
@@ -151,9 +150,106 @@ var goodsLevelTreeVm=avalon.define({
         if(index<3){
             return true
         }
+    },
+    isVisible6:function(index){
+        if(index<6){
+            return true
+        }
     }
-})  
+}); 
 
+var categoryVm=avalon.define({
+    $id:"category",
+    categoryList:[],
+    rightPanel:[],
+    rightPanelVisible:false,
+    rightPanelCurrentIndex:-1,
+    getFirstImg:function(item){ 
+        return item && item.currentGoodList ?item.currentGoodList[0].sImg:""
+    },
+    renderCategory1:function(name){
+        return "<span style='display: flex;justify-content: space-between;align-items: center;'>"+
+            "<span>"+name+"</span>"+
+            "<span class='iconfont'>&#xe622;</span>"+
+        "</span>"
+    }
+})
+
+function rightPanelVisibleChange(visible,arrIndex){ 
+    categoryVm.rightPanelVisible=visible;
+    categoryVm.rightPanelCurrentIndex=arrIndex;
+}
+
+//设置ads
+function setAdsCategory(arr,adsList){
+    let copy=deepClone(arr);  
+    for(let i=0;i<copy.length;i++){
+        for(let j=0;j<adsList.length;j++){
+            let adsCategoryId=JSON.parse(adsList[j].category_id)[1]; 
+            if(copy[i].id==adsCategoryId){ 
+                copy[i].adsItems=adsList[j].items?adsList[j].items:[]
+            }
+        }
+    }
+    return copy;
+}
+
+let globalCategoryGoods=[];
+
+function setCategory3Index(data,categoryIndex,index){
+
+    if(data.length>0){
+        globalCategoryGoods=data;
+    }
+
+    if(data.length===0){
+        data=globalCategoryGoods;
+    }
+     
+    data.forEach((c,i)=>{
+            if(i==categoryIndex){
+                c.currentIndex=index;
+            }
+    }) 
+   
+}
+
+function getCategory() { 
+    getAjaxData('/api/goodsInfo/getList?isPaging=0', (dataInfo) => {
+        getAjaxData('/api/goodsCategory/getList?isPaging=0', (dataCategory) => {
+            getAjaxData('/api/ads/getList?isPaging=0',(adsList)=>{
+               
+                if (adsList.status == 200) {
+                    const data=transformCategoryGoods(transformTree(dataCategory.data,0), transformGoods(dataInfo.data)); 
+                   
+                    //一级分类
+                    let level1=data;
+                    let level2=level1[0].children; 
+
+                    let adsCategory=setAdsCategory(level2,adsList.data);
+
+                    for(let i=0;i<adsCategory.length;i++){
+                        setCategory3Index(adsCategory,i,0);
+                    }
+ 
+                    
+                    categoryVm.categoryList=adsCategory; 
+                    adsGoodsVm.categoryList=adsCategory;
+                }
+            }) 
+        })  
+
+    }) 
+}
+
+var adsGoodsVm=avalon.define({
+    $id:"adsGoods",
+    categoryList:[],
+    renderImage:function(url){ 
+        return "url('"+url+"')";
+    }
+});
+ 
 
 var postMsgVm=avalon.define({
     $id:"postMessage",

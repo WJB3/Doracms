@@ -16,6 +16,14 @@ export function getOneAd(params) {
   })
 }
 
+export function getCategoryList(params){
+  return request({
+    url: '/manage/goodsCategory/getList',
+    params,
+    method: 'get'
+  })
+}
+
 export function addOneAd(data) {
   return request({
     url: '/manage/ads/addOne',
