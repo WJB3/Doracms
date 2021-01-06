@@ -15,6 +15,10 @@ module.exports = async app => {
 
     router.get(["/", "/zh-CN", "/zh-TW", "/en"], controller.page.home.getDataForIndexPage);
 
+    router.get(["/goodsDetail"],controller.page.home.getDataForGoodDetailPage);
+
+    router.get(["/goodsCategory"],controller.page.home.getDataForGoodCategoryPage);
+
     router.get("/page/:current.html", controller.page.home.getDataForIndexPage);
 
     router.get(["/all", "/all/:current.html"], controller.page.home.getDataForAllPost);
@@ -34,6 +38,7 @@ module.exports = async app => {
         "/t/:cate0/:cate1/:cate2/:cate3/:current.html",
     ], controller.page.home.getDataForCatePage);
 
+
     // 搜索
     router.get(["/search/:searchkey", "/search/:searchkey/:current.html"], controller.page.home.getDataForSearchPage);
     // 标签
@@ -41,6 +46,8 @@ module.exports = async app => {
     router.get(["/tag/:tagName", "/tag/:tagName/:current.html"], controller.page.home.getDataForTagPage);
     // 作者
     router.get(["/author/:userId", "/author/:userId/:current.html"], controller.page.home.getDataForAuthorPage);
+
+    
 
     // 移动端
     router.get("/phone-fenlei.html", controller.page.home.getDataForPhoneCategory);

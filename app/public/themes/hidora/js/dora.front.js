@@ -213,18 +213,23 @@ function setCategory3Index(data,categoryIndex,index){
     }) 
    
 }
+ 
 
 function getCategory() { 
     getAjaxData('/api/goodsInfo/getList?isPaging=0', (dataInfo) => {
         getAjaxData('/api/goodsCategory/getList?isPaging=0', (dataCategory) => {
+
+            
             getAjaxData('/api/ads/getList?isPaging=0',(adsList)=>{
                
                 if (adsList.status == 200) {
                     const data=transformCategoryGoods(transformTree(dataCategory.data,0), transformGoods(dataInfo.data)); 
-                   
+                    
                     //一级分类
                     let level1=data;
                     let level2=level1[0].children; 
+
+                    localStorage.setItem("GLOBAL_CATEGORY",JSON.stringify(data))
 
                     let adsCategory=setAdsCategory(level2,adsList.data);
 
@@ -232,6 +237,7 @@ function getCategory() {
                         setCategory3Index(adsCategory,i,0);
                     }
  
+
                     
                     categoryVm.categoryList=adsCategory; 
                     adsGoodsVm.categoryList=adsCategory;
@@ -249,7 +255,74 @@ var adsGoodsVm=avalon.define({
         return "url('"+url+"')";
     }
 });
+
+
+var goodsDetailVm=avalon.define({
+    $id:"goodsDetail", 
+});
  
+
+
+var siderBarCategoryVm=avalon.define({
+    $id:"siderBarCategory", 
+    categoryTree:[],
+    categoryTitle:"",
+    currentExpandIndex:-1
+});
+
+function setSiderBarCategory(){
+    let category=JSON.parse(localStorage.getItem("GLOBAL_CATEGORY")); 
+    siderBarCategoryVm.categoryTree=category[0].children;
+    siderBarCategoryVm.categoryTitle=category[0].name;
+}
+
+var goodDetailVm=avalon.define({
+    $id:"goodDetail",  
+    category1:"",
+    category2:"",
+    category3:"",
+    good_name:"",
+    imgList:[],
+    market_price:"",
+    product_brand:"",
+    product_model:"",
+    product_unit:"",
+    category1id:"",
+    category2id:"",
+    category3id:"",
+});
+
+function getProductDetailById(product_id){ 
+    getAjaxData('/api/goods/get?id='+product_id, (dataInfo) => {
+        let category_list=JSON.parse(dataInfo.data.category_list);
+        console.log(category_list)
+        goodDetailVm.category1=category_list.one.name;
+        goodDetailVm.category2=category_list.two.name;
+        goodDetailVm.category3=category_list.three.name;
+        goodDetailVm.category1id=category_list.one.id;
+        goodDetailVm.category2id=category_list.two.id;
+        goodDetailVm.category3id=category_list.three.id;
+        goodDetailVm.good_name=dataInfo.data.name; 
+        goodDetailVm.imgList=JSON.parse(dataInfo.data.imgList);
+        goodDetailVm.market_price= dataInfo.data.mark_price;
+        goodDetailVm.product_brand= dataInfo.data.brand_items[0].name;
+        goodDetailVm.product_model= dataInfo.data.model;
+        goodDetailVm.product_unit= dataInfo.data.unit;
+
+        let category=JSON.parse(localStorage.getItem("GLOBAL_CATEGORY")); 
+        console.log(category)
+        let index=category[0].children.findIndex(item=>item.id===category_list.two.id);
+        let index2=category[0].children[index].children.findIndex(item=>item.id===category_list.three.id);
+     console.log(index2)
+        $(".category_item").eq(index).find(".wrapper_category3").slideToggle(100, 'linear', function() {
+            console.log('动画执行完毕')
+        });
+
+        
+        $(".category_item").eq(index).find(".wrapper_category3").find(".wrapper_category3_item").eq(index2).addClass("current")
+
+    })
+}
 
 var postMsgVm=avalon.define({
     $id:"postMessage",

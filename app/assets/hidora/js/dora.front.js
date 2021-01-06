@@ -203,8 +203,7 @@ var userEmailLoginVm = avalon.define({
                     shade: [0.001, '#000'],
                     time: msgTime
                 });
-            } else {
-                console.log('全部通过');
+            } else { 
                 var params = {
                     loginType: '3',
                     email: userEmailLoginVm.email,
@@ -456,16 +455,14 @@ var postMsgVm = avalon.define({
     },
     validate: {
         onError: function (reasons) {
-            reasons.forEach(function (reason) {
-                console.log(reason.getMessage())
+            reasons.forEach(function (reason) { 
             })
         },
         onValidateAll: function (reasons) {
             if (reasons.length) {
                 postMsgVm.showErr = true;
                 postMsgVm.message = reasons[0].message;
-            } else {
-                console.log('全部通过');
+            } else { 
                 if ($('#logined').val() == 'true') {
                     var params = {
                         contentId: $('#contentId').val(),

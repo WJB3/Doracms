@@ -1600,6 +1600,67 @@
       "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-goods-brand',    \n    };\n\n    ",
       "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/goodsBrand'), ctx => ctx.path.startsWith('/api/goodsBrand')],\n\n    },\n\n    "
     },
+    "eggGoods": {
+      "alias": "goods",
+      "pkgName": "egg-goods",
+      "enName": "eggGoods",
+      "name": "产品管理",
+      "description": "产品管理",
+      "isadm": 1,
+      "isindex": 1,
+      "version": "1.0.6",
+      "iconName": "icon_shakehands_fill",
+      "adminUrl": "/goods/js/app.js",
+      "adminApi": [
+        {
+          "url": "goods/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取列表"
+        },
+        {
+          "url": "goods/get",
+          "method": "get",
+          "controllerName": "get",
+          "details": "获取单条产品信息"
+        },
+        {
+          "url": "goods/add",
+          "method": "post",
+          "controllerName": "create",
+          "details": "添加单个产品"
+        },
+        {
+          "url": "goods/update",
+          "method": "post",
+          "controllerName": "update",
+          "details": "更新产品信息"
+        },
+        {
+          "url": "goods/delete",
+          "method": "get",
+          "controllerName": "remove",
+          "details": "删除产品"
+        }
+      ],
+      "fontApi": [
+        {
+          "url": "goods/getList",
+          "method": "get",
+          "controllerName": "list",
+          "details": "获取产品列表"
+        },
+        {
+          "url": "goods/get",
+          "method": "get",
+          "controllerName": "get",
+          "details": "获取产品列表"
+        }
+      ],
+      "initData": "",
+      "pluginsConfig": " \n    module.exports = {\n\n        enable: true,\n        package: 'egg-goods',    \n    };\n\n    ",
+      "defaultConfig": "\n    module.exports = {\n\n        match: [ctx => ctx.path.startsWith('/manage/goods'), ctx => ctx.path.startsWith('/api/goods')],\n\n    },\n\n    "
+    },
     "env": "local",
     "name": "doracms-sql",
     "keys": "<String len: 8>",
@@ -1969,11 +2030,9 @@
         null
       ]
     },
-    "admin_root_path": "http://localhost",
+    "admin_root_path": "http://192.168.1.83",
     "dev_modules": [
-      "navbar",
-      "contentCategory",
-      "goodsInfo"
+      "goods"
     ],
     "sqlPath": {
       "bin": "/usr/local/mysql/bin/",
@@ -2393,6 +2452,17 @@
       "package": "egg-goods-brand",
       "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods-brand",
       "name": "eggGoodsBrand",
+      "dependencies": [],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "F:\\ChangweiProject\\DoraCMS-SQL\\config\\plugin.js",
+      "version": "1.0.6"
+    },
+    "eggGoods": {
+      "enable": true,
+      "package": "egg-goods",
+      "path": "F:\\ChangweiProject\\DoraCMS-SQL\\lib\\plugin\\egg-goods",
+      "name": "eggGoods",
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],

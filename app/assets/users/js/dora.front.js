@@ -181,20 +181,17 @@ var personInfoVm = avalon.define({
     experienceArr: [],
     validate: {
         onError: function (reasons) {
-            reasons.forEach(function (reason) {
-                console.log(reason.getMessage())
+            reasons.forEach(function (reason) { 
             })
         },
         onValidateAll: function (reasons) {
-            if (reasons.length) {
-                console.log('有表单没有通过', reasons)
+            if (reasons.length) { 
                 layer.msg(reasons[0].message, {
                     icon: 2,
                     shade: [0.001, '#000'],
                     time: msgTime
                 });
-            } else {
-                console.log('全部通过');
+            } else { 
                 let params = {};
                 if (personInfoVm.userName) {
                     params.userName = personInfoVm.userName;
@@ -285,17 +282,14 @@ var confirmEmailVm = avalon.define({
     showErr: false,
     validate: {
         onError: function (reasons) {
-            reasons.forEach(function (reason) {
-                console.log(reason.getMessage())
+            reasons.forEach(function (reason) { 
             })
         },
         onValidateAll: function (reasons) {
-            if (reasons.length) {
-                console.log('有表单没有通过', reasons)
+            if (reasons.length) { 
                 confirmEmailVm.showErr = true;
                 confirmEmailVm.message = reasons[0].message;
-            } else {
-                console.log('全部通过');
+            } else { 
                 var params = {
                     email: confirmEmailVm.email
                 }
@@ -375,8 +369,7 @@ var userTellLoginVm = avalon.define({
     },
     validate: {
         onError: function (reasons) {
-            reasons.forEach(function (reason) {
-                console.log(reason.getMessage())
+            reasons.forEach(function (reason) { 
             })
         },
         onValidateAll: function (reasons) {

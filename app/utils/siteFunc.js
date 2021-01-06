@@ -76,8 +76,7 @@ var siteFunc = {
                 let fiterSubCates = _.filter(newResources, (doc) => {
                     
                     return doc.parentId == cate.id;
-                });
-                console.log(fiterSubCates.length)
+                }); 
                 if (fiterSubCates.length != 0) {
                     newRootCates.push(cate);
                 }
@@ -236,14 +235,12 @@ var siteFunc = {
         }
         return arr;
     },
-    renderSimpleContent(htmlStr, imgLinkArr, videoLinkArr) {
-        // console.log('----imgLinkArr-', imgLinkArr);
+    renderSimpleContent(htmlStr, imgLinkArr, videoLinkArr) { 
         let renderStr = [];
         // 去除a标签
         htmlStr = htmlStr.replace(/(<\/?a.*?>)|(<\/?span.*?>)/g, '');
         htmlStr = htmlStr.replace(/(<\/?br.*?>)/g, '\n\n');
-        if (imgLinkArr.length > 0 || videoLinkArr.length > 0) {
-            // console.log('----1111---')
+        if (imgLinkArr.length > 0 || videoLinkArr.length > 0) { 
             let delImgStr, delEndStr;
             var imgReg = /<img[^>]*>/gim;
             var videoReg = /<video[^>]*>/gim;
@@ -256,16 +253,13 @@ var siteFunc = {
                 delEndStr = delImgStr.replace(videoReg, "|V|");
             } else {
                 delEndStr = delImgStr;
-            }
-            // console.log('--delEndStr--', delEndStr);
+            } 
             let imgArr = delEndStr.split("|I|");
             let imgTag = 0,
                 videoTag = 0;
             for (let i = 0; i < imgArr.length; i++) {
-                const imgItem = imgArr[i];
-                // console.log('---imgItem---', imgItem);
-                if (imgItem.indexOf("|V|") < 0) {
-                    // console.log('----i----', imgItem);
+                const imgItem = imgArr[i]; 
+                if (imgItem.indexOf("|V|") < 0) { 
                     imgItem && renderStr.push({
                         type: 'contents',
                         content: imgItem
@@ -377,8 +371,7 @@ var siteFunc = {
 
 
 
-    sendTellMessagesByPhoneNum() {
-        console.log('待实现');
+    sendTellMessagesByPhoneNum() { 
     },
 
 

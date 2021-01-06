@@ -25,6 +25,8 @@ module.exports = {
     },
 
     async getRoutes(ctx, action = 'init') {
+ 
+
         let app = this;
         // const ctx = app.createAnonymousContext();
         if (ctx.service.contentCategory) {
@@ -33,8 +35,9 @@ module.exports = {
                 if (app.cache) {
                     documtentCates = app.cache.get(app.config.session_secret + '_default_cate')
                 }
+               
                 if (!_.isEmpty(documtentCates) && action == 'get') {
-                    console.log('get cache cates')
+                   
                     if (action != 'init') {
                         return documtentCates;
                     }
@@ -46,7 +49,8 @@ module.exports = {
                         query: {
                             enable: true
                         },
-                    })
+                    });
+ 
 
                     if (!_.isEmpty(cates)) {
                         let cateArr = [];
@@ -54,9 +58,10 @@ module.exports = {
                             cateArr.push(cateItem.url);
                             cateArr.push(cateItem.url + '/:current.html');
                         }
+                        
                         // console.log('---cateArr--', cateArr)
                         if (action == 'init' || action == 'update') {
-                            console.log('cache cates success!')
+                            
                             ctx.helper.setMemoryCache(app.config.session_secret + '_default_cate', cateArr, 1000 * 60 * 60 * 24);
                         } else {
                             return cateArr;

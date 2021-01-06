@@ -33,8 +33,7 @@ module.exports = {
         } else {
             targetUrl = this.app.config.server_api + '/' + url
         }
-
-        console.log(targetUrl)
+ 
 
         if (method === 'get') {
             responseData = await Axios.get(targetUrl, {
@@ -54,8 +53,7 @@ module.exports = {
 
     },
 
-    clearRedisByType(str, cacheKey) {
-        console.log('cacheStr', str);
+    clearRedisByType(str, cacheKey) { 
         let currentKey = this.app.config.session_secret + cacheKey + str;
         this.setMemoryCache(currentKey, '', 2000);
     },
@@ -212,8 +210,7 @@ module.exports = {
 
                 } else {
                     fs.unlink(path, function (err) {
-                        if (err) {
-                            console.log(err)
+                        if (err) { 
                         } else {
                             console.log('del file success');
                             resolve();

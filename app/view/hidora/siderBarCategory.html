@@ -1,0 +1,32 @@
+
+
+
+
+<div ms-controller="siderBarCategory" id="siderBarCategory">
+    <div class="category_title" ms-text="@categoryTitle"></div>
+    <div ms-for="(index,category2) in @categoryTree" class="category_item" >
+        <div class="wrapper_category2">
+            <div class="title" ms-text="@category2.name"></div>
+            <div class="iconfont iconzhankai"   ms-attr="{'data-index':@index}"></div>
+        </div>
+
+        <div class="wrapper_category3">
+            <div 
+                class="wrapper_category3_item"
+                ms-for="category3 in @category2.children" 
+                ms-text="@category3.name"></div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    setSiderBarCategory();
+    $("body").on("click",".iconzhankai",function(){
+        let index = $(this)[0].dataset.index;  
+        console.log($(".category_item").eq(index).find(".wrapper_category3"))
+        $(".category_item").eq(index).find(".wrapper_category3").slideToggle(100, 'linear', function() {
+                console.log('动画执行完毕')
+        })
+    })
+</script>

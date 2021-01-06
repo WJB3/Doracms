@@ -141,32 +141,30 @@ class HomeController extends Controller {
         await ctx.getPageData();
     }
 
-    async getDataForCatePage() {
-         
+    async getDataForGoodDetailPage(){
+        console.log("getDataForGoodDetailPage")
         const ctx = this.ctx;
-        ctx.pageType = "cate";
+        ctx.tempPage = 'goodsDetail.html';
+        ctx.pageType="goodsDetail";
         let defaultUrl = url.parse(ctx.originalUrl).pathname;
-
-        console.log(defaultUrl)//t/goodsDetails
-
-        let current = ctx.params.current;
-        if (current) {
-            defaultUrl = defaultUrl.replace('/' + current + '.html', '')
+        if(defaultUrl){
+            await ctx.getGoodsDetailPageData();
         }
-        if (defaultUrl) {
-            let cateCache = await this.app.getRoutes(ctx, 'get');
-            if (cateCache && cateCache.indexOf(defaultUrl) >= 0) {
-                ctx.params.defaultUrl = defaultUrl.substr(3);
-                if (current) {
-                    if (validator.isNumeric(current)) {
-                        await ctx.getPageData();
-                    }
-                } else {
-                    await ctx.getPageData();
-                }
-            }
-        }
+       
     }
+
+    
+    async getDataForGoodCategoryPage(){ 
+        const ctx = this.ctx;
+        ctx.tempPage = 'goodsCategory2.html';
+        ctx.pageType="goodsCategory";
+        let defaultUrl = url.parse(ctx.originalUrl).pathname;
+        if(defaultUrl){
+            await ctx.getGoodsCategoryPageData();
+        }
+       
+    }
+  
 
     async getDataForSearchPage() {
         const ctx = this.ctx;

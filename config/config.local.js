@@ -5,14 +5,14 @@ const isDocker = process.env.BUILD_ENV == 'docker' ? true : false;
 module.exports = appInfo => {
 
     return {
-        admin_root_path: 'http://localhost',
+        admin_root_path: 'http://192.168.1.83',
         // DEV_CONFIG_MODULES_BEGIN
         dev_modules: [
-            'navbar',
-            //'dashboard',
-            //'adminGroup',
+            //'navbar',
+            // 'dashboard',
+            // 'adminGroup',
             // 'adminUser',
-            //'adminResource',
+            // 'adminResource',
             // 'systemConfig',
             // 'backUpData',
             // 'systemOptionLog',
@@ -24,7 +24,7 @@ module.exports = appInfo => {
             // 'versionManage',
             // 'content',
             // 'contentTags',
-            'contentCategory',
+            // 'contentCategory',
             // 'contentMessage',
             // 'regUser',
             // 'helpCenter',
@@ -36,10 +36,12 @@ module.exports = appInfo => {
             // 'mailDelivery',
             // 'valine',
             // 'hook',
-            //"homeimage",
+            // "homeimage",
             //"goodsCategory",
-            "goodsInfo",
-            //"goodsBrand"
+            //"goodsInfo",
+            // "goodsBrand",
+            "goods"
+
         ],
         // DEV_CONFIG_MODULES_END
         sqlPath: {

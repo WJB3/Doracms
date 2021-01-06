@@ -1,0 +1,60 @@
+
+
+<div ms-controller="goodDetail" id="goodDetail">
+    <div class="weizhi" >您现在的位置是：<a href="/">产品详情</a>&nbsp;>&nbsp; 
+        <a ms-text="@category1"></a>&nbsp;>&nbsp;
+        <a ms-text="@category2"></a>&nbsp;>&nbsp;
+        <a ms-text="@category3"></a>&nbsp;>&nbsp;
+        <a ms-text="@good_name"></a>
+            
+    </div>
+    <div class="detailContent">
+        <div>{% include './siderBarCategory.html' %}</div>
+        <div class="right">
+            <div class="swiper-container good_img">  
+                <div class="swiper-wrapper">
+              
+                  <div class="swiper-slide" ms-for="(index,img) in @imgList"> 
+                      <a href="{{img.url}}" target="_blank">
+                        <img ms-attr="{src:@img.url}" /> 
+                      </a>
+                  </div> 
+                </div>
+          
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next-detail"></div>
+                <div class="swiper-button-prev-detail"></div>
+           
+            </div>
+            <div class="product_info">
+              <div class="product_name" ms-text="@good_name">
+         
+              </div>
+              <div class="product_content"  >
+                <div class="market_price">本站价格：<span ms-text="@market_price"></span></div>
+                <div class="product_brand">本站品牌：<span ms-text="@product_brand"></span></div>
+                <div class="product_model">规格型号：<span ms-text="@product_model"></span> </div>
+                <div class="product_unit">产品单位：<span ms-text="@product_unit"></span> </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script> 
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next-detail',
+        prevButton: '.swiper-button-prev-detail',
+        paginationClickable: true,
+        spaceBetween: 100,
+        centeredSlides: true,
+        autoplay: 8000,
+        autoplayDisableOnInteraction: false,
+        loop : true,
+      });
+    let product_id=location.search.split("=")[1];
+    getProductDetailById(product_id);
+</script>

@@ -12,7 +12,7 @@ const {
 } = require('./utils');
 
 // 指定打包模块
-let designatedModule = ['contentCategory'];
+let designatedModule = ['goods'];
 
 let copyType = "dev",
     targetModules = '',
@@ -42,10 +42,10 @@ let targetBuildModules = scanforder(modulesPath);
 if (designatedModule.length > 0) {
     targetBuildModules = designatedModule;
 }
-targetBuildModules.push("homeimage");
-targetBuildModules.push("goodsCategory");
-targetBuildModules.push("goodsInfo");
-targetBuildModules.push("goodsBrand");
+// targetBuildModules.push("homeimage");
+// targetBuildModules.push("goodsCategory");
+// targetBuildModules.push("goodsInfo");
+// targetBuildModules.push("goodsBrand");
 
 targetBuildModules.forEach(function (name) {
     if (name != '.git' && name != 'build' && name != 'publicMethods' && name != 'dist') {
